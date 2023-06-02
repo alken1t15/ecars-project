@@ -1,0 +1,365 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul[class] {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+header{
+    width: 1920px;
+    margin: 0 auto;
+}
+
+.container_head{
+    height: 36px;
+    display: flex;
+    padding-top: 10px;
+    padding-left: 112px;
+    background-color: #2C2926;
+}
+.container_head_img{
+    margin-left: 13px;
+}
+.container_head_img_facebook{
+    width: 7px;
+    height: 13px;
+}
+.twitter_img{
+    width: 14px;
+    height: 13px;
+}
+.youtube_img{
+    margin-top: 1px;
+    width: 13px;
+    height: 12px;
+}
+.instagram_whatsapp_img{
+    width: 13.33px;
+    height: 13.33px;
+}
+.container_head_two{
+    height: 70px;
+    display: flex;
+    padding-left: 120px;
+    padding-top: 18px;
+}
+.test_container_head{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1A1A1A;
+    margin-left: 40px;
+}
+.number_phone_header{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    margin-left: 7px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.mail_header_img{
+    margin-left: 17px;
+}
+.mail_header_text{
+    margin-left: 7px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+.map_container_img{
+    margin-left: 815px;
+    width: 12px;
+    height: 14px;
+}
+.text_container_map{
+    margin-left: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+.flag_country_header{
+    width: 20px;
+    height: 20px;
+    margin-top: -3px;
+    margin-left: 6px;
+    display: block;
+}
+.select_country_header{
+margin-left: 6px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    background-color: #2C2926;
+    color: white;
+    border: 2px solid #2C2926;
+    display: block;
+    margin-top: -9px;
+}
+.currency_header_text{
+    margin-left: 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+
+
+    color: rgba(255, 255, 255, 0.7);
+
+}
+.help_img_header{
+    width: 13px;
+    height: 13px;
+    margin-left: 25px;
+    margin-top: 1px;
+}
+.text_help_header{
+    margin-left: 6px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+
+
+    color: rgba(255, 255, 255, 0.7);
+
+}
+.container_two_imgs{
+    display: flex;
+    margin-left: 830px;
+    padding-top: 7px;
+}
+.container_two_search_img{
+    width: 17px;
+    height: 17px;
+}
+.container_two_heart_img{
+    margin-left: 23px;
+    width: 16px;
+    height: 15px;
+}
+.container_two_profile_img{
+    margin-left: 23px;
+    width: 16px;
+    height: 16px;
+}
+.button_container_two{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 9px;
+    gap: 8px;
+
+    width: 103px;
+    height: 36px;
+
+    /* Primary 500 */
+
+    background: #3C7D46;
+    border: none;
+    border-radius: 8px;
+    margin-left: 47px;
+    color: white;
+}
+.section_one{
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1920px;
+    height: 800px;
+}
+.section_one_texts{
+    padding-left: 108px;
+    padding-top: 216px;
+}
+.section_one_main_text{
+    width: 600px;
+    height: 207px;
+
+    font-family: 'Inter Tight';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 115%;
+    /* or 69px */
+
+
+    /* Gray 900 */
+
+    color: #1A1A1A;
+}
+.section_one_button{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 8px;
+
+    width: 138px;
+    height: 48px;
+
+    /* Primary 500 */
+
+    background: #3C7D46;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    margin-top: 32px;
+}
+.section_one_contact{
+    display: inline-flex;
+    padding-left: 33px;
+}
+.section_one_text_phone{
+    margin-left: 6px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+
+    /* Gray 900 */
+
+    color: #1A1A1A;
+}
+.section_one_img_mail{
+    width: 16px;
+    height: 15px;
+    margin-left: 33px;
+}
+.block_information{
+    padding-top: 40px;
+    padding-left: 40px;
+margin-top: 200px;
+    width: 1650px;
+    height: 148px;
+
+    background: #FFFFFF;
+    /* Cards 2 */
+
+    box-shadow: 0px 1px 2px rgba(28, 30, 34, 0.04), 0px 12px 32px rgba(28, 30, 34, 0.08);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+.block_information_inner_block{
+    display: flex;
+}
+.block_information_background_fon{
+    padding-top: 17px;
+    padding-left: 17px;
+    width: 52px;
+    height: 52px;
+
+    /* Secondary 500 */
+
+    background: #E49A49;
+    border-radius: 100px;
+}
+.main_block_text_block_information{
+    margin-left: 16px;
+}
+.main_text_block_information{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+
+
+    /* Gray 900 */
+
+    color: #1A1A1A;
+}
+.bio_text_block_information{
+    margin-top: 5px;
+    Width: 305px;
+    height: 40px;
+
+    /* Desktop/Body Small */
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+
+
+    /* Gray 900 */
+
+    color: #1A1A1A;
+}
+.special_section{
+    margin-top: 170px;
+}
