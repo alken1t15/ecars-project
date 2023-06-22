@@ -795,3 +795,60 @@ display: flex;
 .happy_client_block_text_main_block_img{
     margin-right: 29px;
 }
+.happy_client_block_comment{
+padding-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.happy_client_block_comment_block{
+    padding-top: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 392px;
+    height: 290px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+}
+.happy_client_block_comment_block_texts{
+    display: flex;
+    align-items: center;
+}
+.happy_client_block_comment_block_inner_text{
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.happy_client_block_comment_block_inner_text_star{
+    display: flex;
+    align-items: center;
+}
+.happy_client_block_comment_block_inner_texts{
+    margin-left: 16px;
+}
+.happy_client_block_comment_block_second_text{
+    margin-top: 24px;
+    width: 328px;
+}
+.text_main_happy_client{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.text_main_happy_client_second{
+//styleName: Desktop/Body xSmall;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #767676;
+
+}
