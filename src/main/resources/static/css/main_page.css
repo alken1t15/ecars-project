@@ -770,7 +770,7 @@ margin-top: 200px;
     margin-right: 16px;
 }
 .happy_client_block{
-    height: 992px;
+    height: 600px;
     padding-top: 96px;
     padding-left: 208px;
     padding-right: 114px;
@@ -850,5 +850,106 @@ padding-top: 48px;
     letter-spacing: 0em;
     text-align: left;
     color: #767676;
+
+}
+.section_blog{
+    padding-top: 96px;
+    height: 684px;
+    padding-left: 108px;
+    padding-right: 108px;
+}
+.section_blog_main_text{
+    display: flex;
+    justify-content: space-between;
+}
+.section_blog_main_text_chapter{
+    font-family: Inter Tight;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.section_blog_main_text_all{
+    display: flex;
+    align-items: center;
+}
+.section_blog_main_text_all_text{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #3C7D46;
+    margin-right: 4px;
+}
+.section_blog_content{
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+.section_blog_content_block{
+width: 392px;
+    height: 400px;
+border-radius: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+}
+.section_blog_content_block_tag{
+    margin-top: 16px;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0394FC;
+    background: #E6F4FF;
+    width: 53px;
+height: 20px;
+padding: 2px 6px 2px 6px;
+border-radius: 4px;
+}
+.section_blog_content_block_main_text{
+    margin-top: 12px;
+    font-family: Inter Tight;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+}
+.section_blog_content_block_second_text{
+    margin-top: 12px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #484848;
+
+}
+.section_blog_content_text{
+padding-left: 16px;
+    padding-right: 16px;
+}
+.section_blog_content_block_tag2{
+    margin-top: 16px;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #DD7437;
+
+    background: #FFF1E8;
+
+    width: 45px;
+height: 20px;
+padding: 2px 6px 2px 6px;
+border-radius: 4px;
 
 }
