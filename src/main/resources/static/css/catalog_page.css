@@ -1,0 +1,102 @@
+.block_filter_car{
+    padding-top: 48px;
+    padding-left: 212px;
+    padding-right: 212px;
+}
+.block_filter_car_main_text{
+    font-family: Inter Tight;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.block_filter_car_information{
+    display: flex;
+    justify-content: space-between;
+}
+.block_filter_car_inner{
+    width: 288px;
+height: 1082px;
+top: 205px;
+left: 212px;
+padding: 16px;
+border-radius: 8px;
+border: 1px;
+gap: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+}
+.block_filter_car_inner_first_block{
+    display: flex;
+    justify-content: space-between;
+}
+.block_filter_car_inner_first_block_text{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+}
+.block_filter_car_inner_first_block_button{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #767676;
+    background: none;
+    border: none;
+}
+.block_filter_car_inner_first_select{
+    width: 256px;
+height: 40px;
+padding: 10px 8px 10px 12px;
+border-radius: 8px;
+border: 1px;
+gap: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    margin-top: 8px;
+}
+.block_filter_car_inner_first_text{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+margin-top: 16px;
+}
+.block_filter_car_inner_second_block{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+.block_filter_car_inner_third_block{
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.block_filter_car_inner_third_block_input_first{
+    width: 124px;
+height: 40px;
+padding: 10px 12px 10px 12px;
+border-radius: 8px;
+border: 1px;
+gap: 4px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+}
+.block_filter_car_inner_third_block_input_second{
+    width: 128px;
+height: 40px;
+padding: 10px 12px 10px 12px;
+border-radius: 8px;
+border: 1px;
+gap: 4px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+}
