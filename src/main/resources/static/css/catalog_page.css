@@ -11,7 +11,7 @@
     letter-spacing: 0em;
     text-align: left;
     color: #1A1A1A;
-
+    margin-bottom: 24px;
 }
 .block_filter_car_information{
     display: flex;
@@ -99,4 +99,279 @@ border-radius: 8px;
 border: 1px;
 gap: 4px;
     border: 1px solid rgba(128, 128, 128, 0.3);
+}
+.block_filter_car_inner_second_text{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+    margin-top: 16px;
+}
+.block_filter_car_result_first_block_count{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+}
+.block_filter_car_result_first_block_text{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #484848;
+
+}
+.block_filter_car_result_first_block_filter_text{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #484848;
+}
+.block_filter_car_result_first_block_filter_select{
+    width: 108px;
+height: 20px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+    border: none;
+    margin-left: 8px;
+}
+.block_filter_car_result_first_block{
+    display: flex;
+    justify-content: space-between;
+}
+.block_filter_car_result{
+    Width: 704px;
+}
+.block_filter_car_result_first_block_filter{
+    display: flex;
+}
+.block_filter_car_result_second_block{
+    display: flex;
+    margin-bottom: 24px;
+    margin-top: 16px;
+}
+.block_filter_car_result_second_block_text{
+    margin-right: 14px;
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+}
+.block_filter_car_result_car{
+    margin-top: 16px;
+    display: flex;
+    width: 704px;
+height: 225px;
+border-radius: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+}
+.block_filter_car_result_car_img{
+    border-radius: 8px;
+}
+.block_filter_car_result_car_texts_first{
+    width: 340px;
+    min-height: 48px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.block_filter_car_result_car_texts_second{
+    margin-top: 8px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    color: #484848;
+
+}
+.block_filter_car_result_car_texts_third{
+    width: 372px;
+margin-top: 8px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.block_filter_car_result_car_bottom{
+    min-height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.block_filter_car_result_car_bottom_price{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.block_filter_car_result_car_bottom_button{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #3C7D46;
+    border: none;
+    background: none;
+}
+.block_filter_car_result_car_bottom_buttons{
+    display: flex;
+    align-items: center;
+}
+.block_filter_car_result_car_texts{
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-right: 16px;
+}
+.block_filter_car_result_third_block_main_text{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.block_filter_car_result_third_block_button{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width:103px;
+height: 36px;
+padding: 6px 15px 6px 18px;
+border-radius: 8px;
+
+    background: #3C7D46;
+    border-radius: 8px;
+    border: none;
+    color: white;
+
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.block_filter_car_result_third_block{
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    margin-top: 32px;
+    justify-content: space-between;
+    box-shadow: 0px 8px 16px 0px #1C1E2214;
+
+    box-shadow: 0px 1px 2px 0px #1C1E2214;
+    border-radius: 16px;
+}
+.block_filter_car_result_third_block_support_inner_text{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+    margin-left: 4px;
+}
+.block_filter_car_result_third_block_support_inner{
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.block_filter_car_result_third_block_support{
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.block_filter_car_result_third_block_texts{
+    Width: 545px;
+}
+.page_block{
+    padding-top: 16px;
+    margin: 0 auto;
+    display: flex;
+    width: 704px;
+    justify-content: space-between;
+    padding-left: 228px;
+    padding-right: 228px;
+}
+.page_block_main{
+
+    width: 32px;
+height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+border-radius: 8px;
+gap: 2px;
+    background: #3C7D46;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+    border: none;
+}
+.page_block_second{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    gap: 2px;
+    background: #3C7D46;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    background: #E6E6E6;
+    border: 1px solid #E6E6E6;
+    color: #484848;
+
 }
