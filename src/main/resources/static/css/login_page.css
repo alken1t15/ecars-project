@@ -1,0 +1,109 @@
+.block_authorization_main_text{
+    font-family: Inter Tight;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.block_authorization_mail{
+    margin-top: 32px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.block_authorization_input{
+    margin-top: 8px;
+    width: 392px;
+height: 48px;
+padding: 14px 12px 14px 12px;
+border-radius: 8px;
+border: 1px;
+gap: 4px;
+    border: 1px solid #D1D1D1;
+    color: #D1D1D1;
+
+}
+.block_authorization_texts{
+    display: flex;
+    justify-content: space-between;
+    width: 392px;
+    padding-top: 24px;
+}
+.block_authorization_texts_first{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.block_authorization_texts_second{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #3C7D46;
+}
+.block_authorization_button{
+    width: 392px;
+height: 48px;
+padding: 12px 24px 12px 24px;
+border-radius: 8px;
+gap: 8px;
+    background: #3C7D46;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+.block_authorization_texts_two{
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+.block_authorization{
+    height: 440px;
+    display: flex;
+    justify-content: center;
+}
+.block_authorization_texts_two_first{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    color: #1A1A1A;
+
+}
+.block_authorization_texts_two_second{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    color:  #3C7D46;
+    margin-left: 5px;
+}
