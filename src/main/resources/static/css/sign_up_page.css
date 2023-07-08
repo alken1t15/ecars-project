@@ -1,0 +1,104 @@
+.sign_up_block_main_text{
+    margin-top: 48px;
+    font-family: Inter Tight;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 37px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.sign_up_block_first_text{
+    margin-top: 32px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.sign_up_block_input{
+    margin-top: 8px;
+    width: 392px;
+height: 48px;
+padding: 14px 12px 14px 12px;
+border-radius: 8px;
+border: 1px;
+gap: 4px;
+    color: #D1D1D1;
+    border: 1px solid #D1D1D1;
+}
+.sign_up_block_second_text{
+    margin-top: 24px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+}
+.sign_up_block_texts{
+    margin-top: 30px;
+    display: flex;
+}
+.sign_up_block_texts_checkbox{
+    color: #D1D1D1;
+    border: 1px solid #D1D1D1;
+    margin-right: 8px;
+}
+.sign_up_block_texts_first{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    color: #1A1A1A;
+
+}
+.sign_up_block_texts_second{
+    margin-right: 5px;
+    margin-left: 4px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #3C7D46;
+
+}
+.sign_up_block_button{
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+    width: 392px;
+height: 48px;
+padding: 12px 24px 12px 24px;
+border-radius: 8px;
+gap: 8px;
+background: #3C7D46;
+border: none;
+}
+.sign_up_block{
+    display: flex;
+    justify-content: center;
+    height: 725px;
+}
+.sign_up_block_texts2{
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+}
