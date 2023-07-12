@@ -463,3 +463,211 @@ margin-bottom: 12px;
     color: #1A1A1A;
     margin-bottom: 12px;
 }
+.details_block_first_left_answer_block{
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 776px;
+    margin-top: 48px;
+    height: 110px;
+    align-items: center;
+    box-shadow: 0px 8px 16px 0px #1C1E2214;
+
+    box-shadow: 0px 1px 2px 0px #1C1E2214;
+
+}
+.details_block_first_left_answer_block_text{
+    font-family: Inter Tight;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+}
+.details_block_first_left_answer_block_second_text{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+    margin-top: 12px;
+    width: 617px;
+
+}
+.details_block_first_left_answer_block_button{
+    width: 135px;
+height: 48px;
+padding: 12px 24px 12px 24px;
+border-radius: 8px;
+gap: 8px;
+    background: #3C7D46;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+    border: none;
+}
+.details_block_first_left_links_block_main_text{
+    font-family: Inter Tight;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.details_block_first_left_links_block{
+    width: 808px;
+height: 98px;
+gap: 24px;
+margin-top: 32px;
+}
+.details_block_first_left_links_block_links_left_text{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #3C7D46;
+    margin-bottom: 8px;
+}
+.details_block_first_left_links_block_links{
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+.details_block_first_left_links_block_links_left{
+    width: 392px;
+gap: 8px;
+
+}
+.details_block_first_left_similar_first_block{
+    display: flex;
+    justify-content: space-between;
+}
+.details_block_first_left_similar_first_block_text{
+    font-family: Inter Tight;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+}
+.details_block_first_left_similar_first_block_arrows{
+    display: flex;
+    align-items: center;
+}
+.details_block_first_left_similar_first_block_arrows_button{
+    margin-right: 19px;
+}
+.details_block_first_left_similar_second_block_car{
+    margin-top: 24px;
+    width: 288px;
+height: 312px;
+border-radius: 8px;
+    box-shadow: 0px 8px 16px 0px #1C1E2214;
+
+    box-shadow: 0px 1px 2px 0px #1C1E2214;
+
+}
+.details_block_first_left_similar_second_block_car_img{
+    width: 288px;
+    height: 180px;
+    border-radius: 8px 8px 0px 0px
+
+}
+.details_block_first_left_similar_second_block_car_texts_main{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.details_block_first_left_similar_second_block_car_texts{
+    padding: 16px;
+}
+.details_block_first_left_similar_second_block_car_texts_second{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #A3A3A3;
+
+}
+.details_block_first_left_similar_second_block_car_texts_third{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #767676;
+
+}
+.details_block_first_left_similar_second_block_car_texts_second_text_first{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.details_block_first_left_similar_second_block_car_texts_second_text_second{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #A3A3A3;
+    text-decoration: line-through;
+}
+.details_block_first_left_similar_second_block_car_texts_second_text{
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+.details_block_first_left_similar_second_block_car_texts_second_text_inner{
+    display: flex;
+    align-items: center;
+}
+.details_block_first_left_similar_second_block_car_texts_second_text_inner_text{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #3C7D46;
+    margin-right: 4px;
+}
+.details_block_first_left_similar{
+    width: auto;
+    margin-top: 96px;
+    border-top: 1px solid #E6E6E6;
+height: 554px;
+padding: 96px 150px 96px 150px;
+gap: 24px;
+
+}
+.details_block_first_left_similar_second_block{
+    display: flex;
+    justify-content: space-between;
+}
