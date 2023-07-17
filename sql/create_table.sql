@@ -1,6 +1,5 @@
 create table cars (
   id serial primary key,
-  id_features int4 references features_category(id),
   brand varchar(255) not null,
   model varchar(255) not null,
   year int2 not null,
@@ -21,13 +20,14 @@ create table cars (
 
 create table features_category (
     id serial primary key ,
-    name varchar(255)
+    id_cars int4 references cars(id),
+    name varchar(255) not null
 );
 
 create table features_name (
                                    id serial primary key ,
                                    id_features_category int4 references features_category(id),
-                                   name varchar(255)
+                                   name varchar(255) NOT NULL
 );
 
 create  table  users (
