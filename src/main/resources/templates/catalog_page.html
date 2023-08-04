@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Главная страница</title>
     <link rel="stylesheet" th:href="@{/css/main_page.css}">
-    <link rel="stylesheet" href="../static/css/catalog_page.css">
+    <link rel="stylesheet" th:href="@{/css/catalog_page.css}">
 </head>
 <body>
 <header>
     <div class="container_head">
         <a class="container_head_img" href=""><img class="container_head_img_facebook" th:src="@{/img/Facebook.png}" alt="Facebook"></a>
-        <a class="container_head_img" href=""><img class="twitter_img" src="../static/img/Twitter.png" alt="Twitter"></a>
-        <a class="container_head_img" href=""><img class="youtube_img" src="../static/img/YouTube.png" alt="YouTube"></a>
-        <a class="container_head_img" href=""><img class="instagram_whatsapp_img" src="../static/img/Instagram.png" alt="Instagram"></a>
-        <a class="container_head_img" href=""><img class="instagram_whatsapp_img" src="../static/img/WhatsApp.png" alt="WhatsApp"></a>
+        <a class="container_head_img" href=""><img class="twitter_img" th:src="@{/img/Twitter.png}" alt="Twitter"></a>
+        <a class="container_head_img" href=""><img class="youtube_img" th:src="@{/img/YouTube.png}" alt="YouTube"></a>
+        <a class="container_head_img" href=""><img class="instagram_whatsapp_img" th:src="@{/img/Instagram.png}" alt="Instagram"></a>
+        <a class="container_head_img" href=""><img class="instagram_whatsapp_img" th:src="@{/img/WhatsApp.png}" alt="WhatsApp"></a>
         <p class="number_phone_header">+ 971 55 811 9024</p>
-        <a class="mail_header_img" href="mailto:request@example.com"><img src="../static/img/mail.png" alt="Mail"></a>
+        <a class="mail_header_img" href="mailto:request@example.com"><img th:src="@{/img/mail.png}" alt="Mail"></a>
         <a class="mail_header_text" href="mailto:request@example.com">request@example.com</a>
-        <img class="map_container_img" src="../static/img/Map.png" alt="Map">
+        <img class="map_container_img" th:src="@{/img/Map.png}" alt="Map">
         <p class="text_container_map">Ship to:</p>
-        <img class="flag_country_header" src="../static/img/flag_canada.png" alt="Flag">
+        <img class="flag_country_header" th:src="@{/img/flag_canada.png}" alt="Flag">
         <select class="select_country_header">
             <option>
                 Canada
@@ -33,19 +33,19 @@
             <option>USD</option>
             <option>EUR</option>
         </select>
-        <a class="help_img_header" href=""><img src="../static/img/help.png" alt="Help"></a>
+        <a class="help_img_header" href=""><img th:src="@{/img/help.png}" alt="Help"></a>
         <a href="" class="text_help_header">Help</a>
     </div>
     <div class="container_head_two">
-        <a href=""><img src="../static/img/Logo.png"></a>
+        <a href=""><img th:src="@{/img/Logo.png}"></a>
         <a class="test_container_head" href="">All Cars</a>
         <a class="test_container_head" href="">About Us</a>
         <a class="test_container_head" href="">Blog</a>
         <a class="test_container_head" href="">Contact</a>
         <div class="container_two_imgs">
-            <img class="container_two_search_img" src="../static/img/Search.png" alt="Search">
-            <img class="container_two_heart_img" src="../static/img/Heart.png" alt="Heart">
-            <img class="container_two_profile_img" src="../static/img/Profile.png" alt="Profile">
+            <img class="container_two_search_img" th:src="@{/img/Search.png}" alt="Search">
+            <img class="container_two_heart_img" th:src="@{/img/Heart.png}" alt="Heart">
+            <img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile">
         </div>
         <button class="button_container_two">Get a quote</button>
     </div>
@@ -54,16 +54,17 @@
     <p class="block_filter_car_main_text">Find cars to fit your criteria</p>
     <div class="block_filter_car_information">
         <div class="block_filter_car_inner">
+            <form th:method="GET" th:action="@{/catalog}">
             <div class="block_filter_car_inner_first_block">
                 <p class="block_filter_car_inner_first_block_text">Make</p>
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
-            <select class="block_filter_car_inner_first_select">
+            <select th:name="brand" class="block_filter_car_inner_first_select">
                 <option>Toyota</option>
                 <option>Audi</option>
             </select>
             <p class="block_filter_car_inner_first_text">Model</p>
-            <select class="block_filter_car_inner_first_select">
+            <select th:name="brand" class="block_filter_car_inner_first_select">
                 <option>All</option>
                 <option>Camry</option>
             </select>
@@ -107,6 +108,7 @@
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
             <input type="checkbox" value="SUV/Crossover">
+            </form>
         </div>
         <div class="block_filter_car_result">
             <div class="block_filter_car_result_first_block">
@@ -128,193 +130,212 @@
                 <p class="block_filter_car_result_second_block_text">0-120,000 km</p>
                 <p class="block_filter_car_result_second_block_text">20,000-250,000 USD</p>
             </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod1.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota Land Cruiser 300 VXR+ V6 3.3L Diesel Twin Turbo AT</p>
-                    <p class="block_filter_car_result_car_texts_second">Milwaukee • NEW • 0 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
+            <div th:each="car : ${cars}">
+                <div class="block_filter_car_result_car">
+                    <img class="block_filter_car_result_car_img" th:src="@{/img/__${car.img}__}" alt="Car">
+                    <div class="block_filter_car_result_car_texts">
+                        <p class="block_filter_car_result_car_texts_first" th:text="${car.model}"></p>
+                        <p class="block_filter_car_result_car_texts_second"><span th:text="${car.location}"></span> • <span th:if="${car.isNew}"> NEW • </span> <span th:if="${!car.isNew}"> Used • </span> <span th:text="${car.kilometers}"></span> km • <span th:text="${car.fuel}"></span></p>
+                        <p class="block_filter_car_result_car_texts_third" th:text="${car.miniDescription}"></p>
+                        <div class="block_filter_car_result_car_bottom">
+                            <p class="block_filter_car_result_car_bottom_price"><span>$</span> <span th:text="${car.price}"></span></p>
+                            <div class="block_filter_car_result_car_bottom_buttons">
+                                <form th:method="GET" th:action="@{/{id}(id=${car.id})}">
+                                    <button type="submit" class="block_filter_car_result_car_bottom_button">Details</button>
+                                </form>
+                                <img th:src="@{/img/right3.png}" alt="Arrow">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod2.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota Prado MODEL 2021 TXL 2.7L SUV 4WD</p>
-                    <p class="block_filter_car_result_car_texts_second">Chicago • Used • 20,000 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod3.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota FJ Cruiser GXR 4</p>
-                    <p class="block_filter_car_result_car_texts_second">Memphis • NEW • 0 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/${car.img}}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Land Cruiser 300 VXR+ V6 3.3L Diesel Twin Turbo AT</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Milwaukee • NEW • 0 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod2.png}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Prado MODEL 2021 TXL 2.7L SUV 4WD</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Chicago • Used • 20,000 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod3.png}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota FJ Cruiser GXR 4</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Memphis • NEW • 0 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="block_filter_car_result_third_block">
                 <div class="block_filter_car_result_third_block_texts">
                     <p class="block_filter_car_result_third_block_main_text">Send an inquiry and our managers will offer you the best deals</p>
                     <div  class="block_filter_car_result_third_block_support">
                         <div class="block_filter_car_result_third_block_support_inner">
-                            <img src="../static/img/Yes.png" alt="Yes">
+                            <img th:src="@{/img/Yes.png}" alt="Yes">
                             <p class="block_filter_car_result_third_block_support_inner_text">Professional approach to clients</p>
                         </div>
                         <div class="block_filter_car_result_third_block_support_inner">
-                            <img src="../static/img/Yes.png" alt="Yes">
+                            <img th:src="@{/img/Yes.png}" alt="Yes">
                             <p class="block_filter_car_result_third_block_support_inner_text">Protect all payments</p>
                         </div>
                         <div class="block_filter_car_result_third_block_support_inner">
-                            <img src="../static/img/Yes.png" alt="Yes">
+                            <img th:src="@{/img/Yes.png}" alt="Yes">
                             <p class="block_filter_car_result_third_block_support_inner_text">Real reviews from clients</p>
                         </div>
                     </div>
                 </div>
                 <button class="block_filter_car_result_third_block_button">Get a quote</button>
             </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod4.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota Corolla AED 1250 PM</p>
-                    <p class="block_filter_car_result_car_texts_second">Chicago • Used • 10,500 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod5.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota Camry Sport V6</p>
-                    <p class="block_filter_car_result_car_texts_second">Chicago • NEW • 0 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod6.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota Highlander TOYOTA HIGHLADER XSE 2022 MODEL FULL OPTION 4x4</p>
-                    <p class="block_filter_car_result_car_texts_second">Memphis • Used • 10,500 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod7.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota Hiace</p>
-                    <p class="block_filter_car_result_car_texts_second">Chicago • Used • 10,500 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod8.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota Tundra iFORCE 5.7LV8</p>
-                    <p class="block_filter_car_result_car_texts_second">Detroit • Used • 10,500 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod9.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota Hilux 2019 TOYOTA HILUX MANUAL 4X4</p>
-                    <p class="block_filter_car_result_car_texts_second">Detroit • Used • 10,500 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod10.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota Land Cruiser GXR 2016</p>
-                    <p class="block_filter_car_result_car_texts_second">Chicago • NEW • 0 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block_filter_car_result_car">
-                <img class="block_filter_car_result_car_img" src="../static/img/prod11.png" alt="Car">
-                <div class="block_filter_car_result_car_texts">
-                    <p class="block_filter_car_result_car_texts_first">Toyota Prado Black Edition 70th Anniversary 10/2021 Diesel 4WD Sunroof 2.8L</p>
-                    <p class="block_filter_car_result_car_texts_second">Oklahoma City • Used • 10,500 km • Gasoline</p>
-                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>
-                    <div class="block_filter_car_result_car_bottom">
-                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>
-                        <div class="block_filter_car_result_car_bottom_buttons">
-                            <button class="block_filter_car_result_car_bottom_button">Details</button>
-                            <img src="../static/img/right3.png" alt="Arrow">
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod4.png}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Corolla AED 1250 PM</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Chicago • Used • 10,500 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod5.png}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Camry Sport V6</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Chicago • NEW • 0 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod6.png}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Highlander TOYOTA HIGHLADER XSE 2022 MODEL FULL OPTION 4x4</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Memphis • Used • 10,500 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod7.png}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Hiace</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Chicago • Used • 10,500 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod8.png}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Tundra iFORCE 5.7LV8</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Detroit • Used • 10,500 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod9.png}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Hilux 2019 TOYOTA HILUX MANUAL 4X4</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Detroit • Used • 10,500 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod10.png}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Land Cruiser GXR 2016</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Chicago • NEW • 0 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="block_filter_car_result_car">-->
+<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod11.png}" alt="Car">-->
+<!--                <div class="block_filter_car_result_car_texts">-->
+<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Prado Black Edition 70th Anniversary 10/2021 Diesel 4WD Sunroof 2.8L</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_second">Oklahoma City • Used • 10,500 km • Gasoline</p>-->
+<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
+<!--                    <div class="block_filter_car_result_car_bottom">-->
+<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
+<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
+<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
+<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="page_block">
-                <img src="../static/img/left3.png" alt="Arrow">
+                <img th:src="@{/img/left3.png}" alt="Arrow">
                 <button class="page_block_main">1</button>
                 <button class="page_block_second">2</button>
                 <button class="page_block_second">3</button>
@@ -327,13 +348,13 @@
 <footer class="footer_block">
     <div class="footer_block_content">
         <div class="footer_block_content_first_block">
-            <img src=".././static/img/Logo.png" alt="eCars">
+            <img th:src="@{/img/Logo.png}" alt="eCars">
             <p class="footer_block_content_first_block_main_text">Nullam non nisi est sit amet. Arcu vitae elementum curabitur vitae nunc. Ut tellus elementum sagittis vitae et leo duis.</p>
             <div class="footer_block_content_first_block_img">
-                <img src=".././static/img/Facebook2.png" alt="Facebook">
-                <img src=".././static/img/Twitter2.png" alt="Twitter">
-                <img src=".././static/img/YouTube2.png" alt="YouTube">
-                <img src=".././static/img/Instagram2.png" alt="Instagram">
+                <img th:src="@{/img/Facebook2.png}" alt="Facebook">
+                <img th:src="@{/img/Twitter2.png}" alt="Twitter">
+                <img th:src="@{/img/YouTube2.png}" alt="YouTube">
+                <img th:src="@{/img/Instagram2.png}" alt="Instagram">
             </div>
         </div>
         <div class="footer_block_content_second_block">
@@ -352,11 +373,11 @@
         <div class="footer_block_content_second_block">
             <p class="footer_block_content_second_block_main_text">Contacts</p>
             <div class="footer_block_content_second_block_inner">
-                <img class="footer_block_content_second_block_inner_img" src=".././static/img/Whatsapp2.png" alt="WhatsApp">
+                <img class="footer_block_content_second_block_inner_img" th:src="@{/img/Whatsapp2.png}" alt="WhatsApp">
                 <p class="footer_block_content_second_block_next_text">+971 55 811 9024</p>
             </div>
             <div class="footer_block_content_second_block_inner">
-                <img class="footer_block_content_second_block_inner_img" src=".././static/img/Email2.png" alt="Email">
+                <img class="footer_block_content_second_block_inner_img" th:src="@{/img/Email2.png}" alt="Email">
                 <p class="footer_block_content_second_block_next2_text">request@example.com</p>
             </div>
         </div>
@@ -369,5 +390,9 @@
         </div>
     </div>
 </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script th:src="@{/js/study.js}">
+
+</script>
 </body>
 </html>

@@ -14,8 +14,11 @@ create table cars (
   interior varchar(255) not null ,
   location varchar(255) not null ,
   export_status varchar(255) not null,
-  description text
-
+  description text,
+  img varchar(255),
+  is_new boolean,
+  mini_description varchar(255),
+  price decimal(5, 3)
 );
 
 create table features_category (
@@ -42,10 +45,10 @@ create  table  users (
 
 drop table users;
 
-insert into cars (brand, model, year, wheels, color, vehicle_type, kilometers, gearbox, fuel, seats, cylinders, interior, location, export_status, description) values ('Toyota','Land Cruiser 2017 ZX-G Frontier Face-Lifted Petrol 4.6L Sunroof 4WD',2017,18,'White','SUV/Crossover',15000,'Automatic','Gasoline',8,8,'Black','Dubai','Can be exported'
+insert into cars (brand, model, year, wheels, color, vehicle_type, kilometers, gearbox, fuel, seats, cylinders, interior, location, export_status, description,img,is_new,mini_description,price) values ('Toyota','Land Cruiser 2017 ZX-G Frontier Face-Lifted Petrol 4.6L Sunroof 4WD',2017,18,'White','SUV/Crossover',15000,'Automatic','Gasoline',8,8,'Black','Dubai','Can be exported'
 ,'Toyota Land Cruiser 2017 ZX-G Frontier Face-Lifted Petrol 4.6L Sunroof 4WD AT 7 Electric Leather Seats [RHD Japan Import] Premium Condition.
 ----------------------------------------------------------------------------------------------------------------------
 Quis blandit turpis cursus in hac. In hendrerit gravida rutrum quisque. Pellentesque habitant morbi tristique senectus et. Eget gravida cum sociis natoque. Pharetra diam sit amet nisl suscipit adipiscing bibendum.
 
-Porttitor massa id neque aliquam. In fermentum posuere urna nec. Rhoncus aenean vel elit scelerisque mauris pellentesque. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Consequat id porta nibh venenatis cras sed.');
+Porttitor massa id neque aliquam. In fermentum posuere urna nec. Rhoncus aenean vel elit scelerisque mauris pellentesque. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Consequat id porta nibh venenatis cras sed.','prod1.png',false,'2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.',45.995);
 

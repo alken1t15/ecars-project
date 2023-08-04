@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "car")
+@Table(name = "cars")
 @Getter
 @Setter
 public class Cars {
@@ -34,4 +34,10 @@ public class Cars {
     private String description;
     @OneToMany(mappedBy = "cars")
     private List<FeaturesCategory> featuresCategories;
+    private String img;
+    @Column(name = "is_new")
+    private Boolean isNew;
+    @Column(name = "mini_description")
+    private String miniDescription;
+    private Double price;
 }
