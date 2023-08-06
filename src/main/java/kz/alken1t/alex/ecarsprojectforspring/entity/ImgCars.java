@@ -4,19 +4,18 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
-@Table(name = "features_name")
+@Table(name = "img_cars")
 @Getter
 @Setter
-public class FeaturesName {
+public class ImgCars {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
-    private String name;
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_features_category")
-    private FeaturesCategory featuresCategory;
+    @JoinColumn(name = "id_cars")
+    private Cars cars;
+
+    private String img;
 }

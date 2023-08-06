@@ -22,6 +22,15 @@ public class DetailsController {
         return "catalog_page";
     }
 
+    @GetMapping("/{id}")
+    public String getOneCarPage(@PathVariable Long id,Model model){
+      Cars car = carsService.findById(id);
+      List<Cars> cars = carsService.getFoursCar();
+      model.addAttribute("car",car);
+      model.addAttribute("cars",cars);
+      return "details_page";
+    }
+
   @GetMapping("/tg")
   @ResponseBody
   public List<Cars> allProductPage(){

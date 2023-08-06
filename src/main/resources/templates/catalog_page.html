@@ -140,7 +140,7 @@
                         <div class="block_filter_car_result_car_bottom">
                             <p class="block_filter_car_result_car_bottom_price"><span>$</span> <span th:text="${car.price}"></span></p>
                             <div class="block_filter_car_result_car_bottom_buttons">
-                                <form th:method="GET" th:action="@{/{id}(id=${car.id})}">
+                                <form th:method="GET" th:action="@{/catalog/{id}(id=${car.id})}">
                                     <button type="submit" class="block_filter_car_result_car_bottom_button">Details</button>
                                 </form>
                                 <img th:src="@{/img/right3.png}" alt="Arrow">

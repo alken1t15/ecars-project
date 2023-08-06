@@ -649,6 +649,8 @@ border-radius: 8px;
     align-items: center;
 }
 .details_block_first_left_similar_second_block_car_texts_second_text_inner_text{
+    text-decoration: none;
+    border: none;
     font-family: Inter;
     font-size: 14px;
     font-weight: 600;

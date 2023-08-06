@@ -1,462 +1,408 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <link rel="stylesheet" href="../static/css/main_page.css">
-  <link rel="stylesheet" href="../static/css/details_page.css">
+    <link rel="stylesheet" th:href="@{/css/main_page.css}">
+    <link rel="stylesheet" th:href="@{/css/details_page.css}">
 </head>
 <body>
 <header>
-  <div class="container_head">
-    <a class="container_head_img" href=""><img class="container_head_img_facebook" src="../static/img/Facebook.png" alt="Facebook"></a>
-    <a class="container_head_img" href=""><img class=twitter_img" src="../static/img/Twitter.png" alt="Twitter"></a>
-    <a class="container_head_img" href=""><img class="youtube_img" src="../static/img/YouTube.png" alt="YouTube"></a>
-    <a class="container_head_img" href=""><img class="instagram_whatsapp_img" src="../static/img/Instagram.png" alt="Instagram"></a>
-    <a class="container_head_img" href=""><img class="instagram_whatsapp_img" src="../static/img/WhatsApp.png" alt="WhatsApp"></a>
-    <p class="number_phone_header">+ 971 55 811 9024</p>
-    <a class="mail_header_img" href="mailto:request@example.com"><img src="../static/img/mail.png" alt="Mail"></a>
-    <a class="mail_header_text" href="mailto:request@example.com">request@example.com</a>
-    <img class="map_container_img" src="../static/img/Map.png" alt="Map">
-    <p class="text_container_map">Ship to:</p>
-    <img class="flag_country_header" src="../static/img/flag_canada.png" alt="Flag">
-    <select class="select_country_header">
-      <option>
-        Canada
-      </option>
-      <option>
-        USA
-      </option>
-    </select>
-    <p class="currency_header_text">Currency:</p>
-    <select class="select_country_header">
-      <option>USD</option>
-      <option>EUR</option>
-    </select>
-    <a class="help_img_header" href=""><img src="../static/img/help.png" alt="Help"></a>
-    <a href="" class="text_help_header">Help</a>
-  </div>
-  <div class="container_head_two">
-    <a href=""><img src="../static/img/Logo.png"></a>
-    <a class="test_container_head" href="">All Cars</a>
-    <a class="test_container_head" href="">About Us</a>
-    <a class="test_container_head" href="">Blog</a>
-    <a class="test_container_head" href="">Contact</a>
-    <div class="container_two_imgs">
-      <img class="container_two_search_img" src="../static/img/Search.png" alt="Search">
-      <img class="container_two_heart_img" src="../static/img/Heart.png" alt="Heart">
-      <img class="container_two_profile_img" src="../static/img/Profile.png" alt="Profile">
+    <div class="container_head">
+        <a class="container_head_img" href=""><img class="container_head_img_facebook" th:src="@{/img/Facebook.png}"
+                                                   alt="Facebook"></a>
+        <a class="container_head_img" href=""><img class="twitter_img" th:src="@{/img/Twitter.png}" alt="Twitter"></a>
+        <a class="container_head_img" href=""><img class="youtube_img" th:src="@{/img/YouTube.png}" alt="YouTube"></a>
+        <a class="container_head_img" href=""><img class="instagram_whatsapp_img" th:src="@{/img/Instagram.png}"
+                                                   alt="Instagram"></a>
+        <a class="container_head_img" href=""><img class="instagram_whatsapp_img" th:src="@{/img/WhatsApp.png}"
+                                                   alt="WhatsApp"></a>
+        <p class="number_phone_header">+ 971 55 811 9024</p>
+        <a class="mail_header_img" href="mailto:request@example.com"><img th:src="@{/img/mail.png}" alt="Mail"></a>
+        <a class="mail_header_text" href="mailto:request@example.com">request@example.com</a>
+        <img class="map_container_img" th:src="@{/img/Map.png}" alt="Map">
+        <p class="text_container_map">Ship to:</p>
+        <img class="flag_country_header" th:src="@{/img/flag_canada.png}" alt="Flag">
+        <select class="select_country_header">
+            <option>
+                Canada
+            </option>
+            <option>
+                USA
+            </option>
+        </select>
+        <p class="currency_header_text">Currency:</p>
+        <select class="select_country_header">
+            <option>USD</option>
+            <option>EUR</option>
+        </select>
+        <a class="help_img_header" href=""><img th:src="@{/img/help.png}" alt="Help"></a>
+        <a href="" class="text_help_header">Help</a>
     </div>
-    <button class="button_container_two">Get a quote</button>
-  </div>
+    <div class="container_head_two">
+        <a href=""><img th:src="@{/img/Logo.png}"></a>
+        <a class="test_container_head" href="">All Cars</a>
+        <a class="test_container_head" href="">About Us</a>
+        <a class="test_container_head" href="">Blog</a>
+        <a class="test_container_head" href="">Contact</a>
+        <div class="container_two_imgs">
+            <img class="container_two_search_img" th:src="@{/img/Search.png}" alt="Search">
+            <img class="container_two_heart_img" th:src="@{/img/Heart.png}" alt="Heart">
+            <img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile">
+        </div>
+        <button class="button_container_two">Get a quote</button>
+    </div>
 </header>
 <section class="details_block">
-  <div class="details_block_first">
-    <div class="details_block_first_left">
-      <img class="details_block_first_left_main_img" src="../static/img/main_car.png" alt="Car">
-      <div class="details_block_first_left_imgs">
-        <img class="details_block_first_left_imgs_img" src="../static/img/01.png" alt="Car">
-        <img class="details_block_first_left_imgs_img" src="../static/img/02.png" alt="Car">
-        <img class="details_block_first_left_imgs_img" src="../static/img/03.png" alt="Car">
-        <img class="details_block_first_left_imgs_img" src="../static/img/04.png" alt="Car">
-        <img class="details_block_first_left_imgs_img" src="../static/img/05.png" alt="Car">
-        <img class="details_block_first_left_imgs_img" src="../static/img/06.png" alt="Car">
-        <img class="details_block_first_left_imgs_img" src="../static/img/07.png" alt="Car">
-        <img class="details_block_first_left_imgs_img" src="../static/img/08.png" alt="Car">
-      </div>
-      <div class="details_block_first_left_about">
-        <div class="details_block_first_left_about_block_left">
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_first">Make</p>
-            <p class="details_block_first_left_about_block_second">Toyota</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_first">Model</p>
-            <p class="details_block_first_left_about_block_second">Land Cruiser 2017 ZX-G Frontier Face-Lifted Petrol 4.6L Sunroof 4WD</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_first">Year</p>
-            <p class="details_block_first_left_about_block_second">2017</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_first">Wheels</p>
-            <p class="details_block_first_left_about_block_second">18´</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_first">Color</p>
-            <p class="details_block_first_left_about_block_second">White</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_first">Vehicle type</p>
-            <p class="details_block_first_left_about_block_second">SUV/Crossover</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_first">Kilometers</p>
-            <p class="details_block_first_left_about_block_second">15,000</p>
-          </div>
+    <div class="details_block_first">
+        <div class="details_block_first_left">
+            <img class="details_block_first_left_main_img" th:src="@{/img/__${car.imgBig}__}" alt="Car">
+            <div class="details_block_first_left_imgs">
+                <img class="details_block_first_left_imgs_img" th:each="img: ${car.imgCars}"
+                     th:src="@{/img/__${img.img}__}" alt="Car">
+            </div>
+            <div class="details_block_first_left_about">
+                <div class="details_block_first_left_about_block_left">
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_first">Make</p>
+                        <p class="details_block_first_left_about_block_second" th:text="${car.brand}">Toyota</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_first">Model</p>
+                        <p class="details_block_first_left_about_block_second" th:text="${car.model}">Land Cruiser 2017
+                            ZX-G Frontier Face-Lifted Petrol 4.6L Sunroof 4WD</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_first">Year</p>
+                        <p class="details_block_first_left_about_block_second" th:text="${car.year}">2017</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_first">Wheels</p>
+                        <p class="details_block_first_left_about_block_second" th:text="${car.wheels}">18´</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_first">Color</p>
+                        <p class="details_block_first_left_about_block_second" th:text="${car.color}">White</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_first">Vehicle type</p>
+                        <p class="details_block_first_left_about_block_second" th:text="${car.vehicleType}">
+                            SUV/Crossover</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_first">Kilometers</p>
+                        <p class="details_block_first_left_about_block_second" th:text="${car.kilometers}">15,000</p>
+                    </div>
+                </div>
+                <div class="details_block_first_left_about_block_right">
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_third">Gearbox</p>
+                        <p class="details_block_first_left_about_block_forty" th:text="${car.gearbox}">Automatic</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_third">Fuel</p>
+                        <p class="details_block_first_left_about_block_forty" th:text="${car.fuel}">Gasoline</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_third">Seats</p>
+                        <p class="details_block_first_left_about_block_forty" th:text="${car.seats}">8</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_third">Cylinders</p>
+                        <p class="details_block_first_left_about_block_forty" th:text="${car.cylinders}">8</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_third">Interior</p>
+                        <p class="details_block_first_left_about_block_forty" th:text="${car.interior}">Black</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_third">Location</p>
+                        <p class="details_block_first_left_about_block_forty" th:text="${car.location}">Dubai</p>
+                    </div>
+                    <div class="details_block_first_left_about_block_left_block">
+                        <p class="details_block_first_left_about_block_third">Export status</p>
+                        <p class="details_block_first_left_about_block_forty" th:text="${car.exportStatus}">Can be
+                            exported</p>
+                    </div>
+                </div>
+            </div>
+            <div class="details_block_first_left_description">
+                <p class="details_block_first_left_description_main_text">Description</p>
+                <p class="details_block_first_left_description_text" th:text="${car.description}">Toyota Land Cruiser
+                    2017 ZX-G Frontier Face-Lifted Petrol 4.6L Sunroof 4WD AT 7 Electric Leather Seats [RHD Japan
+                    Import] Premium Condition.
+                    ----------------------------------------------------------------------------------------------------------------------
+                    Quis blandit turpis cursus in hac. In hendrerit gravida rutrum quisque. Pellentesque habitant morbi
+                    tristique senectus et. Eget gravida cum sociis natoque. Pharetra diam sit amet nisl suscipit
+                    adipiscing bibendum.
+
+                    Porttitor massa id neque aliquam. In fermentum posuere urna nec. Rhoncus aenean vel elit scelerisque
+                    mauris pellentesque. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Consequat id
+                    porta nibh venenatis cras sed.</p>
+            </div>
+            <p class="details_block_first_left_description_first_text">Features</p>
+            <div class="details_block_first_left_features">
+                <div class="details_block_first_left_features_left" th:each="category : ${car.featuresCategories}">
+                    <p class="details_block_first_left_features_left_text" th:text="${category.name}">Interior</p>
+                    <div class="details_block_first_left_features_left_inner"
+                         th:each="featureName : ${category.featuresName}">
+                        <img th:src="@{/img/yes3.png}" alt="Yes">
+                        <p class="details_block_first_left_features_left_inner_text" th:text="${featureName.name}">Air
+                            conditioning</p>
+                    </div>
+                </div>
+            </div>
+            <div class="details_block_first_left_answer_block">
+                <div>
+                    <p class="details_block_first_left_answer_block_text">Do you still have questions? Contact us for
+                        answers.</p>
+                    <p class="details_block_first_left_answer_block_second_text">Amet minim mollit non deserunt ullamco
+                        est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                </div>
+                <button class="details_block_first_left_answer_block_button">Contact Us</button>
+            </div>
+            <div class="details_block_first_left_links_block">
+                <p class="details_block_first_left_links_block_main_text">Quick links</p>
+                <div class="details_block_first_left_links_block_links">
+                    <div class="details_block_first_left_links_block_links_left">
+                        <p class="details_block_first_left_links_block_links_left_text">Toyota Land Cruiser for sale in
+                            Dubai</p>
+                        <p class="details_block_first_left_links_block_links_left_text">Toyota Land Cruiser 2017</p>
+                    </div>
+                    <div class="details_block_first_left_links_block_links_left">
+                        <p class="details_block_first_left_links_block_links_left_text">Toyota for sale in Dubai</p>
+                        <p class="details_block_first_left_links_block_links_left_text">All cars for sale in Dubai</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="details_block_first_left_about_block_right">
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_third">Gearbox</p>
-            <p class="details_block_first_left_about_block_forty">Automatic</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_third">Fuel</p>
-            <p class="details_block_first_left_about_block_forty">Gasoline</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_third">Seats</p>
-            <p class="details_block_first_left_about_block_forty">8</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_third">Cylinders</p>
-            <p class="details_block_first_left_about_block_forty">8</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_third">Interior</p>
-            <p class="details_block_first_left_about_block_forty">Black</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_third">Location</p>
-            <p class="details_block_first_left_about_block_forty">Dubai</p>
-          </div>
-          <div class="details_block_first_left_about_block_left_block">
-            <p class="details_block_first_left_about_block_third">Export status</p>
-            <p class="details_block_first_left_about_block_forty">Can be exported</p>
-          </div>
+            <p class="details_block_first_left_about_block_right_main_text">Toyota Land Cruiser 2017 ZX-G Frontier
+                Face-Lifted Petrol 4.6L Sunroof 4WD</p>
+            <p class="details_block_first_left_about_block_right_price_text">$45,995</p>
+            <div class="details_block_first_left_about_block_right_price_texts">
+                <div class="details_block_first_left_about_block_right_price_texts_block">
+                    <p class="details_block_first_left_about_block_right_price_texts_block_first_text">Year</p>
+                    <p class="details_block_first_left_about_block_right_price_texts_block_second_text">2017</p>
+                </div>
+                <div class="details_block_first_left_about_block_right_price_texts_block">
+                    <p class="details_block_first_left_about_block_right_price_texts_block_first_text">Kilometers</p>
+                    <p class="details_block_first_left_about_block_right_price_texts_block_second_text">15,000</p>
+                </div>
+                <div class="details_block_first_left_about_block_right_price_texts_block">
+                    <p class="details_block_first_left_about_block_right_price_texts_block_first_text">Location</p>
+                    <p class="details_block_first_left_about_block_right_price_texts_block_second_text">Dubai</p>
+                </div>
+                <div class="details_block_first_left_about_block_right_price_texts_block">
+                    <p class="details_block_first_left_about_block_right_price_texts_block_first_text">Export status</p>
+                    <p class="details_block_first_left_about_block_right_price_texts_block_second_text">Can be
+                        exported</p>
+                </div>
+            </div>
+            <p class="details_block_first_left_about_block_right_second_text">Interested in this car or want a
+                personalized offer of the best deals?</p>
+            <p class="details_block_first_left_about_block_right_third_text">Contact us and our manager will give you
+                all the information you need.</p>
+            <button class="details_block_first_left_about_block_right_button">Check availability</button>
+            <div class="details_block_first_left_about_block_right_button_second">
+                <img th:src="@{/img/WhatsAppBlack.png}" alt="WhatsApp">
+                <p>+971 55 811 9024</p>
+            </div>
+            <div class="details_block_first_left_about_block_right_button_third">
+                <img th:src="@{/img/MailBlack.png}" alt="Mail">
+                <p>request@example.com</p>
+            </div>
+            <div class="details_block_first_left_about_block_right_second_block">
+                <p class="details_block_first_left_about_block_right_second_block_main_text">Vehicle inspection</p>
+                <div class="details_block_first_left_about_block_right_second_block_inner">
+                    <img th:src="@{/img/yes2.png}" alt="Allow">
+                    <p class="details_block_first_left_about_block_right_second_block_inner_text">Inspected</p>
+                </div>
+            </div>
+            <div class="details_block_first_left_about_block_right_third_block">
+                <div class="details_block_first_left_about_block_right_third_block_inner">
+                    <p class="details_block_first_left_about_block_right_third_block_inner_first_text">Accidents or
+                        damage</p>
+                    <p class="details_block_first_left_about_block_right_third_block_inner_second_text">None
+                        reported</p>
+                </div>
+                <div class="details_block_first_left_about_block_right_third_block_inner">
+                    <p class="details_block_first_left_about_block_right_third_block_inner_first_text">Mileage
+                        comparison</p>
+                    <p class="details_block_first_left_about_block_right_third_block_inner_second_text">15,000 km</p>
+                </div>
+                <div class="details_block_first_left_about_block_right_third_block_inner">
+                    <p class="details_block_first_left_about_block_right_third_block_inner_first_text">1-owner
+                        vehicle</p>
+                    <p class="details_block_first_left_about_block_right_third_block_inner_second_text">Yes</p>
+                </div>
+                <div class="details_block_first_left_about_block_right_third_block_inner">
+                    <p class="details_block_first_left_about_block_right_third_block_inner_first_text">Basic
+                        maintenance</p>
+                    <p class="details_block_first_left_about_block_right_third_block_inner_second_text">Passed</p>
+                </div>
+                <div class="details_block_first_left_about_block_right_third_block_inner_two">
+                    <img th:src="@{/img/download.png}" alt="Download">
+                    <p class="details_block_first_left_about_block_right_third_block_inner_two_text">Download the basic
+                        report</p>
+                </div>
+            </div>
+            <p class="details_block_first_left_about_block_right_four_text">Full Inspection</p>
+            <p class="details_block_first_left_about_block_right_five_text">A complete inspection and history check. In
+                addition, we send you lots of photos and videos of the car to help you make that important purchase.</p>
+            <button class="details_block_first_left_about_block_right_button_four">Book a full inspection</button>
+            <p class="details_block_first_left_about_block_right_six_text">Learn more about the full inspection</p>
+            <p class="details_block_first_left_about_block_right_seven_text"><span
+                    class="details_block_first_left_about_block_right_seven_text_first">Added: </span> <span
+                    class="details_block_first_left_about_block_right_seven_text_second">Jan 6, 2023 </span> <span
+                    class="details_block_first_left_about_block_right_seven_text_first">• Views: </span> <span
+                    class="details_block_first_left_about_block_right_seven_text_second">38</span></p>
         </div>
-      </div>
-      <div class="details_block_first_left_description">
-        <p class="details_block_first_left_description_main_text">Description</p>
-        <p class="details_block_first_left_description_text">Toyota Land Cruiser 2017 ZX-G Frontier Face-Lifted Petrol 4.6L Sunroof 4WD AT 7 Electric Leather Seats [RHD Japan Import] Premium Condition.
-          ----------------------------------------------------------------------------------------------------------------------
-          Quis blandit turpis cursus in hac. In hendrerit gravida rutrum quisque. Pellentesque habitant morbi tristique senectus et. Eget gravida cum sociis natoque. Pharetra diam sit amet nisl suscipit adipiscing bibendum.
-
-          Porttitor massa id neque aliquam. In fermentum posuere urna nec. Rhoncus aenean vel elit scelerisque mauris pellentesque. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Consequat id porta nibh venenatis cras sed.</p>
-      </div>
-      <p class="details_block_first_left_description_first_text">Features</p>
-      <div class="details_block_first_left_features">
-        <div class="details_block_first_left_features_left">
-          <p class="details_block_first_left_features_left_text">Interior</p>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Air conditioning</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Bluetooth system</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Climate control</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Cooled front seats</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Cruise control</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Heated seats</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Leather seats</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Sunroof</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Navigation system</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Power locks</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Power seats</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Power windows</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Premium sound system</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Tuner/radio</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Rear camera</p>
-          </div>
-        </div>
-        <div class="details_block_first_left_features_right">
-          <p class="details_block_first_left_features_right_first_text">Exterior</p>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Fog lights</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Keyless go</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Performance tyres</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Premium paint</p>
-          </div>
-          <p class="details_block_first_left_features_right_second_text">Security & Environment</p>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">4WD</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">ABS</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Adaptive lighting</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Airbags (front and side)</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Tinted windows</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">All wheel drive</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Adaptive cruise control</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Traction control</p>
-          </div>
-          <div class="details_block_first_left_features_left_inner">
-            <img src="../static/img/yes3.png" alt="Yes">
-            <p class="details_block_first_left_features_left_inner_text">Differential lock</p>
-          </div>
-        </div>
-      </div>
-      <div class="details_block_first_left_answer_block">
-        <div>
-          <p class="details_block_first_left_answer_block_text">Do you still have questions? Contact us for answers.</p>
-          <p class="details_block_first_left_answer_block_second_text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
-        </div>
-        <button class="details_block_first_left_answer_block_button">Contact Us</button>
-      </div>
-      <div class="details_block_first_left_links_block">
-        <p class="details_block_first_left_links_block_main_text">Quick links</p>
-        <div class="details_block_first_left_links_block_links">
-          <div class="details_block_first_left_links_block_links_left">
-            <p class="details_block_first_left_links_block_links_left_text">Toyota Land Cruiser for sale in Dubai</p>
-            <p class="details_block_first_left_links_block_links_left_text">Toyota Land Cruiser 2017</p>
-          </div>
-          <div class="details_block_first_left_links_block_links_left">
-            <p class="details_block_first_left_links_block_links_left_text">Toyota for sale in Dubai</p>
-            <p class="details_block_first_left_links_block_links_left_text">All cars for sale in Dubai</p>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="details_block_first_left_about_block_right">
-      <p class="details_block_first_left_about_block_right_main_text">Toyota Land Cruiser 2017 ZX-G Frontier Face-Lifted Petrol 4.6L Sunroof 4WD</p>
-      <p class="details_block_first_left_about_block_right_price_text">$45,995</p>
-      <div class="details_block_first_left_about_block_right_price_texts">
-        <div class="details_block_first_left_about_block_right_price_texts_block">
-          <p class="details_block_first_left_about_block_right_price_texts_block_first_text">Year</p>
-          <p class="details_block_first_left_about_block_right_price_texts_block_second_text">2017</p>
-        </div>
-        <div class="details_block_first_left_about_block_right_price_texts_block">
-          <p class="details_block_first_left_about_block_right_price_texts_block_first_text">Kilometers</p>
-          <p class="details_block_first_left_about_block_right_price_texts_block_second_text">15,000</p>
-        </div>
-        <div class="details_block_first_left_about_block_right_price_texts_block">
-          <p class="details_block_first_left_about_block_right_price_texts_block_first_text">Location</p>
-          <p class="details_block_first_left_about_block_right_price_texts_block_second_text">Dubai</p>
-        </div>
-        <div class="details_block_first_left_about_block_right_price_texts_block">
-          <p class="details_block_first_left_about_block_right_price_texts_block_first_text">Export status</p>
-          <p class="details_block_first_left_about_block_right_price_texts_block_second_text">Can be exported</p>
-        </div>
-      </div>
-      <p class="details_block_first_left_about_block_right_second_text">Interested in this car or want a personalized offer of the best deals?</p>
-      <p class="details_block_first_left_about_block_right_third_text">Contact us and our manager will give you all the information you need.</p>
-      <button class="details_block_first_left_about_block_right_button">Check availability</button>
-      <div class="details_block_first_left_about_block_right_button_second">
-        <img src="../static/img/WhatsAppBlack.png" alt="WhatsApp">
-        <p>+971 55 811 9024</p>
-      </div>
-      <div class="details_block_first_left_about_block_right_button_third">
-        <img src="../static/img/MailBlack.png" alt="Mail">
-        <p>request@example.com</p>
-      </div>
-      <div class="details_block_first_left_about_block_right_second_block">
-        <p class="details_block_first_left_about_block_right_second_block_main_text">Vehicle inspection</p>
-        <div class="details_block_first_left_about_block_right_second_block_inner">
-          <img src="../static/img/yes2.png" alt="Allow">
-          <p class="details_block_first_left_about_block_right_second_block_inner_text">Inspected</p>
-        </div>
-      </div>
-      <div class="details_block_first_left_about_block_right_third_block">
-        <div class="details_block_first_left_about_block_right_third_block_inner">
-          <p class="details_block_first_left_about_block_right_third_block_inner_first_text">Accidents or damage</p>
-          <p class="details_block_first_left_about_block_right_third_block_inner_second_text">None reported</p>
-        </div>
-        <div class="details_block_first_left_about_block_right_third_block_inner">
-          <p class="details_block_first_left_about_block_right_third_block_inner_first_text">Mileage comparison</p>
-          <p class="details_block_first_left_about_block_right_third_block_inner_second_text">15,000 km</p>
-        </div>
-        <div class="details_block_first_left_about_block_right_third_block_inner">
-          <p class="details_block_first_left_about_block_right_third_block_inner_first_text">1-owner vehicle</p>
-          <p class="details_block_first_left_about_block_right_third_block_inner_second_text">Yes</p>
-        </div>
-        <div class="details_block_first_left_about_block_right_third_block_inner">
-          <p class="details_block_first_left_about_block_right_third_block_inner_first_text">Basic maintenance</p>
-          <p class="details_block_first_left_about_block_right_third_block_inner_second_text">Passed</p>
-        </div>
-        <div class="details_block_first_left_about_block_right_third_block_inner_two">
-          <img src="../static/img/download.png" alt="Download">
-          <p class="details_block_first_left_about_block_right_third_block_inner_two_text">Download the basic report</p>
-        </div>
-      </div>
-      <p class="details_block_first_left_about_block_right_four_text">Full Inspection</p>
-      <p class="details_block_first_left_about_block_right_five_text">A complete inspection and history check. In addition, we send you lots of photos and videos of the car to help you make that important purchase.</p>
-      <button class="details_block_first_left_about_block_right_button_four">Book a full inspection</button>
-      <p class="details_block_first_left_about_block_right_six_text">Learn more about the full inspection</p>
-      <p class="details_block_first_left_about_block_right_seven_text"><span class="details_block_first_left_about_block_right_seven_text_first">Added: </span> <span class="details_block_first_left_about_block_right_seven_text_second">Jan 6, 2023 </span> <span class="details_block_first_left_about_block_right_seven_text_first">• Views: </span> <span class="details_block_first_left_about_block_right_seven_text_second">38</span></p>
-    </div>
-  </div>
 </section>
 <div class="details_block_first_left_similar">
-  <div class="details_block_first_left_similar_first_block">
-    <p class="details_block_first_left_similar_first_block_text">Similar cars</p>
-    <div class="details_block_first_left_similar_first_block_arrows">
-      <img class="details_block_first_left_similar_first_block_arrows_button" src="../static/img/left.png" alt="Arrow">
-      <img src="../static/img/right.png" alt="Arrow">
-    </div>
-  </div>
-  <div class="details_block_first_left_similar_second_block">
-    <div class="details_block_first_left_similar_second_block_car">
-      <img class="details_block_first_left_similar_second_block_car_img" src="../static/img/q.png" alt="Car">
-      <div class="details_block_first_left_similar_second_block_car_texts">
-        <p class="details_block_first_left_similar_second_block_car_texts_main">Toyota Land Cruiser GXR MID OPTION</p>
-        <p><span class="details_block_first_left_similar_second_block_car_texts_second"> Used •</span> <span class="details_block_first_left_similar_second_block_car_texts_third"> 27,057 mi</span> <span class="details_block_first_left_similar_second_block_car_texts_second">• Petrol</span></p>
-        <div class="details_block_first_left_similar_second_block_car_texts_second_text">
-          <p><span class="details_block_first_left_similar_second_block_car_texts_second_text_first">$45,995</span> <span class="details_block_first_left_similar_second_block_car_texts_second_text_second">$51,490</span></p>
-          <div class="details_block_first_left_similar_second_block_car_texts_second_text_inner">
-            <p class="details_block_first_left_similar_second_block_car_texts_second_text_inner_text">Details</p>
-            <img src="../static/img/right3.png" alt="Arrow">
-          </div>
+    <div class="details_block_first_left_similar_first_block">
+        <p class="details_block_first_left_similar_first_block_text">Similar cars</p>
+        <div class="details_block_first_left_similar_first_block_arrows">
+            <img class="details_block_first_left_similar_first_block_arrows_button" th:src="@{/img/left.png}"
+                 alt="Arrow">
+            <img th:src="@{/img/right.png}" alt="Arrow">
         </div>
-      </div>
     </div>
-    <div class="details_block_first_left_similar_second_block_car">
-      <img class="details_block_first_left_similar_second_block_car_img" src="../static/img/q2%20(2).png" alt="Car">
-      <div class="details_block_first_left_similar_second_block_car_texts">
-        <p class="details_block_first_left_similar_second_block_car_texts_main">Toyota Land Cruiser GXR</p>
-        <p><span class="details_block_first_left_similar_second_block_car_texts_second"> Used •</span> <span class="details_block_first_left_similar_second_block_car_texts_third"> 27,057 mi</span> <span class="details_block_first_left_similar_second_block_car_texts_second">• Petrol</span></p>
-        <div class="details_block_first_left_similar_second_block_car_texts_second_text">
-          <p><span class="details_block_first_left_similar_second_block_car_texts_second_text_first">$45,995</span> <span class="details_block_first_left_similar_second_block_car_texts_second_text_second">$51,490</span></p>
-          <div class="details_block_first_left_similar_second_block_car_texts_second_text_inner">
-            <p class="details_block_first_left_similar_second_block_car_texts_second_text_inner_text">Details</p>
-            <img src="../static/img/right3.png" alt="Arrow">
-          </div>
+    <div class="details_block_first_left_similar_second_block">
+        <div class="details_block_first_left_similar_second_block_car" th:each="carOne : ${cars}">
+            <img class="details_block_first_left_similar_second_block_car_img" th:src="@{/img/__${carOne.img}__}" alt="Car">
+            <div class="details_block_first_left_similar_second_block_car_texts">
+                <p class="details_block_first_left_similar_second_block_car_texts_main" th:text="${carOne.model}">Toyota Land Cruiser GXR MID OPTION</p>
+                <p>
+                    <span class="details_block_first_left_similar_second_block_car_texts_second" th:if="${carOne.isNew}"> NEW • </span>
+                    <span class="details_block_first_left_similar_second_block_car_texts_second" th:if="${!carOne.isNew}"> Used • </span> <span
+                        class="details_block_first_left_similar_second_block_car_texts_third" th:text="${carOne.kilometers}"> 27,057 mi</span> •<span
+                        class="details_block_first_left_similar_second_block_car_texts_second" th:text="${carOne.fuel}">• Petrol</span></p>
+                <div class="details_block_first_left_similar_second_block_car_texts_second_text">
+                    <p><span
+                            class="details_block_first_left_similar_second_block_car_texts_second_text_first">$45,995</span>
+                        <span class="details_block_first_left_similar_second_block_car_texts_second_text_second">$51,490</span>
+                    </p>
+                    <div class="details_block_first_left_similar_second_block_car_texts_second_text_inner">
+                        <form th:method="GET" th:action="@{/catalog/{id}(id=${carOne.id})}">
+                            <button type="submit" class="details_block_first_left_similar_second_block_car_texts_second_text_inner_text">Details</button>
+                        </form>
+                        <img th:src="@{/img/right3.png}" alt="Arrow">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+<!--        <div class="details_block_first_left_similar_second_block_car">-->
+<!--            <img class="details_block_first_left_similar_second_block_car_img" src="../static/img/q2%20(2).png"-->
+<!--                 alt="Car">-->
+<!--            <div class="details_block_first_left_similar_second_block_car_texts">-->
+<!--                <p class="details_block_first_left_similar_second_block_car_texts_main">Toyota Land Cruiser GXR</p>-->
+<!--                <p><span class="details_block_first_left_similar_second_block_car_texts_second"> Used •</span> <span-->
+<!--                        class="details_block_first_left_similar_second_block_car_texts_third"> 27,057 mi</span> <span-->
+<!--                        class="details_block_first_left_similar_second_block_car_texts_second">• Petrol</span></p>-->
+<!--                <div class="details_block_first_left_similar_second_block_car_texts_second_text">-->
+<!--                    <p><span-->
+<!--                            class="details_block_first_left_similar_second_block_car_texts_second_text_first">$45,995</span>-->
+<!--                        <span class="details_block_first_left_similar_second_block_car_texts_second_text_second">$51,490</span>-->
+<!--                    </p>-->
+<!--                    <div class="details_block_first_left_similar_second_block_car_texts_second_text_inner">-->
+<!--                        <p class="details_block_first_left_similar_second_block_car_texts_second_text_inner_text">-->
+<!--                            Details</p>-->
+<!--                        <img src="../static/img/right3.png" alt="Arrow">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="details_block_first_left_similar_second_block_car">-->
+<!--            <img class="details_block_first_left_similar_second_block_car_img" src="../static/img/q3.png" alt="Car">-->
+<!--            <div class="details_block_first_left_similar_second_block_car_texts">-->
+<!--                <p class="details_block_first_left_similar_second_block_car_texts_main">Toyota Land Cruiser Land Cruiser-->
+<!--                    Diesel 2009</p>-->
+<!--                <p><span class="details_block_first_left_similar_second_block_car_texts_second"> Used •</span> <span-->
+<!--                        class="details_block_first_left_similar_second_block_car_texts_third"> 27,057 mi</span> <span-->
+<!--                        class="details_block_first_left_similar_second_block_car_texts_second">• Petrol</span></p>-->
+<!--                <div class="details_block_first_left_similar_second_block_car_texts_second_text">-->
+<!--                    <p><span-->
+<!--                            class="details_block_first_left_similar_second_block_car_texts_second_text_first">$45,995</span>-->
+<!--                        <span class="details_block_first_left_similar_second_block_car_texts_second_text_second">$51,490</span>-->
+<!--                    </p>-->
+<!--                    <div class="details_block_first_left_similar_second_block_car_texts_second_text_inner">-->
+<!--                        <p class="details_block_first_left_similar_second_block_car_texts_second_text_inner_text">-->
+<!--                            Details</p>-->
+<!--                        <img src="../static/img/right3.png" alt="Arrow">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="details_block_first_left_similar_second_block_car">-->
+<!--            <img class="details_block_first_left_similar_second_block_car_img" src="../static/img/q4.png" alt="Car">-->
+<!--            <div class="details_block_first_left_similar_second_block_car_texts">-->
+<!--                <p class="details_block_first_left_similar_second_block_car_texts_main">Toyota Land Cruiser VXR Grand-->
+<!--                    Touring 5.7 V8 VIP</p>-->
+<!--                <p><span class="details_block_first_left_similar_second_block_car_texts_second"> Used •</span> <span-->
+<!--                        class="details_block_first_left_similar_second_block_car_texts_third"> 27,057 mi</span> <span-->
+<!--                        class="details_block_first_left_similar_second_block_car_texts_second">• Petrol</span></p>-->
+<!--                <div class="details_block_first_left_similar_second_block_car_texts_second_text">-->
+<!--                    <p><span-->
+<!--                            class="details_block_first_left_similar_second_block_car_texts_second_text_first">$45,995</span>-->
+<!--                        <span class="details_block_first_left_similar_second_block_car_texts_second_text_second">$51,490</span>-->
+<!--                    </p>-->
+<!--                    <div class="details_block_first_left_similar_second_block_car_texts_second_text_inner">-->
+<!--                        <p class="details_block_first_left_similar_second_block_car_texts_second_text_inner_text">-->
+<!--                            Details</p>-->
+<!--                        <img src="../static/img/right3.png" alt="Arrow">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
-    <div class="details_block_first_left_similar_second_block_car">
-      <img class="details_block_first_left_similar_second_block_car_img" src="../static/img/q3.png" alt="Car">
-      <div class="details_block_first_left_similar_second_block_car_texts">
-        <p class="details_block_first_left_similar_second_block_car_texts_main">Toyota Land Cruiser Land Cruiser Diesel 2009</p>
-        <p><span class="details_block_first_left_similar_second_block_car_texts_second"> Used •</span> <span class="details_block_first_left_similar_second_block_car_texts_third"> 27,057 mi</span> <span class="details_block_first_left_similar_second_block_car_texts_second">• Petrol</span></p>
-        <div class="details_block_first_left_similar_second_block_car_texts_second_text">
-          <p><span class="details_block_first_left_similar_second_block_car_texts_second_text_first">$45,995</span> <span class="details_block_first_left_similar_second_block_car_texts_second_text_second">$51,490</span></p>
-          <div class="details_block_first_left_similar_second_block_car_texts_second_text_inner">
-            <p class="details_block_first_left_similar_second_block_car_texts_second_text_inner_text">Details</p>
-            <img src="../static/img/right3.png" alt="Arrow">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="details_block_first_left_similar_second_block_car">
-      <img class="details_block_first_left_similar_second_block_car_img" src="../static/img/q4.png" alt="Car">
-      <div class="details_block_first_left_similar_second_block_car_texts">
-        <p class="details_block_first_left_similar_second_block_car_texts_main">Toyota Land Cruiser VXR Grand Touring 5.7 V8 VIP</p>
-        <p><span class="details_block_first_left_similar_second_block_car_texts_second"> Used •</span> <span class="details_block_first_left_similar_second_block_car_texts_third"> 27,057 mi</span> <span class="details_block_first_left_similar_second_block_car_texts_second">• Petrol</span></p>
-        <div class="details_block_first_left_similar_second_block_car_texts_second_text">
-          <p><span class="details_block_first_left_similar_second_block_car_texts_second_text_first">$45,995</span> <span class="details_block_first_left_similar_second_block_car_texts_second_text_second">$51,490</span></p>
-          <div class="details_block_first_left_similar_second_block_car_texts_second_text_inner">
-            <p class="details_block_first_left_similar_second_block_car_texts_second_text_inner_text">Details</p>
-            <img src="../static/img/right3.png" alt="Arrow">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 <footer class="footer_block">
-  <div class="footer_block_content">
-    <div class="footer_block_content_first_block">
-      <img src=".././static/img/Logo.png" alt="eCars">
-      <p class="footer_block_content_first_block_main_text">Nullam non nisi est sit amet. Arcu vitae elementum curabitur vitae nunc. Ut tellus elementum sagittis vitae et leo duis.</p>
-      <div class="footer_block_content_first_block_img">
-        <img src=".././static/img/Facebook2.png" alt="Facebook">
-        <img src=".././static/img/Twitter2.png" alt="Twitter">
-        <img src=".././static/img/YouTube2.png" alt="YouTube">
-        <img src=".././static/img/Instagram2.png" alt="Instagram">
-      </div>
+    <div class="footer_block_content">
+        <div class="footer_block_content_first_block">
+            <img th:src="@{/img/Logo.png}" alt="eCars">
+            <p class="footer_block_content_first_block_main_text">Nullam non nisi est sit amet. Arcu vitae elementum
+                curabitur vitae nunc. Ut tellus elementum sagittis vitae et leo duis.</p>
+            <div class="footer_block_content_first_block_img">
+                <img th:src="@{/img/Facebook2.png}" alt="Facebook">
+                <img th:src="@{/img/Twitter2.png}" alt="Twitter">
+                <img th:src="@{/img/YouTube2.png}" alt="YouTube">
+                <img th:src="@{/img/Instagram2.png}" alt="Instagram">
+            </div>
+        </div>
+        <div class="footer_block_content_second_block">
+            <p class="footer_block_content_second_block_main_text">Company</p>
+            <p class="footer_block_content_second_block_next_text">About Us</p>
+            <p class="footer_block_content_second_block_next2_text">Blog</p>
+            <p class="footer_block_content_second_block_next2_text">FAQ</p>
+        </div>
+        <div class="footer_block_content_second_block">
+            <p class="footer_block_content_second_block_main_text">Cars</p>
+            <p class="footer_block_content_second_block_next_text">Special offers</p>
+            <p class="footer_block_content_second_block_next2_text">New cars</p>
+            <p class="footer_block_content_second_block_next2_text">Used cars</p>
+            <p class="footer_block_content_second_block_next2_text">Brands</p>
+        </div>
+        <div class="footer_block_content_second_block">
+            <p class="footer_block_content_second_block_main_text">Contacts</p>
+            <div class="footer_block_content_second_block_inner">
+                <img class="footer_block_content_second_block_inner_img" th:src="@{/img/Whatsapp2.png}" alt="WhatsApp">
+                <p class="footer_block_content_second_block_next_text">+971 55 811 9024</p>
+            </div>
+            <div class="footer_block_content_second_block_inner">
+                <img class="footer_block_content_second_block_inner_img" th:src="@{/img/Email2.png}" alt="Email">
+                <p class="footer_block_content_second_block_next2_text">request@example.com</p>
+            </div>
+        </div>
     </div>
-    <div class="footer_block_content_second_block">
-      <p class="footer_block_content_second_block_main_text">Company</p>
-      <p class="footer_block_content_second_block_next_text">About Us</p>
-      <p class="footer_block_content_second_block_next2_text">Blog</p>
-      <p class="footer_block_content_second_block_next2_text">FAQ</p>
+    <div class="footer_block_content2">
+        <p class="footer_block_content2_first_text">eCars © 2022. All rights reserved.</p>
+        <div class="footer_block_content2_inner_block">
+            <p class="footer_block_content2_second_text">Privacy Policy</p>
+            <p class="footer_block_content2_three_text">Terms & Conditions</p>
+        </div>
     </div>
-    <div class="footer_block_content_second_block">
-      <p class="footer_block_content_second_block_main_text">Cars</p>
-      <p class="footer_block_content_second_block_next_text">Special offers</p>
-      <p class="footer_block_content_second_block_next2_text">New cars</p>
-      <p class="footer_block_content_second_block_next2_text">Used cars</p>
-      <p class="footer_block_content_second_block_next2_text">Brands</p>
-    </div>
-    <div class="footer_block_content_second_block">
-      <p class="footer_block_content_second_block_main_text">Contacts</p>
-      <div class="footer_block_content_second_block_inner">
-        <img class="footer_block_content_second_block_inner_img" src=".././static/img/Whatsapp2.png" alt="WhatsApp">
-        <p class="footer_block_content_second_block_next_text">+971 55 811 9024</p>
-      </div>
-      <div class="footer_block_content_second_block_inner">
-        <img class="footer_block_content_second_block_inner_img" src=".././static/img/Email2.png" alt="Email">
-        <p class="footer_block_content_second_block_next2_text">request@example.com</p>
-      </div>
-    </div>
-  </div>
-  <div class="footer_block_content2">
-    <p class="footer_block_content2_first_text">eCars © 2022. All rights reserved.</p>
-    <div class="footer_block_content2_inner_block">
-      <p class="footer_block_content2_second_text">Privacy Policy</p>
-      <p class="footer_block_content2_three_text">Terms & Conditions</p>
-    </div>
-  </div>
 </footer>
 </body>
 </html>

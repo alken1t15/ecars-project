@@ -40,4 +40,8 @@ public class Cars {
     @Column(name = "mini_description")
     private String miniDescription;
     private Double price;
+    @Column(name = "img_big")
+    private String imgBig;
+    @OneToMany(mappedBy = "cars")
+    private List<ImgCars> imgCars;
 }
