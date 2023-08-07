@@ -19,7 +19,8 @@ create table cars (
   is_new boolean,
   mini_description varchar(255),
   price decimal(5, 3),
-  img_big varchar(255)
+  img_big varchar(255),
+  price_old decimal(5, 3)
 );
 
 
@@ -73,7 +74,7 @@ Quis blandit turpis cursus in hac. In hendrerit gravida rutrum quisque. Pellente
 Porttitor massa id neque aliquam. In fermentum posuere urna nec. Rhoncus aenean vel elit scelerisque mauris pellentesque. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Consequat id porta nibh venenatis cras sed.','prod1.png',false,'2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.',45.995,'main_car.png');
 
 
-insert into img_cars (id_cars, img) values (1,'01.png'), (1,'02.png'), (1,'03.png'), (1,'04.png'), (1,'05.png'),(1,'06.png'),(1,'07.png'),(1,'08.png')
+insert into img_cars (id_cars, img) values (1,'01.png'), (1,'02.png'), (1,'03.png'), (1,'04.png'), (1,'05.png'),(1,'06.png'),(1,'07.png'),(1,'08.png');
 
 
 insert into cars (brand, model, year, wheels, color, vehicle_type, kilometers, gearbox, fuel, seats, cylinders, interior, location, export_status, description,img,is_new,mini_description,price,img_big) values ('Toyota','Toyota Land Cruiser GXR MID OPTION',2013,14,'White','SUV/Crossover',15000,'Automatic','Gasoline',8,8,'White','Astana','Can be exported'

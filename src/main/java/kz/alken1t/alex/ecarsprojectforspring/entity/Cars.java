@@ -44,4 +44,6 @@ public class Cars {
     private String imgBig;
     @OneToMany(mappedBy = "cars")
     private List<ImgCars> imgCars;
+    @Column(name = "price_old")
+    private Double priceOld;
 }

@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Главная страница</title>
-    <link rel="stylesheet" href="../static/css/main_page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,200;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/main_page.css}">
 </head>
 <body>
 <header>
     <div class="container_head">
-        <a class="container_head_img" href=""><img class="container_head_img_facebook" src="../static/img/Facebook.png" alt="Facebook"></a>
-        <a class="container_head_img" href=""><img class=twitter_img" src="../static/img/Twitter.png" alt="Twitter"></a>
-        <a class="container_head_img" href=""><img class="youtube_img" src="../static/img/YouTube.png" alt="YouTube"></a>
-        <a class="container_head_img" href=""><img class="instagram_whatsapp_img" src="../static/img/Instagram.png" alt="Instagram"></a>
-        <a class="container_head_img" href=""><img class="instagram_whatsapp_img" src="../static/img/WhatsApp.png" alt="WhatsApp"></a>
-        <p class="number_phone_header">+ 971 55 811 9024</p>
-        <a class="mail_header_img" href="mailto:request@example.com"><img src="../static/img/mail.png" alt="Mail"></a>
-        <a class="mail_header_text" href="mailto:request@example.com">request@example.com</a>
-        <img class="map_container_img" src="../static/img/Map.png" alt="Map">
+        <a class="container_head_img" href="https://github.com/alken1t15"><img class="container_head_img_facebook" th:src="@{/img/Facebook.png}"
+                                                                               alt="Facebook"></a>
+        <a class="container_head_img" href="https://github.com/alken1t15"><img class="twitter_img" th:src="@{/img/Twitter.png}" alt="Twitter"></a>
+        <a class="container_head_img" href="https://github.com/alken1t15"><img class="youtube_img" th:src="@{/img/YouTube.png}" alt="YouTube"></a>
+        <a class="container_head_img" href="https://github.com/alken1t15"><img class="instagram_whatsapp_img" th:src="@{/img/Instagram.png}"
+                                                                               alt="Instagram"></a>
+        <a class="container_head_img" href="https://github.com/alken1t15"><img class="instagram_whatsapp_img" th:src="@{/img/WhatsApp.png}"
+                                                                               alt="WhatsApp"></a>
+        <p class="number_phone_header">+ 7 747 165 57 80</p>
+        <a class="mail_header_img" href="mailto:alken1t15@gmail.com"><img th:src="@{/img/mail.png}" alt="Mail"></a>
+        <a class="mail_header_text" href="mailto:alken1t15@gmail.com">alken1t15@gmail.com</a>
+        <img class="map_container_img" th:src="@{/img/Map.png}" alt="Map">
         <p class="text_container_map">Ship to:</p>
-        <img class="flag_country_header" src="../static/img/flag_canada.png" alt="Flag">
+        <img class="flag_country_header" th:src="@{/img/flag_canada.png}" alt="Flag">
         <select class="select_country_header">
             <option>
                 Canada
@@ -32,19 +38,19 @@
             <option>USD</option>
             <option>EUR</option>
         </select>
-        <a class="help_img_header" href=""><img src="../static/img/help.png" alt="Help"></a>
+        <a class="help_img_header" href=""><img th:src="@{/img/help.png}" alt="Help"></a>
         <a href="" class="text_help_header">Help</a>
     </div>
     <div class="container_head_two">
-        <a href=""><img src="../static/img/Logo.png"></a>
-        <a class="test_container_head" href="">All Cars</a>
+        <a th:href="@{/main}"><img th:src="@{/img/Logo.png}"></a>
+        <a class="test_container_head" th:href="@{/catalog}">All Cars</a>
         <a class="test_container_head" href="">About Us</a>
         <a class="test_container_head" href="">Blog</a>
         <a class="test_container_head" href="">Contact</a>
         <div class="container_two_imgs">
-            <img class="container_two_search_img" src="../static/img/Search.png" alt="Search">
-            <img class="container_two_heart_img" src="../static/img/Heart.png" alt="Heart">
-            <img class="container_two_profile_img" src="../static/img/Profile.png" alt="Profile">
+            <img class="container_two_search_img" th:src="@{/img/Search.png}" alt="Search">
+            <img class="container_two_heart_img" th:src="@{/img/Heart.png}" alt="Heart">
+            <img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile">
         </div>
         <button class="button_container_two">Get a quote</button>
     </div>
@@ -54,15 +60,15 @@
         <p class="section_one_main_text">Car import services with delivery to your doorstep.</p>
         <button class="section_one_button">Get a quote</button>
         <div class="section_one_contact">
-            <img src="../static/img/WhatsAppBlack.png" alt="WhatsApp">
+            <img th:src="@{/img/WhatsAppBlack.png}" alt="WhatsApp">
             <p class="section_one_text_phone">+971 55 811 9024</p>
-            <a href="mailto:request@example.com"><img class="section_one_img_mail" src="../static/img/MailBlack.png" alt="Mail"></a>
+            <a href="mailto:request@example.com"><img class="section_one_img_mail" th:src="@{/img/MailBlack.png}" alt="Mail"></a>
             <a href="mailto:request@example.com" class="section_one_text_phone">request@example.com</a>
         </div>
         <div class="block_information">
             <div class="block_information_inner_block">
                 <div>
-                    <p class="block_information_background_fon"><img src="../static/img/Profile2.png" alt="Profile"></p>
+                    <p class="block_information_background_fon"><img th:src="@{/img/Profile2.png}" alt="Profile"></p>
                 </div>
                 <div class="main_block_text_block_information">
                     <p class="main_text_block_information">Professional approach to clients</p>
@@ -71,7 +77,7 @@
             </div>
             <div class="block_information_inner_block">
                 <div>
-                    <p class="block_information_background_fon"><img src="../static/img/information1.png" alt="Profile"></p>
+                    <p class="block_information_background_fon"><img th:src="@{/img/information1.png}" alt="Profile"></p>
                 </div>
                 <div class="main_block_text_block_information">
                     <p class="main_text_block_information">Protect all payments</p>
@@ -80,7 +86,7 @@
             </div>
             <div class="block_information_inner_block">
                 <div>
-                    <p class="block_information_background_fon"><img src="../static/img/information2.png" alt="Profile"></p>
+                    <p class="block_information_background_fon"><img th:src="@{/img/information2.png}" alt="Profile"></p>
                 </div>
                 <div class="main_block_text_block_information">
                     <p class="main_text_block_information">Real reviews from clients</p>
@@ -96,147 +102,144 @@
             <p class="heading_text">Special offers</p>
         </div>
         <div class="heading_text_block">
-            <img class="arrow arrow3" src="../static/img/left.png" alt="arrow">
-            <img class="arrow arrow4" src="../static/img/right.png" alt="arrow">
-            <p class="heading_text_two">See all cars</p>
-            <img class="arrow2" src="../static/img/right2.png" alt="arrow">
+            <button class="button_special" id="btnLeft"><img class="arrow arrow3" th:src="@{/img/left.png}" alt="arrow"></button>
+            <button class="button_special" id="btnRight"><img class="arrow arrow4" th:src="@{/img/right.png}" alt="arrow"></button>
+            <a class="heading_text_two" th:href="@{/catalog}"> See all cars <img class="arrow2" th:src="@{/img/right2.png}" alt="arrow"></a>
         </div>
     </div>
     <div class="all_cart">
-        <div class="block_car">
-            <img class="img_car" src="../static/img/car.png" alt="Car">
+        <div class="block_car" th:each="car : ${cars}">
+            <img class="img_car" th:src="@{/img/__${car.img}__}" alt="Car">
             <div class="block_information_car">
                 <div class="text_car_about">
-                <p class="text_header">2021 Genesis GV80 2.5T</p>
-                <p class="text_car">Used • 27,057 mi • Petrol</p>
+                <p class="text_header" th:text="${car.model}">2021 Genesis GV80 2.5T</p>
+                    <p class="text_car"><span th:text="${car.location}"></span> • <span th:if="${car.isNew}"> NEW • </span> <span th:if="${!car.isNew}"> Used • </span> <span th:text="${car.kilometers}"></span> km • <span th:text="${car.fuel}"></span></p>
                 </div>
                 <div class="block_information_car_inner">
                     <div>
-                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>
+                        <p>$<span class="price" th:text="${car.price}">$45,995</span> <span th:text="${car.priceOld}" class="discount">$51,490</span></p>
                     </div>
                     <div class="details_car">
-                        <p class="text_details">Details</p>
-                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">
+                        <a class="text_details" th:href="@{/catalog/{id}(id=${car.id})}">Details <img class="arrow_car" th:src="@{/img/right3.png}" alt="arrow"></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="block_car">
-            <img class="img_car" src="../static/img/car2.png" alt="Car">
-            <div class="block_information_car">
-                <div class="text_car_about">
-                <p class="text_header">2019 Mitsubishi Outlander Sport 2.0 SE</p>
-                <p class="text_car">Used • 27,057 mi • Petrol</p>
-                </div>
-                <div class="block_information_car_inner">
-                    <div>
-                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>
-                    </div>
-                    <div class="details_car">
-                        <p class="text_details">Details</p>
-                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="block_car">
-            <img class="img_car" src="../static/img/car3.png" alt="Car">
-            <div class="block_information_car">
-                <div class="text_car_about">
-                <p class="text_header">2019 BMW 640 Gran Turismo i xDrive</p>
-                <p class="text_car">Used • 27,057 mi • Petrol</p>
-                </div>
-                <div class="block_information_car_inner">
-                    <div>
-                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>
-                    </div>
-                    <div class="details_car">
-                        <p class="text_details">Details</p>
-                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="block_car">
-            <img class="img_car" src="../static/img/car4.png" alt="Car">
-            <div class="block_information_car">
-                <div class="text_car_about">
-                    <p class="text_header">2020 Subaru Ascent Touring 7-Passenger</p>
-                    <p class="text_car">Used • 27,057 mi • Petrol</p>
-                </div>
-                <div class="block_information_car_inner">
-                    <div>
-                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>
-                    </div>
-                    <div class="details_car">
-                        <p class="text_details">Details</p>
-                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="block_car">
-            <img class="img_car" src="../static/img/car.png" alt="Car">
-            <div class="block_information_car">
-                <div class="text_car_about">
-                <p class="text_header">2021 Genesis GV80 2.5T</p>
-                <p class="text_car">Used • 27,057 mi • Petrol</p>
-                </div>
-                <div class="block_information_car_inner">
-                    <div>
-                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>
-                    </div>
-                    <div class="details_car">
-                        <p class="text_details">Details</p>
-                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="block_car">-->
+<!--            <img class="img_car" src="../static/img/car2.png" alt="Car">-->
+<!--            <div class="block_information_car">-->
+<!--                <div class="text_car_about">-->
+<!--                <p class="text_header">2019 Mitsubishi Outlander Sport 2.0 SE</p>-->
+<!--                <p class="text_car">Used • 27,057 mi • Petrol</p>-->
+<!--                </div>-->
+<!--                <div class="block_information_car_inner">-->
+<!--                    <div>-->
+<!--                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>-->
+<!--                    </div>-->
+<!--                    <div class="details_car">-->
+<!--                        <p class="text_details">Details</p>-->
+<!--                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="block_car">-->
+<!--            <img class="img_car" src="../static/img/car3.png" alt="Car">-->
+<!--            <div class="block_information_car">-->
+<!--                <div class="text_car_about">-->
+<!--                <p class="text_header">2019 BMW 640 Gran Turismo i xDrive</p>-->
+<!--                <p class="text_car">Used • 27,057 mi • Petrol</p>-->
+<!--                </div>-->
+<!--                <div class="block_information_car_inner">-->
+<!--                    <div>-->
+<!--                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>-->
+<!--                    </div>-->
+<!--                    <div class="details_car">-->
+<!--                        <p class="text_details">Details</p>-->
+<!--                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="block_car">-->
+<!--            <img class="img_car" src="../static/img/car4.png" alt="Car">-->
+<!--            <div class="block_information_car">-->
+<!--                <div class="text_car_about">-->
+<!--                    <p class="text_header">2020 Subaru Ascent Touring 7-Passenger</p>-->
+<!--                    <p class="text_car">Used • 27,057 mi • Petrol</p>-->
+<!--                </div>-->
+<!--                <div class="block_information_car_inner">-->
+<!--                    <div>-->
+<!--                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>-->
+<!--                    </div>-->
+<!--                    <div class="details_car">-->
+<!--                        <p class="text_details">Details</p>-->
+<!--                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="block_car">-->
+<!--            <img class="img_car" src="../static/img/car.png" alt="Car">-->
+<!--            <div class="block_information_car">-->
+<!--                <div class="text_car_about">-->
+<!--                <p class="text_header">2021 Genesis GV80 2.5T</p>-->
+<!--                <p class="text_car">Used • 27,057 mi • Petrol</p>-->
+<!--                </div>-->
+<!--                <div class="block_information_car_inner">-->
+<!--                    <div>-->
+<!--                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>-->
+<!--                    </div>-->
+<!--                    <div class="details_car">-->
+<!--                        <p class="text_details">Details</p>-->
+<!--                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
     <div class="brand_block">
         <p class="brand_text_main">Browse by brand</p>
         <div class="blocks_brand">
             <div class="inner_block_brand">
                 <div class="img_block_brand">
-                    <img src=".././static/img/ford.png" alt="Ford">
+                    <img th:src="@{/img/ford.png}" alt="Ford">
                 </div>
                 <p class="text_brand">Ford</p>
             </div>
             <div class="inner_block_brand">
                 <div class="img_block_brand">
-                    <img src=".././static/img/Volkswagen.png" alt="Volkswagen">
+                    <img th:src="@{/img/Volkswagen.png}" alt="Volkswagen">
                 </div>
                 <p class="text_brand">Volkswagen</p>
             </div>
             <div class="inner_block_brand">
                 <div class="img_block_brand">
-                    <img src=".././static/img/Volvo.png" alt="Volvo">
+                    <img th:src="@{/img/Volvo.png}" alt="Volvo">
                 </div>
                 <p class="text_brand">Volvo</p>
             </div>
             <div class="inner_block_brand">
                 <div class="img_block_brand">
-                    <img src=".././static/img/Tesla.png" alt="Tesla">
+                    <img th:src="@{/img/Tesla.png}" alt="Tesla">
                 </div>
                 <p class="text_brand">Tesla</p>
             </div>
             <div class="inner_block_brand">
                 <div class="img_block_brand">
-                    <img src=".././static/img/Lexus.png" alt="Lexus">
+                    <img th:src="@{/img/Lexus.png}" alt="Lexus">
                 </div>
                 <p class="text_brand">Lexus</p>
             </div>
             <div class="inner_block_brand">
                 <div class="img_block_brand">
-                    <img src=".././static/img/Land Rover.png" alt="Land Rover">
+                    <img th:src="@{/img/Land Rover.png}" alt="Land Rover">
                 </div>
                 <p class="text_brand">Land Rover</p>
             </div>
         </div>
         <div class="texts_block_brand">
-            <p class="text_block_brand">Show all brands</p>
-            <img  src=".././static/img/arrowBottom.png" alt="Arrow Bottom">
+            <a class="text_block_brand" th:href="@{/catalog}">Show all brands <img class="img_block_brand_text" th:src="@{/img/arrowBottom.png}" alt="Arrow Bottom"></a>
         </div>
     </div>
 </section>
@@ -264,7 +267,7 @@
                 <p class="second_text_how_work_block_inner">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
             </div>
         </div>
-        <img src=".././static/img/line.png" alt="Line">
+        <img th:src="@{/img/line.png}" alt="Line">
         <div>
             <div class="how_work_block_inner">
                 <p class="number_how_work_block_inner">2</p>
@@ -273,7 +276,7 @@
             <div class="text_block_how_work_block_inner">
                 <p class="second_text_how_work_block_inner">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
             </div>
-        </div>        <img src=".././static/img/line.png" alt="Line">
+        </div>        <img th:src="@{/img/line.png}" alt="Line">
         <div>
             <div class="how_work_block_inner">
                 <p class="number_how_work_block_inner">3</p>
@@ -282,7 +285,7 @@
             <div class="text_block_how_work_block_inner">
                 <p class="second_text_how_work_block_inner">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
             </div>
-        </div>        <img src=".././static/img/line.png" alt="Line">
+        </div>        <img th:src="@{/img/line.png}" alt="Line">
         <div>
             <div class="how_work_block_inner">
                 <p class="number_how_work_block_inner">4</p>
@@ -296,7 +299,7 @@
 </section>
 <section class="why_choose_block">
     <div>
-        <img src=".././static/img/choose.png" alt="Choose">
+        <img th:src="@{/img/choose.png}" alt="Choose">
     </div>
     <div class="why_choose_block_texts">
         <p class="why_choose_block_main_text">Why choose us</p>
@@ -304,21 +307,21 @@
         <p class="why_choose_block_second_text">Porttitor massa id neque aliquam. In fermentum posuere urna nec. Rhoncus aenean vel elit scelerisque mauris pellentesque. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Consequat id porta nibh venenatis cras sed.</p>
         <div class="why_choose_block_inner">
             <div class="why_choose_block_inner_block">
-                <img class="img_why_choose_block_inner_block" src=".././static/img/line2.png" alt="Line">
+                <img class="img_why_choose_block_inner_block" th:src="@{/img/line2.png}" alt="Line">
                 <div>
                     <p class="why_choose_block_inner_block_main_text">Some headline</p>
                     <p class="why_choose_block_inner_block_second_text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
                 </div>
             </div>
             <div class="why_choose_block_inner_block">
-                <img class="img_why_choose_block_inner_block" src=".././static/img/line2.png" alt="Line">
+                <img class="img_why_choose_block_inner_block" th:src="@{/img/line2.png}" alt="Line">
                 <div>
                     <p class="why_choose_block_inner_block_main_text">Some headline</p>
                     <p class="why_choose_block_inner_block_second_text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
                 </div>
             </div>
             <div class="why_choose_block_inner_block">
-                <img class="img_why_choose_block_inner_block" src=".././static/img/line2.png" alt="Line">
+                <img class="img_why_choose_block_inner_block" th:src="@{/img/line2.png}" alt="Line">
                 <div>
                     <p class="why_choose_block_inner_block_main_text">Some headline</p>
                     <p class="why_choose_block_inner_block_second_text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
@@ -331,25 +334,27 @@
     <div class="happy_client_block_text_main_block">
         <p class="happy_client_block_main_text">Our happy clients say about us</p>
         <div class="happy_client_block_text_main_block_button">
-            <img class="happy_client_block_text_main_block_img" src=".././static/img/left.png" alt="Left">
-            <img src=".././static/img/right.png" alt="Right">
+            <button class="button_happy_client" id="btnLeftSecond"><img class="happy_client_block_text_main_block_img" th:src="@{/img/left.png}" alt="Left"></button>
+            <button class="button_happy_client" id="btnRightSecond"><img th:src="@{/img/right.png}" alt="Right"></button>
+<!--            <img class="happy_client_block_text_main_block_img" th:src="@{/img/left.png}" alt="Left">-->
+<!--            <img th:src="@{/img/right.png}" alt="Right">-->
         </div>
     </div>
     <div class="happy_client_block_comment">
         <div class="happy_client_block_comment_block">
             <div class="happy_client_block_comment_block_texts">
-                <img src=".././static/img/user.png" alt="User">
+                <img th:src="@{/img/user.png}" alt="User">
                 <div class="happy_client_block_comment_block_inner_text">
                     <div class="happy_client_block_comment_block_inner_texts">
                         <p class="text_main_happy_client">Robert Fox</p>
                         <p class="text_main_happy_client_second">BMW M850</p>
                     </div>
                     <div class="happy_client_block_comment_block_inner_text_star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
                     </div>
                 </div>
             </div>
@@ -357,18 +362,18 @@
         </div>
         <div class="happy_client_block_comment_block">
             <div class="happy_client_block_comment_block_texts">
-                <img src=".././static/img/user2.png" alt="User">
+                <img th:src="@{/img/user2.png}" alt="User">
                 <div class="happy_client_block_comment_block_inner_text">
                     <div class="happy_client_block_comment_block_inner_texts">
                         <p class="text_main_happy_client">Cody Fisher</p>
                         <p class="text_main_happy_client_second">Mercedes-Benz C 63 AMG</p>
                     </div>
                     <div class="happy_client_block_comment_block_inner_text_star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
                     </div>
                 </div>
             </div>
@@ -376,18 +381,18 @@
         </div>
         <div class="happy_client_block_comment_block">
         <div class="happy_client_block_comment_block_texts">
-            <img src=".././static/img/user3.png" alt="User">
+            <img th:src="@{/img/user3.png}" alt="User">
             <div class="happy_client_block_comment_block_inner_text">
                 <div class="happy_client_block_comment_block_inner_texts">
                     <p class="text_main_happy_client">Wade Warren</p>
                     <p class="text_main_happy_client_second">Lexus LS 460</p>
                 </div>
                 <div class="happy_client_block_comment_block_inner_text_star">
-                    <img src=".././static/img/star.png" alt="Star">
-                    <img src=".././static/img/star.png" alt="Star">
-                    <img src=".././static/img/star.png" alt="Star">
-                    <img src=".././static/img/star.png" alt="Star">
-                    <img src=".././static/img/star.png" alt="Star">
+                    <img th:src="@{/img/star.png}" alt="Star">
+                    <img th:src="@{/img/star.png}" alt="Star">
+                    <img th:src="@{/img/star.png}" alt="Star">
+                    <img th:src="@{/img/star.png}" alt="Star">
+                    <img th:src="@{/img/star.png}" alt="Star">
                 </div>
             </div>
         </div>
@@ -395,18 +400,18 @@
     </div>
         <div class="happy_client_block_comment_block">
             <div class="happy_client_block_comment_block_texts">
-                <img src=".././static/img/user3.png" alt="User">
+                <img th:src="@{/img/user3.png}" alt="User">
                 <div class="happy_client_block_comment_block_inner_text">
                     <div class="happy_client_block_comment_block_inner_texts">
                         <p class="text_main_happy_client">Wade Warren</p>
                         <p class="text_main_happy_client_second">Lexus LS 460</p>
                     </div>
                     <div class="happy_client_block_comment_block_inner_text_star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
-                        <img src=".././static/img/star.png" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
+                        <img th:src="@{/img/star.png}" alt="Star">
                     </div>
                 </div>
             </div>
@@ -419,12 +424,12 @@
         <p class="section_blog_main_text_chapter">Read our blog</p>
         <div class="section_blog_main_text_all">
             <p class="section_blog_main_text_all_text">All articles</p>
-            <img src=".././static/img/right2.png" alt="Arrow">
+            <img th:src="@{/img/right2.png}" alt="Arrow">
         </div>
     </div>
     <div class="section_blog_content">
         <div class="section_blog_content_block">
-            <img src=".././static/img/blog.png" alt="Blog">
+            <img th:src="@{/img/blog.png}" alt="Blog">
             <div class="section_blog_content_text">
                 <p class="section_blog_content_block_tag">Guides</p>
                 <p class="section_blog_content_block_main_text">The rising cost of fuel in the UAE and how to avoid it</p>
@@ -432,7 +437,7 @@
             </div>
         </div>
         <div class="section_blog_content_block">
-            <img src=".././static/img/blog2.png" alt="Blog">
+            <img th:src="@{/img/blog2.png}" alt="Blog">
             <div class="section_blog_content_text">
                 <p class="section_blog_content_block_tag2">News</p>
                 <p class="section_blog_content_block_main_text">These new EV pick up trucks are about to be all the rage</p>
@@ -440,7 +445,7 @@
             </div>
         </div>
         <div class="section_blog_content_block">
-            <img src=".././static/img/blog3.png" alt="Blog">
+            <img th:src="@{/img/blog3.png}" alt="Blog">
             <div class="section_blog_content_text">
                 <p class="section_blog_content_block_tag">Guides</p>
                 <p class="section_blog_content_block_main_text">7 tips when buying a new car in UAE</p>
@@ -451,14 +456,14 @@
 </section>
 <section class="support_block">
     <div class="support_block_content">
-        <img src=".././static/img/email.png" alt="Email">
+        <img th:src="@{/img/email.png}" alt="Email">
         <p class="support_block_content_main_text">Send an inquiry and our managers will offer you the best deals.</p>
         <p class="support_block_content_second_text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
         <button class="support_block_content_button">Get a quote</button>
     </div>
-    <img src=".././static/img/Line%201.png" alt="">
+    <img th:src="@{/img/Line1.png}" alt="">
     <div class="support_block_content">
-        <img src=".././static/img/question.png" alt="Question">
+        <img th:src="@{/img/question.png}" alt="Question">
         <p class="support_block_content_main_text">Do you still have questions? Contact us for answers.</p>
         <p class="support_block_content_second_text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
         <button class="support_block_content_button2">Get a quote</button>
@@ -467,13 +472,14 @@
 <footer class="footer_block">
     <div class="footer_block_content">
         <div class="footer_block_content_first_block">
-            <img src=".././static/img/Logo.png" alt="eCars">
-            <p class="footer_block_content_first_block_main_text">Nullam non nisi est sit amet. Arcu vitae elementum curabitur vitae nunc. Ut tellus elementum sagittis vitae et leo duis.</p>
+            <img th:src="@{/img/Logo.png}" alt="eCars">
+            <p class="footer_block_content_first_block_main_text">Nullam non nisi est sit amet. Arcu vitae elementum
+                curabitur vitae nunc. Ut tellus elementum sagittis vitae et leo duis.</p>
             <div class="footer_block_content_first_block_img">
-                <img src=".././static/img/Facebook2.png" alt="Facebook">
-                <img src=".././static/img/Twitter2.png" alt="Twitter">
-                <img src=".././static/img/YouTube2.png" alt="YouTube">
-                <img src=".././static/img/Instagram2.png" alt="Instagram">
+                <img th:src="@{/img/Facebook2.png}" href="https://github.com/alken1t15" alt="Facebook">
+                <img th:src="@{/img/Twitter2.png}" href="https://github.com/alken1t15" alt="Twitter">
+                <img th:src="@{/img/YouTube2.png}" href="https://github.com/alken1t15" alt="YouTube">
+                <img th:src="@{/img/Instagram2.png}" href="https://github.com/alken1t15" alt="Instagram">
             </div>
         </div>
         <div class="footer_block_content_second_block">
@@ -492,12 +498,12 @@
         <div class="footer_block_content_second_block">
             <p class="footer_block_content_second_block_main_text">Contacts</p>
             <div class="footer_block_content_second_block_inner">
-                <img class="footer_block_content_second_block_inner_img" src=".././static/img/Whatsapp2.png" alt="WhatsApp">
-                <p class="footer_block_content_second_block_next_text">+971 55 811 9024</p>
+                <img class="footer_block_content_second_block_inner_img" th:src="@{/img/Whatsapp2.png}" alt="WhatsApp">
+                <p class="footer_block_content_second_block_next_text">+ 7 747 165 57 80</p>
             </div>
             <div class="footer_block_content_second_block_inner">
-                <img class="footer_block_content_second_block_inner_img" src=".././static/img/Email2.png" alt="Email">
-                <p class="footer_block_content_second_block_next2_text">request@example.com</p>
+                <img class="footer_block_content_second_block_inner_img" th:src="@{/img/Email2.png}" alt="Email">
+                <a class="footer_block_content_second_block_next2_text"  href="mailto:alken1t15@gmail.com">alken1t15@gmail.com</a>
             </div>
         </div>
     </div>
@@ -509,5 +515,6 @@
         </div>
     </div>
 </footer>
+<script th:src="@{/js/main_page.js}"></script>
 </body>
 </html>

@@ -24,6 +24,8 @@ public class DetailsController {
 
     @GetMapping("/{id}")
     public String getOneCarPage(@PathVariable Long id,Model model){
+      System.out.println("ffsdfsdfsdf");
+      System.out.println(id);
       Cars car = carsService.findById(id);
       List<Cars> cars = carsService.getFoursCar();
       model.addAttribute("car",car);

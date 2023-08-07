@@ -40,6 +40,7 @@
     display: none;
 }
 .main_content_information{
+    border: none;
     display: flex;
     justify-content: space-between;
     width: 808px;
@@ -113,4 +114,26 @@ gap: 8px;
 border: none;
     display: flex;
     justify-content: center;
+}
+.content{
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    width: 808px;
+    padding: 0px 18px;
+//styleName: Desktop/Body Medium;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+    border-radius: 1px 0px 0px 0px;
+}
+.active,.main_content_information:hover{
+    background-color: #F6F5F4;
+
 }
