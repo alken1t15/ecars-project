@@ -42,6 +42,13 @@ create table features_name (
                                    name varchar(255) NOT NULL
 );
 
+create table blog_page(
+    id serial primary key,
+    name_file varchar(255) not null
+);
+
+insert into blog_page (name_file) values ('article_blog_page');
+
 
 insert into features_category (id_cars, name) values (1,'Interior') , (1,'Exterior'),(1,'Security & Environment');
 

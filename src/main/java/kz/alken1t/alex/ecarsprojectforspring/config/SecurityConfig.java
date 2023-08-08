@@ -15,7 +15,7 @@ public class SecurityConfig {
             authorization.requestMatchers("/asfdsf").authenticated();
             authorization.anyRequest().permitAll();
         });
-        http.formLogin().defaultSuccessUrl("/fsdf");
+        http.formLogin().loginPage("/login").failureUrl("/login?error").and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");
         return http.build();
     }
 }

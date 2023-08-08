@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Страница авторизации</title>
-  <link rel="stylesheet" href="../static/css/main_page.css">
-  <link rel="stylesheet" href="../static/css/login_page.css">
+  <link rel="stylesheet" th:href="@{/css/main_page.css}">
+  <link rel="stylesheet" th:href="@{/css/login_page.css}">
 </head>
 <body>
 <header>
   <div class="container_head">
-    <a class="container_head_img" href=""><img class="container_head_img_facebook" src="../static/img/Facebook.png" alt="Facebook"></a>
-    <a class="container_head_img" href=""><img class=twitter_img" src="../static/img/Twitter.png" alt="Twitter"></a>
-    <a class="container_head_img" href=""><img class="youtube_img" src="../static/img/YouTube.png" alt="YouTube"></a>
-    <a class="container_head_img" href=""><img class="instagram_whatsapp_img" src="../static/img/Instagram.png" alt="Instagram"></a>
-    <a class="container_head_img" href=""><img class="instagram_whatsapp_img" src="../static/img/WhatsApp.png" alt="WhatsApp"></a>
-    <p class="number_phone_header">+ 971 55 811 9024</p>
-    <a class="mail_header_img" href="mailto:request@example.com"><img src="../static/img/mail.png" alt="Mail"></a>
-    <a class="mail_header_text" href="mailto:request@example.com">request@example.com</a>
-    <img class="map_container_img" src="../static/img/Map.png" alt="Map">
+    <a class="container_head_img" href="https://github.com/alken1t15"><img class="container_head_img_facebook" th:src="@{/img/Facebook.png}"
+                                                                           alt="Facebook"></a>
+    <a class="container_head_img" href="https://github.com/alken1t15"><img class="twitter_img" th:src="@{/img/Twitter.png}" alt="Twitter"></a>
+    <a class="container_head_img" href="https://github.com/alken1t15"><img class="youtube_img" th:src="@{/img/YouTube.png}" alt="YouTube"></a>
+    <a class="container_head_img" href="https://github.com/alken1t15"><img class="instagram_whatsapp_img" th:src="@{/img/Instagram.png}"
+                                                                           alt="Instagram"></a>
+    <a class="container_head_img" href="https://github.com/alken1t15"><img class="instagram_whatsapp_img" th:src="@{/img/WhatsApp.png}"
+                                                                           alt="WhatsApp"></a>
+    <p class="number_phone_header">+ 7 747 165 57 80</p>
+    <a class="mail_header_img" href="mailto:alken1t15@gmail.com"><img th:src="@{/img/mail.png}" alt="Mail"></a>
+    <a class="mail_header_text" href="mailto:alken1t15@gmail.com">alken1t15@gmail.com</a>
+    <img class="map_container_img" th:src="@{/img/Map.png}" alt="Map">
     <p class="text_container_map">Ship to:</p>
-    <img class="flag_country_header" src="../static/img/flag_canada.png" alt="Flag">
+    <img class="flag_country_header" th:src="@{/img/flag_canada.png}" alt="Flag">
     <select class="select_country_header">
       <option>
         Canada
@@ -33,19 +36,19 @@
       <option>USD</option>
       <option>EUR</option>
     </select>
-    <a class="help_img_header" href=""><img src="../static/img/help.png" alt="Help"></a>
+    <a class="help_img_header" href=""><img th:src="@{/img/help.png}" alt="Help"></a>
     <a href="" class="text_help_header">Help</a>
   </div>
   <div class="container_head_two">
-    <a href=""><img src="../static/img/Logo.png"></a>
-    <a class="test_container_head" href="">All Cars</a>
-    <a class="test_container_head" href="">About Us</a>
-    <a class="test_container_head" href="">Blog</a>
+    <a th:href="@{/main}"><img th:src="@{/img/Logo.png}"></a>
+    <a class="test_container_head" th:href="@{/catalog}">All Cars</a>
+    <a class="test_container_head" th:href="@{/about}">About Us</a>
+    <a class="test_container_head" th:href="@{/blog}">Blog</a>
     <a class="test_container_head" href="">Contact</a>
     <div class="container_two_imgs">
-      <img class="container_two_search_img" src="../static/img/Search.png" alt="Search">
-      <img class="container_two_heart_img" src="../static/img/Heart.png" alt="Heart">
-      <img class="container_two_profile_img" src="../static/img/Profile.png" alt="Profile">
+      <img class="container_two_search_img" th:src="@{/img/Search.png}" alt="Search">
+      <img class="container_two_heart_img" th:src="@{/img/Heart.png}" alt="Heart">
+      <img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile">
     </div>
     <button class="button_container_two">Get a quote</button>
   </div>
@@ -63,27 +66,28 @@
     <button class="block_authorization_button">Login</button>
     <div class="block_authorization_texts_two">
       <p class="block_authorization_texts_two_first">Don’t have an account?</p>
-      <p class="block_authorization_texts_two_second">Sign Up</p>
+      <a class="block_authorization_texts_two_second" th:href="@{/registration}">Sign Up</a>
     </div>
   </div>
 </section>
 <footer class="footer_block">
   <div class="footer_block_content">
     <div class="footer_block_content_first_block">
-      <img src=".././static/img/Logo.png" alt="eCars">
-      <p class="footer_block_content_first_block_main_text">Nullam non nisi est sit amet. Arcu vitae elementum curabitur vitae nunc. Ut tellus elementum sagittis vitae et leo duis.</p>
+      <a th:href="@{/main}"><img th:src="@{/img/Logo.png}" alt="eCars"></a>
+      <p class="footer_block_content_first_block_main_text">Nullam non nisi est sit amet. Arcu vitae elementum
+        curabitur vitae nunc. Ut tellus elementum sagittis vitae et leo duis.</p>
       <div class="footer_block_content_first_block_img">
-        <img src=".././static/img/Facebook2.png" alt="Facebook">
-        <img src=".././static/img/Twitter2.png" alt="Twitter">
-        <img src=".././static/img/YouTube2.png" alt="YouTube">
-        <img src=".././static/img/Instagram2.png" alt="Instagram">
+        <a href="https://github.com/alken1t15"><img th:src="@{/img/Facebook2.png}" href="https://github.com/alken1t15" alt="Facebook"></a>
+        <a href="https://github.com/alken1t15"><img th:src="@{/img/Twitter2.png}" href="https://github.com/alken1t15" alt="Twitter"></a>
+        <a href="https://github.com/alken1t15"><img th:src="@{/img/YouTube2.png}" href="https://github.com/alken1t15" alt="YouTube"></a>
+        <a href="https://github.com/alken1t15"><img th:src="@{/img/Instagram2.png}" href="https://github.com/alken1t15" alt="Instagram"></a>
       </div>
     </div>
     <div class="footer_block_content_second_block">
       <p class="footer_block_content_second_block_main_text">Company</p>
-      <p class="footer_block_content_second_block_next_text">About Us</p>
-      <p class="footer_block_content_second_block_next2_text">Blog</p>
-      <p class="footer_block_content_second_block_next2_text">FAQ</p>
+      <a  class="footer_block_content_second_block_next_text" th:href="@{/about}">About Us</a>
+      <a  class="footer_block_content_second_block_next2_text" th:href="@{/blog}">Blog</a>
+      <a  class="footer_block_content_second_block_next2_text" th:href="@{/frequently}">FAQ</a>
     </div>
     <div class="footer_block_content_second_block">
       <p class="footer_block_content_second_block_main_text">Cars</p>
@@ -95,12 +99,12 @@
     <div class="footer_block_content_second_block">
       <p class="footer_block_content_second_block_main_text">Contacts</p>
       <div class="footer_block_content_second_block_inner">
-        <img class="footer_block_content_second_block_inner_img" src=".././static/img/Whatsapp2.png" alt="WhatsApp">
-        <p class="footer_block_content_second_block_next_text">+971 55 811 9024</p>
+        <img class="footer_block_content_second_block_inner_img" th:src="@{/img/Whatsapp2.png}" alt="WhatsApp">
+        <p class="footer_block_content_second_block_next_text">+ 7 747 165 57 80</p>
       </div>
       <div class="footer_block_content_second_block_inner">
-        <img class="footer_block_content_second_block_inner_img" src=".././static/img/Email2.png" alt="Email">
-        <p class="footer_block_content_second_block_next2_text">request@example.com</p>
+        <img class="footer_block_content_second_block_inner_img" th:src="@{/img/Email2.png}" alt="Email">
+        <a class="footer_block_content_second_block_next2_text"  href="mailto:alken1t15@gmail.com">alken1t15@gmail.com</a>
       </div>
     </div>
   </div>

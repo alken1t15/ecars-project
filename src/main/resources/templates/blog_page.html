@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <link rel="stylesheet" href="../static/css/main_page.css">
-  <link rel="stylesheet" href="../static/css/blog_page.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,200;0,600;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/main_page.css}">
+  <link rel="stylesheet" th:href="@{/css/blog_page.css}">
 </head>
 <body>
 <header>
   <div class="container_head">
-    <a class="container_head_img" href=""><img class="container_head_img_facebook" src="../static/img/Facebook.png" alt="Facebook"></a>
-    <a class="container_head_img" href=""><img class=twitter_img" src="../static/img/Twitter.png" alt="Twitter"></a>
-    <a class="container_head_img" href=""><img class="youtube_img" src="../static/img/YouTube.png" alt="YouTube"></a>
-    <a class="container_head_img" href=""><img class="instagram_whatsapp_img" src="../static/img/Instagram.png" alt="Instagram"></a>
-    <a class="container_head_img" href=""><img class="instagram_whatsapp_img" src="../static/img/WhatsApp.png" alt="WhatsApp"></a>
-    <p class="number_phone_header">+ 971 55 811 9024</p>
-    <a class="mail_header_img" href="mailto:request@example.com"><img src="../static/img/mail.png" alt="Mail"></a>
-    <a class="mail_header_text" href="mailto:request@example.com">request@example.com</a>
-    <img class="map_container_img" src="../static/img/Map.png" alt="Map">
+    <a class="container_head_img" href="https://github.com/alken1t15"><img class="container_head_img_facebook" th:src="@{/img/Facebook.png}"
+                                                                           alt="Facebook"></a>
+    <a class="container_head_img" href="https://github.com/alken1t15"><img class="twitter_img" th:src="@{/img/Twitter.png}" alt="Twitter"></a>
+    <a class="container_head_img" href="https://github.com/alken1t15"><img class="youtube_img" th:src="@{/img/YouTube.png}" alt="YouTube"></a>
+    <a class="container_head_img" href="https://github.com/alken1t15"><img class="instagram_whatsapp_img" th:src="@{/img/Instagram.png}"
+                                                                           alt="Instagram"></a>
+    <a class="container_head_img" href="https://github.com/alken1t15"><img class="instagram_whatsapp_img" th:src="@{/img/WhatsApp.png}"
+                                                                           alt="WhatsApp"></a>
+    <p class="number_phone_header">+ 7 747 165 57 80</p>
+    <a class="mail_header_img" href="mailto:alken1t15@gmail.com"><img th:src="@{/img/mail.png}" alt="Mail"></a>
+    <a class="mail_header_text" href="mailto:alken1t15@gmail.com">alken1t15@gmail.com</a>
+    <img class="map_container_img" th:src="@{/img/Map.png}" alt="Map">
     <p class="text_container_map">Ship to:</p>
-    <img class="flag_country_header" src="../static/img/flag_canada.png" alt="Flag">
+    <img class="flag_country_header" th:src="@{/img/flag_canada.png}" alt="Flag">
     <select class="select_country_header">
       <option>
         Canada
@@ -33,19 +39,19 @@
       <option>USD</option>
       <option>EUR</option>
     </select>
-    <a class="help_img_header" href=""><img src="../static/img/help.png" alt="Help"></a>
+    <a class="help_img_header" href=""><img th:src="@{/img/help.png}" alt="Help"></a>
     <a href="" class="text_help_header">Help</a>
   </div>
   <div class="container_head_two">
-    <a href=""><img src="../static/img/Logo.png"></a>
-    <a class="test_container_head" href="">All Cars</a>
-    <a class="test_container_head" href="">About Us</a>
-    <a class="test_container_head" href="">Blog</a>
+    <a th:href="@{/main}"><img th:src="@{/img/Logo.png}"></a>
+    <a class="test_container_head" th:href="@{/catalog}">All Cars</a>
+    <a class="test_container_head" th:href="@{/about}">About Us</a>
+    <a class="test_container_head" th:href="@{/blog}">Blog</a>
     <a class="test_container_head" href="">Contact</a>
     <div class="container_two_imgs">
-      <img class="container_two_search_img" src="../static/img/Search.png" alt="Search">
-      <img class="container_two_heart_img" src="../static/img/Heart.png" alt="Heart">
-      <img class="container_two_profile_img" src="../static/img/Profile.png" alt="Profile">
+      <img class="container_two_search_img" th:src="@{/img/Search.png}" alt="Search">
+      <img class="container_two_heart_img" th:src="@{/img/Heart.png}" alt="Heart">
+      <img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile">
     </div>
     <button class="button_container_two">Get a quote</button>
   </div>
@@ -64,172 +70,191 @@
   </div>
   <div class="blog_news">
     <div class="blog_news_left">
-      <div class="blog_news_left_first">
-        <img src="../static/img/blog4.png" alt="Car">
-        <p class="blog_news_teg">News</p>
-        <p class="blog_news_text_main">These new EV pick up trucks are about to be all the rage</p>
-        <p class="blog_news_text_second">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
+      <a th:href="@{/blog/1}">
+        <div class="blog_news_left_first">
+          <img th:src="@{/img/blog4.png}" alt="Car">
+          <p class="blog_news_teg">News</p>
+          <p class="blog_news_text_main">These new EV pick up trucks are about to be all the rage</p>
+          <p class="blog_news_text_second">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </a>
       <div class="blog_news_left_small">
-        <div class="blog_news_left_small_blog">
-          <img src="../static/img/blog1_1.png" alt="Car">
-          <div class="blog_news_left_small_blog_texts">
-            <p class="blog_news_teg_two">Guides</p>
-            <p class="blog_news_left_small_blog_texts_main">7 tips when buying a new car in UAE</p>
-            <p class="blog_news_left_small_blog_texts_second">Platea dictumst quisque sagittis purus sit amet volutpat consequat. Porta nibh venenatis cras sed felis eget.</p>
+        <a th:href="@{/blog/1}">
+          <div class="blog_news_left_small_blog">
+            <img th:src="@{/img/blog1_1.png}" alt="Car">
+            <div class="blog_news_left_small_blog_texts">
+              <p class="blog_news_teg_two">Guides</p>
+              <p class="blog_news_left_small_blog_texts_main">7 tips when buying a new car in UAE</p>
+              <p class="blog_news_left_small_blog_texts_second">Platea dictumst quisque sagittis purus sit amet volutpat consequat. Porta nibh venenatis cras sed felis eget.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="blog_news_left_small_blog">
-          <img src="../static/img/blog1_2.png" alt="Car">
-          <div class="blog_news_left_small_blog_texts">
-            <p class="blog_news_teg_two">Guides</p>
-            <p class="blog_news_left_small_blog_texts_main">The rising cost of fuel in the UAE and how to avoid it</p>
-            <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+        </a>
+        <a th:href="@{/blog/1}">
+          <div class="blog_news_left_small_blog">
+            <img th:src="@{/img/blog1_2.png}" alt="Car">
+            <div class="blog_news_left_small_blog_texts">
+              <p class="blog_news_teg_two">Guides</p>
+              <p class="blog_news_left_small_blog_texts_main">The rising cost of fuel in the UAE and how to avoid it</p>
+              <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="blog_news_left_small_blog">
-          <img src="../static/img/blog1_3.png" alt="Car">
-          <div class="blog_news_left_small_blog_texts">
-            <p class="blog_news_teg_third">News</p>
-            <p class="blog_news_left_small_blog_texts_main">Kia is operating eco-friendly vehicles at the World Cup</p>
-            <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+        </a>
+        <a th:href="@{/blog/1}">
+          <div class="blog_news_left_small_blog">
+            <img th:src="@{/img/blog1_3.png}" alt="Car">
+            <div class="blog_news_left_small_blog_texts">
+              <p class="blog_news_teg_third">News</p>
+              <p class="blog_news_left_small_blog_texts_main">Kia is operating eco-friendly vehicles at the World Cup</p>
+              <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="blog_news_left_small_blog">
-          <img src="../static/img/blog1_4.png" alt="Car">
-          <div class="blog_news_left_small_blog_texts">
-            <p class="blog_news_teg_third">News</p>
-            <p class="blog_news_left_small_blog_texts_main">The UAE’s Big Push Into Electric Vehicles Continues</p>
-            <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+        </a>
+        <a th:href="@{/blog/1}">
+          <div class="blog_news_left_small_blog">
+            <img th:src="@{/img/blog1_4.png}" alt="Car">
+            <div class="blog_news_left_small_blog_texts">
+              <p class="blog_news_teg_third">News</p>
+              <p class="blog_news_left_small_blog_texts_main">The UAE’s Big Push Into Electric Vehicles Continues</p>
+              <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="blog_news_left_small_blog">
-          <img src="../static/img/blog1_5.png" alt="Car">
-          <div class="blog_news_left_small_blog_texts">
-            <p class="blog_news_teg_two">Guides</p>
-            <p class="blog_news_left_small_blog_texts_main">How to take the best shots of your car to get a sale</p>
-            <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+        </a>
+        <a th:href="@{/blog/1}">
+          <div class="blog_news_left_small_blog">
+            <img th:src="@{/img/blog1_5.png}" alt="Car">
+            <div class="blog_news_left_small_blog_texts">
+              <p class="blog_news_teg_two">Guides</p>
+              <p class="blog_news_left_small_blog_texts_main">How to take the best shots of your car to get a sale</p>
+              <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="blog_news_left_small_blog">
-          <img src="../static/img/blog1_6.png" alt="Car">
-          <div class="blog_news_left_small_blog_texts">
-            <p class="blog_news_teg_third">News</p>
-            <p class="blog_news_left_small_blog_texts_main">Michelin launches construction on its first tire recycling plant in the world</p>
-            <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+        </a>
+        <a th:href="@{/blog/1}">
+          <div class="blog_news_left_small_blog">
+            <img th:src="@{/img/blog1_6.png}" alt="Car">
+            <div class="blog_news_left_small_blog_texts">
+              <p class="blog_news_teg_third">News</p>
+              <p class="blog_news_left_small_blog_texts_main">Michelin launches construction on its first tire recycling plant in the world</p>
+              <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="blog_news_left_small_blog">
-          <img src="../static/img/blog1_7.png" alt="Car">
-          <div class="blog_news_left_small_blog_texts">
-            <p class="blog_news_teg_fourth">Reviews</p>
-            <p class="blog_news_left_small_blog_texts_main">2021 Lexus LC500; a daily sports car</p>
-            <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+        </a>
+        <a th:href="@{/blog/1}">
+          <div class="blog_news_left_small_blog">
+            <img th:src="@{/img/blog1_7.png}" alt="Car">
+            <div class="blog_news_left_small_blog_texts">
+              <p class="blog_news_teg_fourth">Reviews</p>
+              <p class="blog_news_left_small_blog_texts_main">2021 Lexus LC500; a daily sports car</p>
+              <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="blog_news_left_small_blog">
-          <img src="../static/img/blog1_8.png" alt="Car">
-          <div class="blog_news_left_small_blog_texts">
-            <p class="blog_news_teg_third">News</p>
-            <p class="blog_news_left_small_blog_texts_main">How to test drive a used car in UAE</p>
-            <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+        </a>
+        <a th:href="@{/blog/1}">
+          <div class="blog_news_left_small_blog">
+            <img th:src="@{/img/blog1_8.png}" alt="Car">
+            <div class="blog_news_left_small_blog_texts">
+              <p class="blog_news_teg_third">News</p>
+              <p class="blog_news_left_small_blog_texts_main">How to test drive a used car in UAE</p>
+              <p class="blog_news_left_small_blog_texts_second">Accumsan sit amet nulla facilisi morbi tempus iaculis. Nisl nunc mi ipsum faucibus. Pulvinar neque laoreet suspendisse interdum consectetur.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
       <div class="page_block">
-        <img src="../static/img/left3.png" alt="Arrow">
+        <img th:src="@{/img/left3.png}" alt="Arrow">
         <button class="page_block_main">1</button>
         <button class="page_block_second">2</button>
         <button class="page_block_second">3</button>
         <button class="page_block_second">...</button>
         <button class="page_block_second">29</button>
-        <img  src="../static/img/right4.png" alt="Arrow">
+        <img  th:src="@{/img/right4.png}" alt="Arrow">
       </div>
     </div>
     <div class="blog_news_right">
-      <div class="blog_news_right_first">
-        <img class="blog_news_right_first_img" src="../static/img/blog2_1.png" alt="Car">
-        <div class="blog_news_left_small_blog_texts">
-          <p class="blog_news_teg_fourth">Reviews</p>
-          <p class="blog_news_left_small_blog_texts_main">2023 Nissan Altima 2.0 SR Review: A Sensible, Somewhat Sporty Sedan</p>
+      <a th:href="@{/blog/1}">
+        <div class="blog_news_right_first">
+          <img class="blog_news_right_first_img" th:src="@{/img/blog2_1.png}" alt="Car">
+          <div class="blog_news_left_small_blog_texts">
+            <p class="blog_news_teg_fourth">Reviews</p>
+            <p class="blog_news_left_small_blog_texts_main">2023 Nissan Altima 2.0 SR Review: A Sensible, Somewhat Sporty Sedan</p>
+          </div>
         </div>
-      </div>
-      
-      <div class="blog_news_right_second">
-        <img src="../static/img/blog2_2.png" alt="Car">
-        <div class="blog_news_right_second_texts">
-          <p class="blog_news_teg_two">Guides</p>
-          <p class="blog_news_right_second_texts_main">What is a VIN (Vehicle Identification Number)?</p>
+      </a>
+      <a th:href="@{/blog/1}">
+        <div class="blog_news_right_second">
+          <img th:src="@{/img/blog2_2.png}" alt="Car">
+          <div class="blog_news_right_second_texts">
+            <p class="blog_news_teg_two">Guides</p>
+            <p class="blog_news_right_second_texts_main">What is a VIN (Vehicle Identification Number)?</p>
+          </div>
         </div>
-      </div>
-
-      <div class="blog_news_right_second">
-        <img src="../static/img/blog2_3.png" alt="Car">
-        <div class="blog_news_right_second_texts">
-          <p class="blog_news_teg_third">News</p>
-          <p class="blog_news_right_second_texts_main">Will the flying car from GITEX become a reality?</p>
+      </a>
+      <a th:href="@{/blog/1}">
+        <div class="blog_news_right_second">
+          <img th:src="@{/img/blog2_3.png}" alt="Car">
+          <div class="blog_news_right_second_texts">
+            <p class="blog_news_teg_third">News</p>
+            <p class="blog_news_right_second_texts_main">Will the flying car from GITEX become a reality?</p>
+          </div>
         </div>
-      </div>
-
-      <div class="blog_news_right_second">
-        <img src="../static/img/blog2_4.png" alt="Car">
-        <div class="blog_news_right_second_texts">
-          <p class="blog_news_teg_two">Guides</p>
-          <p class="blog_news_right_second_texts_main">Indicate! It could save your life and your bank account</p>
+      </a>
+      <a th:href="@{/blog/1}">
+        <div class="blog_news_right_second">
+          <img th:src="@{/img/blog2_4.png}" alt="Car">
+          <div class="blog_news_right_second_texts">
+            <p class="blog_news_teg_two">Guides</p>
+            <p class="blog_news_right_second_texts_main">Indicate! It could save your life and your bank account</p>
+          </div>
         </div>
-      </div>
-
-      <div class="blog_news_right_second">
-        <img src="../static/img/blog2_5.png" alt="Car">
-        <div class="blog_news_right_second_texts">
-          <p class="blog_news_teg_two">Guides</p>
-          <p class="blog_news_right_second_texts_main">GCC Specs a Comparison with Imported Specs Cars</p>
+      </a>
+      <a th:href="@{/blog/1}">
+        <div class="blog_news_right_second">
+          <img th:src="@{/img/blog2_5.png}" alt="Car">
+          <div class="blog_news_right_second_texts">
+            <p class="blog_news_teg_two">Guides</p>
+            <p class="blog_news_right_second_texts_main">GCC Specs a Comparison with Imported Specs Cars</p>
+          </div>
         </div>
-      </div>
-
-      <div class="blog_news_right_second">
-        <img src="../static/img/blog2_6.png" alt="Car">
-        <div class="blog_news_right_second_texts">
-          <p class="blog_news_teg_third">News</p>
-          <p class="blog_news_right_second_texts_main">How Dubai is emerging as a key leader in the international sustainability movement</p>
+      </a>
+      <a th:href="@{/blog/1}">
+        <div class="blog_news_right_second">
+          <img th:src="@{/img/blog2_6.png}" alt="Car">
+          <div class="blog_news_right_second_texts">
+            <p class="blog_news_teg_third">News</p>
+            <p class="blog_news_right_second_texts_main">How Dubai is emerging as a key leader in the international sustainability movement</p>
+          </div>
         </div>
-      </div>
-
-      <div class="blog_news_right_second">
-        <img src="../static/img/blog2_7.png" alt="Car">
-        <div class="blog_news_right_second_texts">
-          <p class="blog_news_teg_fourth">Reviews</p>
-          <p class="blog_news_right_second_texts_main">2021 Volvo S60; an underrated executive sedan</p>
+      </a>
+      <a th:href="@{/blog/1}">
+        <div class="blog_news_right_second">
+          <img th:src="@{/img/blog2_7.png}" alt="Car">
+          <div class="blog_news_right_second_texts">
+            <p class="blog_news_teg_fourth">Reviews</p>
+            <p class="blog_news_right_second_texts_main">2021 Volvo S60; an underrated executive sedan</p>
+          </div>
         </div>
-      </div>
-      
+      </a>
     </div>
   </div>
 </section>
 <footer class="footer_block">
   <div class="footer_block_content">
     <div class="footer_block_content_first_block">
-      <img src=".././static/img/Logo.png" alt="eCars">
-      <p class="footer_block_content_first_block_main_text">Nullam non nisi est sit amet. Arcu vitae elementum curabitur vitae nunc. Ut tellus elementum sagittis vitae et leo duis.</p>
+      <a th:href="@{/main}"><img th:src="@{/img/Logo.png}" alt="eCars"></a>
+      <p class="footer_block_content_first_block_main_text">Nullam non nisi est sit amet. Arcu vitae elementum
+        curabitur vitae nunc. Ut tellus elementum sagittis vitae et leo duis.</p>
       <div class="footer_block_content_first_block_img">
-        <img src=".././static/img/Facebook2.png" alt="Facebook">
-        <img src=".././static/img/Twitter2.png" alt="Twitter">
-        <img src=".././static/img/YouTube2.png" alt="YouTube">
-        <img src=".././static/img/Instagram2.png" alt="Instagram">
+        <a href="https://github.com/alken1t15"><img th:src="@{/img/Facebook2.png}" href="https://github.com/alken1t15" alt="Facebook"></a>
+        <a href="https://github.com/alken1t15"><img th:src="@{/img/Twitter2.png}" href="https://github.com/alken1t15" alt="Twitter"></a>
+        <a href="https://github.com/alken1t15"><img th:src="@{/img/YouTube2.png}" href="https://github.com/alken1t15" alt="YouTube"></a>
+        <a href="https://github.com/alken1t15"><img th:src="@{/img/Instagram2.png}" href="https://github.com/alken1t15" alt="Instagram"></a>
       </div>
     </div>
     <div class="footer_block_content_second_block">
       <p class="footer_block_content_second_block_main_text">Company</p>
-      <p class="footer_block_content_second_block_next_text">About Us</p>
-      <p class="footer_block_content_second_block_next2_text">Blog</p>
-      <p class="footer_block_content_second_block_next2_text">FAQ</p>
+      <a  class="footer_block_content_second_block_next_text" th:href="@{/about}">About Us</a>
+      <a  class="footer_block_content_second_block_next2_text" th:href="@{/blog}">Blog</a>
+      <a  class="footer_block_content_second_block_next2_text" th:href="@{/frequently}">FAQ</a>
     </div>
     <div class="footer_block_content_second_block">
       <p class="footer_block_content_second_block_main_text">Cars</p>
@@ -241,12 +266,12 @@
     <div class="footer_block_content_second_block">
       <p class="footer_block_content_second_block_main_text">Contacts</p>
       <div class="footer_block_content_second_block_inner">
-        <img class="footer_block_content_second_block_inner_img" src=".././static/img/Whatsapp2.png" alt="WhatsApp">
-        <p class="footer_block_content_second_block_next_text">+971 55 811 9024</p>
+        <img class="footer_block_content_second_block_inner_img" th:src="@{/img/Whatsapp2.png}" alt="WhatsApp">
+        <p class="footer_block_content_second_block_next_text">+ 7 747 165 57 80</p>
       </div>
       <div class="footer_block_content_second_block_inner">
-        <img class="footer_block_content_second_block_inner_img" src=".././static/img/Email2.png" alt="Email">
-        <p class="footer_block_content_second_block_next2_text">request@example.com</p>
+        <img class="footer_block_content_second_block_inner_img" th:src="@{/img/Email2.png}" alt="Email">
+        <a class="footer_block_content_second_block_next2_text"  href="mailto:alken1t15@gmail.com">alken1t15@gmail.com</a>
       </div>
     </div>
   </div>
