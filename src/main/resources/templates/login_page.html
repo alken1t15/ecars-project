@@ -54,21 +54,27 @@
   </div>
 </header>
 <section class="block_authorization">
-  <div>
-    <p class="block_authorization_main_text">Login</p>
-    <p class="block_authorization_mail">Email address</p>
-    <input class="block_authorization_input" type="email" placeholder="example@mail.com">
-    <div class="block_authorization_texts">
-      <p class="block_authorization_texts_first">Password</p>
-      <p class="block_authorization_texts_second">Forgot password?</p>
+  <form th:method="POST" th:action="@{/process_login}">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+    <div>
+      <p class="block_authorization_main_text">Login</p>
+      <p class="block_authorization_mail">Email address</p>
+      <input name="username" class="block_authorization_input" type="email" placeholder="example@mail.com">
+      <div class="block_authorization_texts">
+        <p class="block_authorization_texts_first">Password</p>
+        <a class="block_authorization_texts_second" th:href="@{/forgot}">Forgot password?</a>
+      </div>
+      <input name="password" class="block_authorization_input" type="password" placeholder="Your password">
+      <div th:if="${param.error}" class="error">
+        Incorrect login or password
+      </div>
+      <button type="submit" class="block_authorization_button">Login</button>
+      <div class="block_authorization_texts_two">
+        <p class="block_authorization_texts_two_first">Don’t have an account?</p>
+        <a class="block_authorization_texts_two_second" th:href="@{/registration}">Sign Up</a>
+      </div>
     </div>
-    <input class="block_authorization_input" type="email" placeholder="Your password">
-    <button class="block_authorization_button">Login</button>
-    <div class="block_authorization_texts_two">
-      <p class="block_authorization_texts_two_first">Don’t have an account?</p>
-      <a class="block_authorization_texts_two_second" th:href="@{/registration}">Sign Up</a>
-    </div>
-  </div>
+  </form>
 </section>
 <footer class="footer_block">
   <div class="footer_block_content">

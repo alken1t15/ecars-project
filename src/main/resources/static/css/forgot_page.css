@@ -89,3 +89,13 @@ margin-left: 4px;
     justify-content: center;
     height: 440px;
 }
+.error{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #C31C27;
+    margin-top: 8px;
+}

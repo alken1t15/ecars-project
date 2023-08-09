@@ -10,13 +10,13 @@
 <header>
     <div class="container_head">
         <a class="container_head_img" href="https://github.com/alken1t15"><img class="container_head_img_facebook" th:src="@{/img/Facebook.png}"
-                                                   alt="Facebook"></a>
+                                                                               alt="Facebook"></a>
         <a class="container_head_img" href="https://github.com/alken1t15"><img class="twitter_img" th:src="@{/img/Twitter.png}" alt="Twitter"></a>
         <a class="container_head_img" href="https://github.com/alken1t15"><img class="youtube_img" th:src="@{/img/YouTube.png}" alt="YouTube"></a>
         <a class="container_head_img" href="https://github.com/alken1t15"><img class="instagram_whatsapp_img" th:src="@{/img/Instagram.png}"
-                                                   alt="Instagram"></a>
+                                                                               alt="Instagram"></a>
         <a class="container_head_img" href="https://github.com/alken1t15"><img class="instagram_whatsapp_img" th:src="@{/img/WhatsApp.png}"
-                                                   alt="WhatsApp"></a>
+                                                                               alt="WhatsApp"></a>
         <p class="number_phone_header">+ 7 747 165 57 80</p>
         <a class="mail_header_img" href="mailto:alken1t15@gmail.com"><img th:src="@{/img/mail.png}" alt="Mail"></a>
         <a class="mail_header_text" href="mailto:alken1t15@gmail.com">alken1t15@gmail.com</a>
@@ -40,10 +40,10 @@
         <a href="" class="text_help_header">Help</a>
     </div>
     <div class="container_head_two">
-        <a href=""><img th:src="@{/img/Logo.png}"></a>
-        <a class="test_container_head" href="">All Cars</a>
-        <a class="test_container_head" href="">About Us</a>
-        <a class="test_container_head" href="">Blog</a>
+        <a th:href="@{/main}"><img th:src="@{/img/Logo.png}"></a>
+        <a class="test_container_head" th:href="@{/catalog}">All Cars</a>
+        <a class="test_container_head" th:href="@{/about}">About Us</a>
+        <a class="test_container_head" th:href="@{/blog}">Blog</a>
         <a class="test_container_head" href="">Contact</a>
         <div class="container_two_imgs">
             <img class="container_two_search_img" th:src="@{/img/Search.png}" alt="Search">
@@ -264,9 +264,11 @@
     <div class="details_block_first_left_similar_first_block">
         <p class="details_block_first_left_similar_first_block_text">Similar cars</p>
         <div class="details_block_first_left_similar_first_block_arrows">
-            <img class="details_block_first_left_similar_first_block_arrows_button" th:src="@{/img/left.png}"
-                 alt="Arrow">
-            <img th:src="@{/img/right.png}" alt="Arrow">
+            <button class="button_block" id="btnLeft">  <img class="details_block_first_left_similar_first_block_arrows_button" th:src="@{/img/left.png}" alt="Arrow"></button>
+            <button class="button_block" id="btnRight"> <img th:src="@{/img/right.png}" alt="Arrow"></button>
+<!--            <img class="details_block_first_left_similar_first_block_arrows_button" th:src="@{/img/left.png}"-->
+<!--                 alt="Arrow">-->
+<!--            <img th:src="@{/img/right.png}" alt="Arrow">-->
         </div>
     </div>
     <div class="details_block_first_left_similar_second_block">
@@ -361,21 +363,21 @@
 <footer class="footer_block">
     <div class="footer_block_content">
         <div class="footer_block_content_first_block">
-            <img th:src="@{/img/Logo.png}" alt="eCars">
+            <a th:href="@{/main}"><img th:src="@{/img/Logo.png}" alt="eCars"></a>
             <p class="footer_block_content_first_block_main_text">Nullam non nisi est sit amet. Arcu vitae elementum
                 curabitur vitae nunc. Ut tellus elementum sagittis vitae et leo duis.</p>
             <div class="footer_block_content_first_block_img">
-                <img th:src="@{/img/Facebook2.png}" href="https://github.com/alken1t15" alt="Facebook">
-                <img th:src="@{/img/Twitter2.png}" href="https://github.com/alken1t15" alt="Twitter">
-                <img th:src="@{/img/YouTube2.png}" href="https://github.com/alken1t15" alt="YouTube">
-                <img th:src="@{/img/Instagram2.png}" href="https://github.com/alken1t15" alt="Instagram">
+                <a href="https://github.com/alken1t15"><img th:src="@{/img/Facebook2.png}" href="https://github.com/alken1t15" alt="Facebook"></a>
+                <a href="https://github.com/alken1t15"><img th:src="@{/img/Twitter2.png}" href="https://github.com/alken1t15" alt="Twitter"></a>
+                <a href="https://github.com/alken1t15"><img th:src="@{/img/YouTube2.png}" href="https://github.com/alken1t15" alt="YouTube"></a>
+                <a href="https://github.com/alken1t15"><img th:src="@{/img/Instagram2.png}" href="https://github.com/alken1t15" alt="Instagram"></a>
             </div>
         </div>
         <div class="footer_block_content_second_block">
             <p class="footer_block_content_second_block_main_text">Company</p>
-            <p class="footer_block_content_second_block_next_text">About Us</p>
-            <p class="footer_block_content_second_block_next2_text">Blog</p>
-            <p class="footer_block_content_second_block_next2_text">FAQ</p>
+            <a  class="footer_block_content_second_block_next_text" th:href="@{/about}">About Us</a>
+            <a  class="footer_block_content_second_block_next2_text" th:href="@{/blog}">Blog</a>
+            <a  class="footer_block_content_second_block_next2_text" th:href="@{/frequently}">FAQ</a>
         </div>
         <div class="footer_block_content_second_block">
             <p class="footer_block_content_second_block_main_text">Cars</p>
@@ -404,5 +406,6 @@
         </div>
     </div>
 </footer>
+<script th:src="@{/js/details_page.js}"></script>
 </body>
 </html>

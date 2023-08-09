@@ -59,12 +59,17 @@
       <p class="sign_up_block_main_text">Sign Up</p>
       <p class="sign_up_block_first_text">Full name</p>
       <input name="name" type="text" class="sign_up_block_input">
+      <p class="error" th:if="${registrationError.isName()}">The Name cannot be empty</p>
       <p class="sign_up_block_second_text">Email address</p>
-      <input name="login" type="text" class="sign_up_block_input">
+      <input name="login" type="email" class="sign_up_block_input">
+      <p class="error" th:if="${registrationError.isLogin()}">The Email cannot be empty</p>
       <p class="sign_up_block_second_text">Password</p>
       <input name="password" type="password" class="sign_up_block_input">
+      <p class="error" th:if="${registrationError.isPassword()}">The password cannot be empty</p>
       <p class="sign_up_block_second_text">Confirm password</p>
       <input name="password_confirm" type="password" class="sign_up_block_input">
+      <p class="error" th:if="${registrationError.isPasswordConfirm()}">The passwords don't match</p>
+      <p class="error" th:if="${registrationError.isPasswordNotCorrected()}">The passwords don't match</p>
       <div class="sign_up_block_texts">
         <input name="confirm" class="sign_up_block_texts_checkbox" type="checkbox">
         <p class="sign_up_block_texts_first">I agree to the </p>
@@ -72,6 +77,7 @@
         <p class="sign_up_block_texts_first"> and </p>
         <p class="sign_up_block_texts_second">Privacy Policy</p>
       </div>
+      <p class="error" th:if="${registrationError.isConfirm()}">You didn't agree</p>
       <button type="submit" class="sign_up_block_button">Sign Up</button>
     </form>
     <div class="sign_up_block_texts2">

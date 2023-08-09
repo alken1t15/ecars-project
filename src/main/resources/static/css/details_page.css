@@ -568,7 +568,6 @@ gap: 8px;
     align-items: center;
 }
 .details_block_first_left_similar_first_block_arrows_button{
-    margin-right: 19px;
 }
 .details_block_first_left_similar_second_block_car{
     margin-top: 24px;
@@ -672,4 +671,10 @@ gap: 24px;
 .details_block_first_left_similar_second_block{
     display: flex;
     justify-content: space-between;
+    position: relative;
+    transition: left 0.5s ease;
+    overflow: hidden; /* Добавляем скрытие элементов, которые выходят за пределы контейнера */
+}
+.button_block{
+    border: none;
 }
