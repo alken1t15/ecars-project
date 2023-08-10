@@ -117,7 +117,7 @@
                     </div>
                     <div class="details_block_first_left_about_block_left_block">
                         <p class="details_block_first_left_about_block_third">Location</p>
-                        <p class="details_block_first_left_about_block_forty" th:text="${car.location}">Dubai</p>
+                        <p class="details_block_first_left_about_block_forty" th:text="${car.city.name}">Dubai</p>
                     </div>
                     <div class="details_block_first_left_about_block_left_block">
                         <p class="details_block_first_left_about_block_third">Export status</p>
@@ -266,9 +266,6 @@
         <div class="details_block_first_left_similar_first_block_arrows">
             <button class="button_block" id="btnLeft">  <img class="details_block_first_left_similar_first_block_arrows_button" th:src="@{/img/left.png}" alt="Arrow"></button>
             <button class="button_block" id="btnRight"> <img th:src="@{/img/right.png}" alt="Arrow"></button>
-<!--            <img class="details_block_first_left_similar_first_block_arrows_button" th:src="@{/img/left.png}"-->
-<!--                 alt="Arrow">-->
-<!--            <img th:src="@{/img/right.png}" alt="Arrow">-->
         </div>
     </div>
     <div class="details_block_first_left_similar_second_block">

@@ -509,6 +509,7 @@ display: flex;
     overflow: hidden; /* Добавляем скрытие элементов, которые выходят за пределы контейнера */
 }
 .img_car{
+    min-height: 214px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }

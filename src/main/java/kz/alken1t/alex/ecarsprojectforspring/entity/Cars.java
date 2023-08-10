@@ -28,7 +28,9 @@ public class Cars {
     private Integer seats;
     private Integer cylinders;
     private String interior;
-    private String location;
+    @ManyToOne
+    @JoinColumn(name = "id_city")
+    private City city;
     @Column(name = "export_status")
     private String exportStatus;
     private String description;

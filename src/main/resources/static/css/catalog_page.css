@@ -19,7 +19,7 @@
 }
 .block_filter_car_inner{
     width: 288px;
-height: 1082px;
+height: 1430px;
 top: 205px;
 left: 212px;
 padding: 16px;
@@ -76,6 +76,7 @@ margin-top: 16px;
     display: flex;
     justify-content: space-between;
     margin-top: 16px;
+    margin-bottom: 12px;
 }
 .block_filter_car_inner_third_block{
     margin-top: 8px;
@@ -186,6 +187,8 @@ border-radius: 8px;
 }
 .block_filter_car_result_car_img{
     border-radius: 8px;
+    max-width: 299px;
+    max-height: 233px;
 }
 .block_filter_car_result_car_texts_first{
     width: 340px;
@@ -224,7 +227,7 @@ margin-top: 8px;
 
 }
 .block_filter_car_result_car_bottom{
-    min-height: 88px;
+    min-height: 74px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -374,4 +377,55 @@ gap: 2px;
     border: 1px solid #E6E6E6;
     color: #484848;
 
+}
+.vehicle_type{
+    display:  flex;
+}
+.vehicle_type_text{
+    margin-left: 8px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1A1A1A;
+
+}
+.text_block_filter{
+    margin-top: 16px;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #767676;
+
+}
+.button_submit_found{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width:103px;
+    height: 36px;
+    padding: 6px 15px 6px 18px;
+    border-radius: 8px;
+
+    background: #3C7D46;
+    border-radius: 8px;
+    border: none;
+    color: white;
+
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }

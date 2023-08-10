@@ -63,54 +63,99 @@
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
             <select th:name="brand" class="block_filter_car_inner_first_select">
-                <option>Toyota</option>
-                <option>Audi</option>
+                <option th:each="brand : ${brands}" th:text="${brand}" th:value="${brand}">Toyota</option>
             </select>
             <p class="block_filter_car_inner_first_text">Model</p>
-            <select th:name="brand" class="block_filter_car_inner_first_select">
-                <option>All</option>
-                <option>Camry</option>
+            <select th:name="model" class="block_filter_car_inner_first_select">
+                <option th:value="All">All</option>
+                <option th:each="model : ${modelsCar}" th:text="${model}" th:value="${model}">Toyota</option>
             </select>
             <div class="block_filter_car_inner_second_block">
                 <p class="block_filter_car_inner_first_block_text">Vehicle type</p>
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
-            <input type="checkbox" value="SUV/Crossover">
+                <div th:each="vehicleType : ${vehicleTypes}"  class="vehicle_type">
+                    <input type="checkbox" th:value="${vehicleType}">
+                    <p class="vehicle_type_text" th:text="${vehicleType}"></p>
+                </div>
             <div class="block_filter_car_inner_second_block">
                 <p class="block_filter_car_inner_first_block_text">Kilometers</p>
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
             <div class="block_filter_car_inner_third_block">
-                <input placeholder="Min 0" class="block_filter_car_inner_third_block_input_first" type="number">
-                <input placeholder="Max 120000" class="block_filter_car_inner_third_block_input_second" type="number">
+                <input  placeholder="Min 0" class="block_filter_car_inner_third_block_input_first" type="number" th:name="min_km">
+                <input placeholder="Max 120000" class="block_filter_car_inner_third_block_input_second" type="number" th:name="max_km">
             </div>
             <p class="block_filter_car_inner_second_text">Year</p>
             <div class="block_filter_car_inner_third_block">
-                <input placeholder="Min" class="block_filter_car_inner_third_block_input_first" type="number">
-                <input placeholder="Max" class="block_filter_car_inner_third_block_input_second" type="number">
+                <input placeholder="Min" class="block_filter_car_inner_third_block_input_first" type="number" th:name="min_year">
+                <input placeholder="Max" class="block_filter_car_inner_third_block_input_second" type="number" th:name="max_year">
             </div>
             <div class="block_filter_car_inner_second_block">
                 <p class="block_filter_car_inner_first_block_text">Price, USD</p>
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
             <div class="block_filter_car_inner_third_block">
-                <input placeholder="Min 20000" class="block_filter_car_inner_third_block_input_first" type="number">
-                <input placeholder="Max 250000" class="block_filter_car_inner_third_block_input_second" type="number">
+                <input placeholder="Min 20000" class="block_filter_car_inner_third_block_input_first" type="number" th:name="min_price">
+                <input placeholder="Max 250000" class="block_filter_car_inner_third_block_input_second" type="number" th:name="max_price">
             </div>
             <div class="block_filter_car_inner_second_block">
                 <p class="block_filter_car_inner_first_block_text">Country</p>
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
-            <select class="block_filter_car_inner_first_select">
-                <option>USA</option>
-                <option>KZ</option>
-                <option>Ru</option>
+            <select th:name="country" class="block_filter_car_inner_first_select">
+                <option th:each="country : ${countries}" th:text="${country.name}" th:value="${country.id}">Toyota</option>
             </select>
             <div class="block_filter_car_inner_second_block">
                 <p class="block_filter_car_inner_first_block_text">City</p>
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
-            <input type="checkbox" value="SUV/Crossover">
+                <div th:each="city : ${cities}"  class="vehicle_type">
+                    <input type="checkbox" th:name="city" th:value="${city.id}">
+                    <p class="vehicle_type_text" th:text="${city.name}"></p>
+                </div>
+                <p class="text_block_filter">Specifications</p>
+                <div class="block_filter_car_inner_second_block">
+                    <p class="block_filter_car_inner_first_block_text">Cylinders</p>
+                    <button class="block_filter_car_inner_first_block_button">Reset</button>
+                </div>
+                <div th:each="cylinder : ${cylinders}"  class="vehicle_type">
+                    <input type="checkbox" th:name="cylinder" th:value="${cylinder}">
+                    <p class="vehicle_type_text" th:text="${cylinder}"></p>
+                </div>
+                <div class="block_filter_car_inner_second_block">
+                    <p class="block_filter_car_inner_first_block_text">Color</p>
+                    <button class="block_filter_car_inner_first_block_button">Reset</button>
+                </div>
+                <div th:each="color : ${colors}"  class="vehicle_type">
+                    <input type="checkbox" th:name="color" th:value="${color}">
+                    <p class="vehicle_type_text" th:text="${color}"></p>
+                </div>
+                <div class="block_filter_car_inner_second_block">
+                    <p class="block_filter_car_inner_first_block_text">Seats</p>
+                    <button class="block_filter_car_inner_first_block_button">Reset</button>
+                </div>
+                <div th:each="seat : ${seats}"  class="vehicle_type">
+                    <input type="checkbox" th:name="seat" th:value="${seat}">
+                    <p class="vehicle_type_text" th:text="${seat}"></p>
+                </div>
+                <div class="block_filter_car_inner_second_block">
+                    <p class="block_filter_car_inner_first_block_text">Fuel type</p>
+                    <button class="block_filter_car_inner_first_block_button">Reset</button>
+                </div>
+                <div th:each="fuelType : ${fuelTypes}"  class="vehicle_type">
+                    <input type="checkbox" th:name="fuelType"  th:value="${fuelType}">
+                    <p class="vehicle_type_text" th:text="${fuelType}"></p>
+                </div>
+                <div class="block_filter_car_inner_second_block">
+                    <p class="block_filter_car_inner_first_block_text">Transmission</p>
+                    <button class="block_filter_car_inner_first_block_button">Reset</button>
+                </div>
+                <div th:each="transmission : ${transmissions}"  class="vehicle_type">
+                    <input type="checkbox" th:name="transmission" th:value="${transmission}">
+                    <p class="vehicle_type_text" th:text="${transmission}"></p>
+                </div>
+                <button type="submit" class="button_submit_found">Find</button>
             </form>
         </div>
         <div class="block_filter_car_result">
@@ -138,7 +183,7 @@
                     <img class="block_filter_car_result_car_img" th:src="@{/img/__${car.img}__}" alt="Car">
                     <div class="block_filter_car_result_car_texts">
                         <p class="block_filter_car_result_car_texts_first" th:text="${car.model}"></p>
-                        <p class="block_filter_car_result_car_texts_second"><span th:text="${car.location}"></span> • <span th:if="${car.isNew}"> NEW • </span> <span th:if="${!car.isNew}"> Used • </span> <span th:text="${car.kilometers}"></span> km • <span th:text="${car.fuel}"></span></p>
+                        <p class="block_filter_car_result_car_texts_second"><span th:text="${car.city.name}"></span> • <span th:if="${car.isNew}"> NEW • </span> <span th:if="${!car.isNew}"> Used • </span> <span th:text="${car.kilometers}"></span> km • <span th:text="${car.fuel}"></span></p>
                         <p class="block_filter_car_result_car_texts_third" th:text="${car.miniDescription}"></p>
                         <div class="block_filter_car_result_car_bottom">
                             <p class="block_filter_car_result_car_bottom_price"><span>$</span> <span th:text="${car.price}"></span></p>
@@ -217,126 +262,6 @@
                 </div>
                 <button class="block_filter_car_result_third_block_button">Get a quote</button>
             </div>
-<!--            <div class="block_filter_car_result_car">-->
-<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod4.png}" alt="Car">-->
-<!--                <div class="block_filter_car_result_car_texts">-->
-<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Corolla AED 1250 PM</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_second">Chicago • Used • 10,500 km • Gasoline</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
-<!--                    <div class="block_filter_car_result_car_bottom">-->
-<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
-<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
-<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
-<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="block_filter_car_result_car">-->
-<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod5.png}" alt="Car">-->
-<!--                <div class="block_filter_car_result_car_texts">-->
-<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Camry Sport V6</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_second">Chicago • NEW • 0 km • Gasoline</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
-<!--                    <div class="block_filter_car_result_car_bottom">-->
-<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
-<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
-<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
-<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="block_filter_car_result_car">-->
-<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod6.png}" alt="Car">-->
-<!--                <div class="block_filter_car_result_car_texts">-->
-<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Highlander TOYOTA HIGHLADER XSE 2022 MODEL FULL OPTION 4x4</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_second">Memphis • Used • 10,500 km • Gasoline</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
-<!--                    <div class="block_filter_car_result_car_bottom">-->
-<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
-<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
-<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
-<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="block_filter_car_result_car">-->
-<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod7.png}" alt="Car">-->
-<!--                <div class="block_filter_car_result_car_texts">-->
-<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Hiace</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_second">Chicago • Used • 10,500 km • Gasoline</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
-<!--                    <div class="block_filter_car_result_car_bottom">-->
-<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
-<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
-<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
-<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="block_filter_car_result_car">-->
-<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod8.png}" alt="Car">-->
-<!--                <div class="block_filter_car_result_car_texts">-->
-<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Tundra iFORCE 5.7LV8</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_second">Detroit • Used • 10,500 km • Gasoline</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
-<!--                    <div class="block_filter_car_result_car_bottom">-->
-<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
-<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
-<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
-<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="block_filter_car_result_car">-->
-<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod9.png}" alt="Car">-->
-<!--                <div class="block_filter_car_result_car_texts">-->
-<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Hilux 2019 TOYOTA HILUX MANUAL 4X4</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_second">Detroit • Used • 10,500 km • Gasoline</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
-<!--                    <div class="block_filter_car_result_car_bottom">-->
-<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
-<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
-<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
-<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="block_filter_car_result_car">-->
-<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod10.png}" alt="Car">-->
-<!--                <div class="block_filter_car_result_car_texts">-->
-<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Land Cruiser GXR 2016</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_second">Chicago • NEW • 0 km • Gasoline</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
-<!--                    <div class="block_filter_car_result_car_bottom">-->
-<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
-<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
-<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
-<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="block_filter_car_result_car">-->
-<!--                <img class="block_filter_car_result_car_img" th:src="@{/img/prod11.png}" alt="Car">-->
-<!--                <div class="block_filter_car_result_car_texts">-->
-<!--                    <p class="block_filter_car_result_car_texts_first">Toyota Prado Black Edition 70th Anniversary 10/2021 Diesel 4WD Sunroof 2.8L</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_second">Oklahoma City • Used • 10,500 km • Gasoline</p>-->
-<!--                    <p class="block_filter_car_result_car_texts_third">2022 Land Cruiser, panoramic roof, black interior, LED headlights and automatic gearbox. A brand new car with GCC specifications.</p>-->
-<!--                    <div class="block_filter_car_result_car_bottom">-->
-<!--                        <p class="block_filter_car_result_car_bottom_price">$45,995</p>-->
-<!--                        <div class="block_filter_car_result_car_bottom_buttons">-->
-<!--                            <button class="block_filter_car_result_car_bottom_button">Details</button>-->
-<!--                            <img th:src="@{/img/right3.png}" alt="Arrow">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
             <div class="page_block">
                 <img th:src="@{/img/left3.png}" alt="Arrow">
                 <button class="page_block_main">1</button>

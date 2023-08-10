@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -25,5 +26,37 @@ public class CarsService {
     public List<Cars> getFoursCar() {
         Pageable pageable = PageRequest.of(0, 4);
         return carsRepository.findAll(pageable).getContent();
+    }
+
+    public List<String> getAllBrand() {
+        return carsRepository.findBrand();
+    }
+
+    public List<String> getAllModels() {
+        return carsRepository.findModel();
+    }
+
+    public List<String> getAllVehicleTypes() {
+        return carsRepository.getAllVehicleTypes();
+    }
+
+    public List<Integer> getAllCylinders() {
+        return carsRepository.getAllCylinders();
+    }
+
+    public List<String> getAllColor() {
+        return carsRepository.getAllColor();
+    }
+
+    public List<Integer> getAllSeats() {
+        return carsRepository.getAllSeats();
+    }
+
+    public List<String> getAllFuelType() {
+        return carsRepository.getAllFuelType();
+    }
+
+    public List<String> getAllTransmission() {
+        return carsRepository.getAllTransmission();
     }
 }

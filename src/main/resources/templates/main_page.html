@@ -113,7 +113,7 @@
             <div class="block_information_car">
                 <div class="text_car_about">
                 <p class="text_header" th:text="${car.model}">2021 Genesis GV80 2.5T</p>
-                    <p class="text_car"><span th:text="${car.location}"></span> • <span th:if="${car.isNew}"> NEW • </span> <span th:if="${!car.isNew}"> Used • </span> <span th:text="${car.kilometers}"></span> km • <span th:text="${car.fuel}"></span></p>
+                    <p class="text_car"><span th:text="${car.city.name}"></span> • <span th:if="${car.isNew}"> NEW • </span> <span th:if="${!car.isNew}"> Used • </span> <span th:text="${car.kilometers}"></span> km • <span th:text="${car.fuel}"></span></p>
                 </div>
                 <div class="block_information_car_inner">
                     <div>
@@ -125,60 +125,6 @@
                 </div>
             </div>
         </div>
-<!--        <div class="block_car">-->
-<!--            <img class="img_car" src="../static/img/car2.png" alt="Car">-->
-<!--            <div class="block_information_car">-->
-<!--                <div class="text_car_about">-->
-<!--                <p class="text_header">2019 Mitsubishi Outlander Sport 2.0 SE</p>-->
-<!--                <p class="text_car">Used • 27,057 mi • Petrol</p>-->
-<!--                </div>-->
-<!--                <div class="block_information_car_inner">-->
-<!--                    <div>-->
-<!--                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>-->
-<!--                    </div>-->
-<!--                    <div class="details_car">-->
-<!--                        <p class="text_details">Details</p>-->
-<!--                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="block_car">-->
-<!--            <img class="img_car" src="../static/img/car3.png" alt="Car">-->
-<!--            <div class="block_information_car">-->
-<!--                <div class="text_car_about">-->
-<!--                <p class="text_header">2019 BMW 640 Gran Turismo i xDrive</p>-->
-<!--                <p class="text_car">Used • 27,057 mi • Petrol</p>-->
-<!--                </div>-->
-<!--                <div class="block_information_car_inner">-->
-<!--                    <div>-->
-<!--                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>-->
-<!--                    </div>-->
-<!--                    <div class="details_car">-->
-<!--                        <p class="text_details">Details</p>-->
-<!--                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="block_car">-->
-<!--            <img class="img_car" src="../static/img/car4.png" alt="Car">-->
-<!--            <div class="block_information_car">-->
-<!--                <div class="text_car_about">-->
-<!--                    <p class="text_header">2020 Subaru Ascent Touring 7-Passenger</p>-->
-<!--                    <p class="text_car">Used • 27,057 mi • Petrol</p>-->
-<!--                </div>-->
-<!--                <div class="block_information_car_inner">-->
-<!--                    <div>-->
-<!--                        <p><span class="price">$45,995</span> <span class="discount">$51,490</span></p>-->
-<!--                    </div>-->
-<!--                    <div class="details_car">-->
-<!--                        <p class="text_details">Details</p>-->
-<!--                        <img class="arrow_car" src="../static/img/right3.png" alt="arrow">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
 <!--        <div class="block_car">-->
 <!--            <img class="img_car" src="../static/img/car.png" alt="Car">-->
 <!--            <div class="block_information_car">-->
