@@ -75,7 +75,7 @@
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
                 <div th:each="vehicleType : ${vehicleTypes}"  class="vehicle_type">
-                    <input type="checkbox" th:value="${vehicleType}">
+                    <input type="checkbox" th:value="${vehicleType}" th:name="vehicleType">
                     <p class="vehicle_type_text" th:text="${vehicleType}"></p>
                 </div>
             <div class="block_filter_car_inner_second_block">
@@ -103,15 +103,15 @@
                 <p class="block_filter_car_inner_first_block_text">Country</p>
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
-            <select th:name="country" class="block_filter_car_inner_first_select">
-                <option th:each="country : ${countries}" th:text="${country.name}" th:value="${country.id}">Toyota</option>
+            <select id="country" th:name="country" class="block_filter_car_inner_first_select">
+                <option th:each="country : ${countries}" th:text="${country.name}" th:value="${country.name}">Toyota</option>
             </select>
             <div class="block_filter_car_inner_second_block">
                 <p class="block_filter_car_inner_first_block_text">City</p>
                 <button class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
-                <div th:each="city : ${cities}"  class="vehicle_type">
-                    <input type="checkbox" th:name="city" th:value="${city.id}">
+                <div id="city" th:each="city : ${cities}"  class="vehicle_type_city">
+                    <input type="checkbox" th:name="city" th:value="${city.name}">
                     <p class="vehicle_type_text" th:text="${city.name}"></p>
                 </div>
                 <p class="text_block_filter">Specifications</p>
@@ -320,7 +320,7 @@
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script th:src="@{/js/study.js}">
+<script th:src="@{/js/catalog_page.js}">
 
 </script>
 </body>

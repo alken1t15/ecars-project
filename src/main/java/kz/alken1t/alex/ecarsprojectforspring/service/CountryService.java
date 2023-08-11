@@ -15,4 +15,8 @@ public class CountryService {
     public List<Country> findAll() {
         return countryRepository.findAll();
     }
+
+    public Country findByName(String country) {
+        return countryRepository.findByName(country);
+    }
 }

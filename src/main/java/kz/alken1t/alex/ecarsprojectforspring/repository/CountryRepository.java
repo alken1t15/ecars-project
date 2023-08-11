@@ -4,6 +4,8 @@ import kz.alken1t.alex.ecarsprojectforspring.entity.City;
 import kz.alken1t.alex.ecarsprojectforspring.entity.Country;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CountryRepository extends JpaRepository<Country,Long> {
+import java.util.List;
 
+public interface CountryRepository extends JpaRepository<Country,Long> {
+    Country findByName(String name);
 }

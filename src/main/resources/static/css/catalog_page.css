@@ -429,3 +429,6 @@ gap: 2px;
     justify-content: center;
     margin-top: 20px;
 }
+.vehicle_type_city{
+    display:  flex;
+}

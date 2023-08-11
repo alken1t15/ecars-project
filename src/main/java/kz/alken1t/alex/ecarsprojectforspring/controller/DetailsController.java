@@ -22,8 +22,17 @@ public class DetailsController {
     private final CityService cityService;
 
     @GetMapping()
-    public String allProductPage(Model model) {
-        List<Cars> cars = carsService.findAll();
+    public String allProductPage(@RequestParam(value = "brand",required = false) String brand,@RequestParam(value ="model",required = false) String modelCar,
+            @RequestParam(value ="vehicleType",required = false)List<String> vehicleTypesCar,@RequestParam(value ="min_km",required = false)Integer minKm,
+            @RequestParam(value ="max_km",required = false)Integer maxKm,@RequestParam(value ="min_year",required = false)Integer minYear,
+            @RequestParam(value ="max_year",required = false)Integer maxYear,@RequestParam(value ="min_price",required = false)Integer minPrice,
+            @RequestParam(value ="max_price",required = false) Integer maxPrice,@RequestParam(value ="country",required = false) String countryId,
+            @RequestParam(value ="city",required = false)List<String> citiesCar,@RequestParam(value ="cylinder",required = false)List<String> cylindersCar,
+                                 @RequestParam(value ="color",required = false)List<String> colorsCar,@RequestParam(value ="seat",required = false)List<String> seatsCar,
+                                 @RequestParam(value ="fuelType",required = false)List<String> fuelTypesCar,@RequestParam(value ="transmission",required = false)List<String> transmissionsCar, Model model) {
+        List<Cars> cars = carsService.findBySort(brand,modelCar,vehicleTypesCar,minKm,maxKm,maxYear,minYear,minPrice,maxPrice,countryId,citiesCar,cylindersCar,colorsCar
+        ,seatsCar,fuelTypesCar,transmissionsCar);
+        //List<Cars> cars = carsService.findAll();
         List<String> brands = carsService.getAllBrand();
         List<String> models = carsService.getAllModels();
         List<String> vehicleTypes = carsService.getAllVehicleTypes();
