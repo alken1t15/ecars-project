@@ -18,6 +18,9 @@ public class JsController {
     @PostMapping("/city")
     public List<String> findCity(@RequestBody String input) {
         String str = input.substring(1, input.length()-1);
+        if (str.equals("All")){
+            return cityService.findAllName();
+        }
         return cityService.findByCountry(str);
     }
 }

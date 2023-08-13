@@ -432,3 +432,24 @@ gap: 2px;
 .vehicle_type_city{
     display:  flex;
 }
+.vehicle_type_block{
+    display:  flex;
+}
+.cylinders{
+    display:  flex;
+}
+.color{
+    display:  flex;
+}
+.seats{
+    display:  flex;
+}
+.fuel_type{
+    display:  flex;
+}
+.transmission{
+    display:  flex;
+}
+.city{
+    display:  flex;
+}

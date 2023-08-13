@@ -1,5 +1,6 @@
 package kz.alken1t.alex.ecarsprojectforspring.controller;
 
+import kz.alken1t.alex.ecarsprojectforspring.dto.SortCategory;
 import kz.alken1t.alex.ecarsprojectforspring.entity.Cars;
 import kz.alken1t.alex.ecarsprojectforspring.entity.City;
 import kz.alken1t.alex.ecarsprojectforspring.entity.Country;
@@ -30,8 +31,10 @@ public class DetailsController {
             @RequestParam(value ="city",required = false)List<String> citiesCar,@RequestParam(value ="cylinder",required = false)List<String> cylindersCar,
                                  @RequestParam(value ="color",required = false)List<String> colorsCar,@RequestParam(value ="seat",required = false)List<String> seatsCar,
                                  @RequestParam(value ="fuelType",required = false)List<String> fuelTypesCar,@RequestParam(value ="transmission",required = false)List<String> transmissionsCar, Model model) {
-        List<Cars> cars = carsService.findBySort(brand,modelCar,vehicleTypesCar,minKm,maxKm,maxYear,minYear,minPrice,maxPrice,countryId,citiesCar,cylindersCar,colorsCar
+        SortCategory sortCategory = carsService.findBySort(brand,modelCar,vehicleTypesCar,minKm,maxKm,maxYear,minYear,minPrice,maxPrice,countryId,citiesCar,cylindersCar,colorsCar
         ,seatsCar,fuelTypesCar,transmissionsCar);
+        List<Cars> cars = sortCategory.getCars();
+        List<String> filters = sortCategory.getStrings();
         //List<Cars> cars = carsService.findAll();
         List<String> brands = carsService.getAllBrand();
         List<String> models = carsService.getAllModels();
@@ -54,6 +57,7 @@ public class DetailsController {
         model.addAttribute("seats",seats);
         model.addAttribute("fuelTypes",fuelTypes);
         model.addAttribute("transmissions",transmissions);
+        model.addAttribute("filters",filters);
         return "catalog_page";
     }
 
