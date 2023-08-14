@@ -215,6 +215,7 @@ border-radius: 8px;
 
 }
 .block_filter_car_result_car_texts_third{
+    max-height: 65px;
     width: 372px;
 margin-top: 8px;
     font-family: Inter;
@@ -335,7 +336,6 @@ border-radius: 8px;
     margin: 0 auto;
     display: flex;
     width: 704px;
-    justify-content: space-between;
     padding-left: 228px;
     padding-right: 228px;
 }
@@ -452,4 +452,36 @@ gap: 2px;
 }
 .city{
     display:  flex;
+}
+.arrow_button{
+    border: none;
+}
+.button_number{
+    margin-right: 5px;
+}
+.button_submit_found_two{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width:103px;
+    height: 36px;
+    padding: 6px 15px 6px 18px;
+    border-radius: 8px;
+
+    background: #3C7D46;
+    border-radius: 8px;
+    border: none;
+    color: white;
+
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
 }

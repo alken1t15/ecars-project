@@ -8,6 +8,7 @@ import kz.alken1t.alex.ecarsprojectforspring.service.CarsService;
 import kz.alken1t.alex.ecarsprojectforspring.service.CityService;
 import kz.alken1t.alex.ecarsprojectforspring.service.CountryService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -30,12 +31,17 @@ public class DetailsController {
             @RequestParam(value ="max_price",required = false) Integer maxPrice,@RequestParam(value ="country",required = false) String countryId,
             @RequestParam(value ="city",required = false)List<String> citiesCar,@RequestParam(value ="cylinder",required = false)List<String> cylindersCar,
                                  @RequestParam(value ="color",required = false)List<String> colorsCar,@RequestParam(value ="seat",required = false)List<String> seatsCar,
-                                 @RequestParam(value ="fuelType",required = false)List<String> fuelTypesCar,@RequestParam(value ="transmission",required = false)List<String> transmissionsCar, Model model) {
+                                 @RequestParam(value ="fuelType",required = false)List<String> fuelTypesCar,@RequestParam(value ="transmission",required = false)List<String> transmissionsCar,@RequestParam
+                                             (value = "page",required = false)Integer page, @RequestParam(value = "sort",required = false)String sort, Model model) {
+        if (page == null){
+            page = 0;
+        }
         SortCategory sortCategory = carsService.findBySort(brand,modelCar,vehicleTypesCar,minKm,maxKm,maxYear,minYear,minPrice,maxPrice,countryId,citiesCar,cylindersCar,colorsCar
-        ,seatsCar,fuelTypesCar,transmissionsCar);
+        ,seatsCar,fuelTypesCar,transmissionsCar,page, sort);
+        int found = sortCategory.getFound();
+        List<Integer> count = sortCategory.getCount();
         List<Cars> cars = sortCategory.getCars();
         List<String> filters = sortCategory.getStrings();
-        //List<Cars> cars = carsService.findAll();
         List<String> brands = carsService.getAllBrand();
         List<String> models = carsService.getAllModels();
         List<String> vehicleTypes = carsService.getAllVehicleTypes();
@@ -58,6 +64,9 @@ public class DetailsController {
         model.addAttribute("fuelTypes",fuelTypes);
         model.addAttribute("transmissions",transmissions);
         model.addAttribute("filters",filters);
+        model.addAttribute("count",count);
+        model.addAttribute("found",found);
+        model.addAttribute("page",page);
         return "catalog_page";
     }
 

@@ -4,6 +4,8 @@ import kz.alken1t.alex.ecarsprojectforspring.dto.RegistrationError;
 import kz.alken1t.alex.ecarsprojectforspring.entity.Users;
 import kz.alken1t.alex.ecarsprojectforspring.service.UsersService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SecurityController {
     private final UsersService usersService;
     private final PasswordEncoder passwordEncoder;
+
+    @GetMapping("/profile")
+    public String profilePage(Model model){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        System.out.println(username);
+        return "profile_page";
+    }
 
     @GetMapping("/login")
     public String loginPage() {

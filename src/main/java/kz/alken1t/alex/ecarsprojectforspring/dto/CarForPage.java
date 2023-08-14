@@ -8,9 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class SortCategory {
+public class CarForPage {
     private List<Cars> cars;
-    private List<String> strings;
     private List<Integer> count;
-    private int found;
 }

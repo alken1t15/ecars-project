@@ -40,7 +40,8 @@ create table cars (
                       mini_description varchar(255),
                       price decimal(5, 3),
                       img_big varchar(255),
-                      price_old decimal(5, 3)
+                      price_old decimal(5, 3),
+                  add_date timestamp
 );
 
 

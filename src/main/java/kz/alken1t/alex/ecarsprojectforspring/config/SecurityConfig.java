@@ -12,7 +12,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.authorizeHttpRequests(authorization -> {
-            authorization.requestMatchers("/asfdsf").authenticated();
+            authorization.requestMatchers("/profile").authenticated();
             authorization.anyRequest().permitAll();
         });
         http.formLogin().loginPage("/login").loginProcessingUrl("/process_login").failureUrl("/login?error").and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");

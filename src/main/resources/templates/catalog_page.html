@@ -162,14 +162,17 @@
         </div>
         <div class="block_filter_car_result">
             <div class="block_filter_car_result_first_block">
-                <p><span class="block_filter_car_result_first_block_count" th:text="${cars.size()}">2743</span> <span class="block_filter_car_result_first_block_text">found</span></p>
+                <p><span class="block_filter_car_result_first_block_count" th:text="${found}">2743</span> <span class="block_filter_car_result_first_block_text">found</span></p>
                 <div class="block_filter_car_result_first_block_filter">
                     <p class="block_filter_car_result_first_block_filter_text">Sort by:</p>
-                    <select class="block_filter_car_result_first_block_filter_select">
-                        <option>Newly added</option>
-                        <option>Max price</option>
-                        <option>Min price</option>
-                    </select>
+                    <form th:method="GET" th:action="@{/catalog}">
+                        <select name="sort" class="block_filter_car_result_first_block_filter_select">
+                            <option value="add">Newly added</option>
+                            <option value="max">Max price</option>
+                            <option value="min">Min price</option>
+                        </select>
+                        <button type="submit" class="button_submit_found_two">Find</button>
+                    </form>
                 </div>
             </div>
             <div class="block_filter_car_result_second_block">
@@ -265,12 +268,18 @@
                 <button class="block_filter_car_result_third_block_button">Get a quote</button>
             </div>
             <div class="page_block">
-                <img th:src="@{/img/left3.png}" alt="Arrow">
-                <button class="page_block_main">1</button>
-                <button class="page_block_second">2</button>
-                <button class="page_block_second">3</button>
-                <button class="page_block_second">...</button>
-                <button class="page_block_second">29</button>
+                <form th:if="${page !=null && page != 0}" th:method="GET" th:action="@{/catalog}">
+                    <input  name="page" type="hidden" th:value="${page -1}">
+                    <button class="arrow_button" type="submit" ><img th:src="@{/img/left3.png}" alt="Arrow"></button>
+                </form>
+                <form class="button_number" th:each="count : ${count}" th:method="GET" th:action="@{/catalog}">
+                    <input  name="page" type="hidden" th:value="${count}">
+                    <button type="submit"   class="page_block_main" th:text="${count+1}">1</button>
+                </form>
+                <form th:if="${page<count.size()-1}" th:method="GET" th:action="@{/catalog}">
+                    <input  name="page" type="hidden" th:value="${page +1}">
+                    <button class="arrow_button" type="submit" ><img  th:src="@{/img/right4.png}" alt="Arrow"></button>
+                </form>
             </div>
         </div>
     </div>

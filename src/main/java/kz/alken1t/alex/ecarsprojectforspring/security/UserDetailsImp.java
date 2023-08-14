@@ -4,6 +4,7 @@ import kz.alken1t.alex.ecarsprojectforspring.entity.Users;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Collection;
 import java.util.List;
@@ -21,13 +22,13 @@ public class UserDetailsImp implements UserDetails {
     }
 
     @Override
-    public String getPassword() {
-        return users.getPassword();
+    public String getUsername() {
+        return users.getEmail();
     }
 
     @Override
-    public String getUsername() {
-        return users.getEmail();
+    public String getPassword() {
+        return users.getPassword();
     }
 
     @Override

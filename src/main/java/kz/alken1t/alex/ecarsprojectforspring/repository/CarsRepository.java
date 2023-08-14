@@ -32,4 +32,10 @@ public interface CarsRepository extends JpaRepository<Cars,Long> {
 
     @Query("select DISTINCT c.gearbox from Cars c")
     List<String> getAllTransmission();
+
+
+    List<Cars> findAllByOrderByAddDateDesc();
+
+    List<Cars> findAllByOrderByPriceAsc();
+    List<Cars> findAllByOrderByPriceDesc();
 }

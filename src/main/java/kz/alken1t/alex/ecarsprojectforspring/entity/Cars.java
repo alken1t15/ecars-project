@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -48,4 +49,6 @@ public class Cars {
     private List<ImgCars> imgCars;
     @Column(name = "price_old")
     private Double priceOld;
+    @Column(name = "add_date")
+    private LocalDateTime addDate;
 }
