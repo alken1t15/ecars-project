@@ -51,19 +51,20 @@
     <div class="container_two_imgs">
       <img class="container_two_search_img" th:src="@{/img/Search.png}" alt="Search">
       <img class="container_two_heart_img" th:src="@{/img/Heart.png}" alt="Heart">
-      <img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile">
+      <a th:if="${#authorization.expression('isAuthenticated()')}" th:href="@{/profile}"><img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile"></a>
+      <a th:unless="${#authorization.expression('isAuthenticated()')}" th:href="@{/login}"><img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile"></a>
     </div>
     <button class="button_container_two">Get a quote</button>
   </div>
 </header>
-<section>
+<section class="section">
   <div class="container">
-    <h1>Personal Information</h1>
+    <h1 class="title">Personal Information</h1>
     <div class="info">
-      <p><strong>First Name:</strong> <!-- Вставьте имя здесь --></p>
-      <p><strong>Last Name:</strong> <!-- Вставьте фамилию здесь --></p>
-      <p><strong>Middle Name:</strong> <!-- Вставьте отчество здесь --></p>
-      <p><strong>Email:</strong> <!-- Вставьте email здесь --></p>
+      <p class="info-item"><strong class="info-label">First Name:</strong> <span class="info-value" th:text="${users.getFirstName()}"></span></p>
+      <p class="info-item"><strong class="info-label">Last Name:</strong> <span class="info-value" th:text="${users.getLastName()}"></span></p>
+      <p class="info-item"><strong class="info-label">Middle Name:</strong> <span class="info-value" th:text="${users.getMiddleName()}"></span></p>
+      <p class="info-item"><strong class="info-label">Email:</strong> <span class="info-value" th:text="${users.getEmail()}"></span></p>
     </div>
   </div>
 </section>

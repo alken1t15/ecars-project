@@ -15,7 +15,7 @@ public class SecurityConfig {
             authorization.requestMatchers("/profile").authenticated();
             authorization.anyRequest().permitAll();
         });
-        http.formLogin().loginPage("/login").loginProcessingUrl("/process_login").failureUrl("/login?error").and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");
+        http.formLogin().loginPage("/login").loginProcessingUrl("/process_login").defaultSuccessUrl("/profile").failureUrl("/login?error").and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");
         return http.build();
     }
 }

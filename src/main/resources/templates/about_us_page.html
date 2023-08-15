@@ -51,7 +51,8 @@
         <div class="container_two_imgs">
             <img class="container_two_search_img" th:src="@{/img/Search.png}" alt="Search">
             <img class="container_two_heart_img" th:src="@{/img/Heart.png}" alt="Heart">
-            <img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile">
+            <a th:if="${#authorization.expression('isAuthenticated()')}" th:href="@{/profile}"><img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile"></a>
+            <a th:unless="${#authorization.expression('isAuthenticated()')}" th:href="@{/login}"><img class="container_two_profile_img" th:src="@{/img/Profile.png}" alt="Profile"></a>
         </div>
         <button class="button_container_two">Get a quote</button>
     </div>

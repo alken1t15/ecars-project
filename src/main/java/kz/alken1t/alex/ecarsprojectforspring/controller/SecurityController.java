@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Optional;
+
 @Controller
 @AllArgsConstructor
 public class SecurityController {
@@ -23,7 +25,8 @@ public class SecurityController {
     public String profilePage(Model model){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
-        System.out.println(username);
+        Users users = usersService.findByEmail(username);
+        model.addAttribute("users",users);
         return "profile_page";
     }
 
