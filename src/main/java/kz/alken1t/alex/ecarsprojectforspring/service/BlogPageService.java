@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class BlogPageService {
     private final BlogPageRepository blogPageRepository;
 
-    public String findById(Long id){
+    public String findById(Long id) {
         BlogPage blogPage = blogPageRepository.findById(id).orElseThrow();
         return blogPage.getNameFile();
     }

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface CarsRepository extends JpaRepository<Cars,Long> {
+public interface CarsRepository extends JpaRepository<Cars, Long> {
 
     @Query("select DISTINCT c.brand from Cars c")
     List<String> findBrand();
@@ -37,5 +37,6 @@ public interface CarsRepository extends JpaRepository<Cars,Long> {
     List<Cars> findAllByOrderByAddDateDesc();
 
     List<Cars> findAllByOrderByPriceAsc();
+
     List<Cars> findAllByOrderByPriceDesc();
 }

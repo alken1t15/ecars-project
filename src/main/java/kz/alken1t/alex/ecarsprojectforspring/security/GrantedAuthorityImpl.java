@@ -13,9 +13,8 @@ public class GrantedAuthorityImpl implements GrantedAuthority {
 
     @Override
     public String getAuthority() {
-        if (role)
-        {
-            return "ROLE_"+authority;
+        if (role) {
+            return "ROLE_" + authority;
         }
         return authority;
     }

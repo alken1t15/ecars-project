@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 public class UsersService {
     private final UsersRepository usersRepository;
 
-    public void save (Users users){
+    public void save(Users users) {
         usersRepository.save(users);
     }
 
-    public Users  findByEmail(String email){
+    public Users findByEmail(String email) {
         return usersRepository.findByEmail(email).orElseThrow();
     }
 }

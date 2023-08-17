@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/frequently")
 public class FrequentlyController {
     @GetMapping
-    public String page(){
+    public String page() {
         return "faq_page";
     }
 }

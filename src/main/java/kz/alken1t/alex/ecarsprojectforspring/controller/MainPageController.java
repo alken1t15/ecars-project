@@ -17,9 +17,9 @@ public class MainPageController {
     private final CarsService carsService;
 
     @GetMapping
-    public String mainPage(Model model){
+    public String mainPage(Model model) {
         List<Cars> cars = carsService.getFoursCar();
-        model.addAttribute("cars",cars);
+        model.addAttribute("cars", cars);
         return "main_page";
     }
 }

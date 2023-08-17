@@ -15,12 +15,12 @@ public class BlogController {
     private final BlogPageService blogPageService;
 
     @GetMapping()
-    public String mainPage(){
+    public String mainPage() {
         return "blog_page";
     }
 
     @GetMapping("/{id}")
-    public String getBlogPage(@PathVariable Long id){
+    public String getBlogPage(@PathVariable Long id) {
         return blogPageService.findById(id);
     }
 }

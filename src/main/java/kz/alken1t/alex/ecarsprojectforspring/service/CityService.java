@@ -23,7 +23,7 @@ public class CityService {
     public List<String> findAllName() {
         List<City> cities = cityRepository.findAll();
         List<String> strings = new ArrayList<>();
-        for (City c : cities){
+        for (City c : cities) {
             strings.add(c.getName());
         }
         return strings;
@@ -33,10 +33,10 @@ public class CityService {
         return cityRepository.findCity(country);
     }
 
-    public List<String> findByCountry(String country){
+    public List<String> findByCountry(String country) {
         Country countries = countryService.findByName(country);
         List<String> strings = new ArrayList<>();
-        for (City c : countries.getCities()){
+        for (City c : countries.getCities()) {
             strings.add(c.getName());
         }
         return strings;

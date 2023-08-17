@@ -88,18 +88,16 @@ public class CarsService {
 
         List<String> filter = new ArrayList<>();
         List<Predicate> predicates = new ArrayList<>();
-        if (sort!=null && !sort.isEmpty()){
+        if (sort != null && !sort.isEmpty()) {
             List<Cars> cars;
-            if (sort.equals("add")){
+            if (sort.equals("add")) {
                 cars = carsRepository.findAllByOrderByAddDateDesc();
-            }
-            else if (sort.equals("max")){
+            } else if (sort.equals("max")) {
                 cars = carsRepository.findAllByOrderByPriceDesc();
-            }
-            else {
+            } else {
                 cars = carsRepository.findAllByOrderByPriceAsc();
             }
-            CarForPage carForPage = getCarForPage(cars,page);
+            CarForPage carForPage = getCarForPage(cars, page);
             sortCategory.setCars(carForPage.getCars());
             sortCategory.setCount(carForPage.getCount());
             sortCategory.setFound(cars.size());
@@ -215,7 +213,7 @@ public class CarsService {
         }
         if (predicates.isEmpty()) {
             List<Cars> cars = findAll();
-            CarForPage carForPage = getCarForPage(cars,page);
+            CarForPage carForPage = getCarForPage(cars, page);
             sortCategory.setCars(carForPage.getCars());
             sortCategory.setCount(carForPage.getCount());
             sortCategory.setFound(cars.size());
@@ -226,7 +224,7 @@ public class CarsService {
         TypedQuery<Cars> query = entityManager.createQuery(critQuery);
         sortCategory.setStrings(filter);
         List<Cars> cars = query.getResultList();
-        CarForPage carForPage = getCarForPage(cars,page);
+        CarForPage carForPage = getCarForPage(cars, page);
         sortCategory.setFound(cars.size());
         sortCategory.setCars(carForPage.getCars());
         sortCategory.setCount(carForPage.getCount());
@@ -234,29 +232,28 @@ public class CarsService {
     }
 
 
-    public CarForPage getCarForPage(List<Cars> cars,Integer page) {
-        if (page==null){
-            page=0;
+    public CarForPage getCarForPage(List<Cars> cars, Integer page) {
+        if (page == null) {
+            page = 0;
         }
         CarForPage carForPage = new CarForPage();
         final int number = 11;
         List<List<Cars>> carsList = new ArrayList<>();
-        if (cars.size()<=number){
+        if (cars.size() <= number) {
             carForPage.setCars(cars);
             carForPage.setCount(new ArrayList<>());
             return carForPage;
         }
-        for (int i = 0;i<cars.size();i+=number){
-            if (i+number>cars.size()){
+        for (int i = 0; i < cars.size(); i += number) {
+            if (i + number > cars.size()) {
                 carsList.add(cars.subList(i, cars.size()));
-            }
-            else {
+            } else {
                 carsList.add(cars.subList(i, i + number));
             }
         }
         carForPage.setCars(carsList.get(page));
         List<Integer> list = new ArrayList<>();
-        for (int i = 0;i<carsList.size();i++){
+        for (int i = 0; i < carsList.size(); i++) {
             list.add(i);
         }
         carForPage.setCount(list);

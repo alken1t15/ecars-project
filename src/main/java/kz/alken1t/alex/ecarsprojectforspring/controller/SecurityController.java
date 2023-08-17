@@ -22,11 +22,11 @@ public class SecurityController {
     private final PasswordEncoder passwordEncoder;
 
     @GetMapping("/profile")
-    public String profilePage(Model model){
+    public String profilePage(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         Users users = usersService.findByEmail(username);
-        model.addAttribute("users",users);
+        model.addAttribute("users", users);
         return "profile_page";
     }
 
@@ -37,18 +37,18 @@ public class SecurityController {
     }
 
     @GetMapping("/forgot")
-    private String forgotPage(Model model){
-        model.addAttribute("email",false);
+    private String forgotPage(Model model) {
+        model.addAttribute("email", false);
         return "forgot_page";
     }
 
     @PostMapping("/forgot_email")
-    private String forgotEmailPage(@RequestParam("email") String email,Model model){
-        if (email.isEmpty()){
-            model.addAttribute("email",true);
+    private String forgotEmailPage(@RequestParam("email") String email, Model model) {
+        if (email.isEmpty()) {
+            model.addAttribute("email", true);
             return "forgot_page";
         }
-        model.addAttribute("email",email);
+        model.addAttribute("email", email);
         return "forgot_page_second";
     }
 
