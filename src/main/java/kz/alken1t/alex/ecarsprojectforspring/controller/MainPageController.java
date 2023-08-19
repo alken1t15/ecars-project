@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/main")
 @AllArgsConstructor
 public class MainPageController {
     private final CarsService carsService;
 
-    @GetMapping
+    @GetMapping({"/", "/main"})
     public String mainPage(Model model) {
         List<Cars> cars = carsService.getFoursCar();
         model.addAttribute("cars", cars);

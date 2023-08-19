@@ -3,18 +3,23 @@ package kz.alken1t.alex.ecarsprojectforspring.service;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
+import kz.alken1t.alex.ecarsprojectforspring.dto.CarFilter;
 import kz.alken1t.alex.ecarsprojectforspring.dto.CarForPage;
 import kz.alken1t.alex.ecarsprojectforspring.dto.SortCategory;
 import kz.alken1t.alex.ecarsprojectforspring.entity.Cars;
 import kz.alken1t.alex.ecarsprojectforspring.entity.City;
+import kz.alken1t.alex.ecarsprojectforspring.helpers.CarFilterDescriptionHelper;
+import kz.alken1t.alex.ecarsprojectforspring.helpers.CarFilterPredicateHelper;
 import kz.alken1t.alex.ecarsprojectforspring.repository.CarsRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @AllArgsConstructor
@@ -80,156 +85,98 @@ public class CarsService {
         return carsRepository.getAllTransmission();
     }
 
-    public SortCategory findBySort(String brand, String modelCar, List<String> vehicleTypesCar, Integer minKm, Integer maxKm, Integer maxYear, Integer minYear, Integer minPrice, Integer maxPrice, String countryName, List<String> cities, List<String> cylindersCar, List<String> colorsCar, List<String> seatsCar, List<String> fuelTypesCar, List<String> transmissionsCar, Integer page, String sort) {
-        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Cars> critQuery = builder.createQuery(Cars.class);
-        Root<Cars> root = critQuery.from(Cars.class);
+    public SortCategory findBySort(CarFilter filter) {
         SortCategory sortCategory = new SortCategory();
 
-        List<String> filter = new ArrayList<>();
-        List<Predicate> predicates = new ArrayList<>();
-        if (sort != null && !sort.isEmpty()) {
+        if (!StringUtils.isEmpty(filter.getSort())){
             List<Cars> cars;
-            if (sort.equals("add")) {
-                cars = carsRepository.findAllByOrderByAddDateDesc();
-            } else if (sort.equals("max")) {
-                cars = carsRepository.findAllByOrderByPriceDesc();
-            } else {
-                cars = carsRepository.findAllByOrderByPriceAsc();
+            switch (filter.getSort()){
+                case "add" -> cars = carsRepository.findAllByOrderByAddDateDesc();
+                case "max" -> cars = carsRepository.findAllByOrderByPriceDesc();
+                default -> cars = carsRepository.findAllByOrderByPriceAsc();
             }
-            CarForPage carForPage = getCarForPage(cars, page);
+
+            CarForPage carForPage = getCarForPage(cars,filter.getPage());
             sortCategory.setCars(carForPage.getCars());
             sortCategory.setCount(carForPage.getCount());
             sortCategory.setFound(cars.size());
             return sortCategory;
         }
-        if (brand != null && !brand.isEmpty() && !brand.equals("All")) {
-            predicates.add(builder.equal(root.get("brand"), brand));
-            filter.add(brand);
-        }
-        if (modelCar != null && !modelCar.isEmpty() && !modelCar.equals("All")) {
-            predicates.add(builder.equal(root.get("model"), modelCar));
-            filter.add(modelCar);
-        }
-        if (vehicleTypesCar != null && !vehicleTypesCar.isEmpty()) {
-            List<Predicate> predicateList = new ArrayList<>();
-            for (String vehicleType : vehicleTypesCar) {
-                predicateList.add(builder.equal(root.get("vehicleType"), vehicleType));
-                filter.add(vehicleType);
-            }
-            Predicate predicate = builder.or(predicateList.toArray(new Predicate[predicateList.size()]));
-            predicates.add(predicate);
-        }
 
-        if (minKm != null && maxKm != null) {
-            predicates.add(builder.between(root.get("kilometers"), minKm, maxKm));
-            filter.add(minKm + "-" + maxKm + " km");
-        } else if (minKm != null) {
-            predicates.add(builder.greaterThanOrEqualTo(root.get("kilometers"), minKm));
-            filter.add(minPrice + " km");
-        } else if (maxKm != null) {
-            predicates.add(builder.between(root.get("kilometers"), 0, maxKm));
-            filter.add(maxKm + " km");
-        }
-
-        if (minYear != null && maxYear != null) {
-            predicates.add(builder.between(root.get("year"), minYear, maxYear));
-            filter.add(minYear + "-" + maxYear + " year");
-        } else if (minYear != null) {
-            predicates.add(builder.greaterThanOrEqualTo(root.get("year"), minYear));
-            filter.add(minYear + " year");
-        } else if (maxYear != null) {
-            predicates.add(builder.between(root.get("year"), 0, maxYear));
-            filter.add(maxYear + " year");
-        }
-
-        if (minPrice != null && maxPrice != null) {
-            predicates.add(builder.between(root.get("price"), minPrice, maxPrice));
-            filter.add(minPrice + "-" + maxPrice + " USD");
-        } else if (minPrice != null) {
-            predicates.add(builder.greaterThanOrEqualTo(root.get("price"), minPrice));
-            filter.add(minPrice + " USD");
-        } else if (maxPrice != null) {
-            predicates.add(builder.between(root.get("price"), 0, maxPrice));
-            filter.add(maxPrice + " USD");
-        }
-
-        if (cylindersCar != null && !cylindersCar.isEmpty()) {
-            List<Predicate> predicateList = new ArrayList<>();
-            for (String cylinder : cylindersCar) {
-                predicateList.add(builder.equal(root.get("cylinders"), cylinder));
-                filter.add(cylinder);
-            }
-            Predicate predicate = builder.or(predicateList.toArray(new Predicate[predicateList.size()]));
-            predicates.add(predicate);
-        }
-        if (colorsCar != null && !colorsCar.isEmpty()) {
-            List<Predicate> predicateList = new ArrayList<>();
-            for (String color : colorsCar) {
-                predicateList.add(builder.equal(root.get("color"), color));
-                filter.add(color);
-            }
-            Predicate predicate = builder.or(predicateList.toArray(new Predicate[predicateList.size()]));
-            predicates.add(predicate);
-        }
-        if (seatsCar != null && !seatsCar.isEmpty()) {
-            List<Predicate> predicateList = new ArrayList<>();
-            for (String seat : seatsCar) {
-                predicateList.add(builder.equal(root.get("seats"), seat));
-                filter.add(seat);
-            }
-            Predicate predicate = builder.or(predicateList.toArray(new Predicate[predicateList.size()]));
-            predicates.add(predicate);
-        }
-        if (fuelTypesCar != null && !fuelTypesCar.isEmpty()) {
-            List<Predicate> predicateList = new ArrayList<>();
-            for (String fuelType : fuelTypesCar) {
-                predicateList.add(builder.equal(root.get("fuel"), fuelType));
-                filter.add(fuelType);
-            }
-            Predicate predicate = builder.or(predicateList.toArray(new Predicate[predicateList.size()]));
-            predicates.add(predicate);
-        }
-        if (transmissionsCar != null && !transmissionsCar.isEmpty()) {
-            List<Predicate> predicateList = new ArrayList<>();
-            for (String transmission : transmissionsCar) {
-                predicateList.add(builder.equal(root.get("gearbox"), transmission));
-                filter.add(transmission);
-            }
-            Predicate predicate = builder.or(predicateList.toArray(new Predicate[predicateList.size()]));
-            predicates.add(predicate);
-        }
-        if (cities != null && !cities.isEmpty()) {
-            List<Predicate> predicateList = new ArrayList<>();
-            for (String str : cities) {
-                Join<Cars, City> cityJoin = root.join("city");
-                City city = cityService.findByName(str);
-                Predicate cityIdPredicate = builder.equal(cityJoin.get("id"), city.getId());
-                predicateList.add(cityIdPredicate);
-                filter.add(str);
-            }
-            Predicate predicate = builder.or(predicateList.toArray(new Predicate[predicateList.size()]));
-            predicates.add(predicate);
-        }
-        if (predicates.isEmpty()) {
+        if (isEmpty(filter)){
             List<Cars> cars = findAll();
-            CarForPage carForPage = getCarForPage(cars, page);
+            CarForPage carForPage = getCarForPage(cars, filter.getPage());
             sortCategory.setCars(carForPage.getCars());
             sortCategory.setCount(carForPage.getCount());
             sortCategory.setFound(cars.size());
-            return sortCategory;
         }
+
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Cars> query = builder.createQuery(Cars.class);
+        Root<Cars> root = query.from(Cars.class);
+
+        List<Predicate> predicates = createPredicate(filter, builder, root);
         Predicate finalPredicate = builder.and(predicates.toArray(new Predicate[predicates.size()]));
-        critQuery.where(finalPredicate);
-        TypedQuery<Cars> query = entityManager.createQuery(critQuery);
-        sortCategory.setStrings(filter);
-        List<Cars> cars = query.getResultList();
-        CarForPage carForPage = getCarForPage(cars, page);
+        query.where(finalPredicate);
+
+        List<String> description = createDescription(filter);
+        sortCategory.setStrings(description);
+
+
+        List<Cars> cars = entityManager.createQuery(query).getResultList();
+        CarForPage carForPage = getCarForPage(cars, filter.getPage());
         sortCategory.setFound(cars.size());
         sortCategory.setCars(carForPage.getCars());
         sortCategory.setCount(carForPage.getCount());
         return sortCategory;
     }
+
+    private List<String> createDescription(CarFilter filter) {
+        return new CarFilterDescriptionHelper()
+                .createDescription(filter.getBrand())
+                .createDescription(filter.getModel())
+                .createDescription(filter.getMinKm(), filter.getMaxKm(), "km")
+                .createDescription(filter.getMinYear(), filter.getMaxYear(), "year")
+                .createDescription(filter.getMinPrice(), filter.getMaxPrice(), "USD")
+                .createDescription(filter.getVehicleType())
+                .createDescription(filter.getCylinder())
+                .createDescription(filter.getColor())
+                .createDescription(filter.getSeat())
+                .createDescription(filter.getFuelType())
+                .createDescription(filter.getTransmission())
+                .createDescription(filter.getCity())
+                .build();
+    }
+
+    private List<Predicate> createPredicate(CarFilter filter, CriteriaBuilder builder, Root<Cars> root) {
+        List<Long> cityIds = new ArrayList<>();
+        for (String cityName: filter.getCity()){
+            City city = cityService.findByName(cityName);
+            cityIds.add(city.getId());
+        }
+
+        return new CarFilterPredicateHelper(builder, root)
+                .createPredicateEquals(filter.getBrand(), "brand")
+                .createPredicateEquals(filter.getModel(), "model")
+                .createPredicateBetween(filter.getMinKm(), filter.getMaxKm(), "kilometers")
+                .createPredicateBetween(filter.getMinYear(), filter.getMaxYear(), "year")
+                .createPredicateBetween(filter.getMinPrice(), filter.getMaxPrice(), "price")
+                .createPredicateEqualsList(filter.getVehicleType(), "vehicleType")
+                .createPredicateEqualsList(filter.getCylinder(), "cylinders")
+                .createPredicateEqualsList(filter.getColor(), "color")
+                .createPredicateEqualsList(filter.getSeat(), "seats")
+                .createPredicateEqualsList(filter.getFuelType(), "fuel")
+                .createPredicateEqualsList(filter.getTransmission(), "gearbox")
+                .createPredicateEqualsJoinList(cityIds, "id", root.join("city")).build();
+    }
+
+
+    private boolean isEmpty(CarFilter filter) {
+        return !(hasParam(filter.getBrand())) || hasParam(filter.getModel()) || hasParam(filter.getMinKm()) || hasParam(filter.getMaxKm()) || hasParam(filter.getMinYear())
+                || hasParam(filter.getMaxYear()) || hasParam(filter.getMinPrice()) || hasParam(filter.getMaxPrice()) || hasParam(filter.getCountry()) || hasParam(filter.getVehicleType())
+                || hasParam(filter.getCity()) || hasParam(filter.getCylinder()) || hasParam(filter.getColor()) || hasParam(filter.getSeat()) || hasParam(filter.getFuelType()) || hasParam(filter.getTransmission());
+    }
+
 
 
     public CarForPage getCarForPage(List<Cars> cars, Integer page) {
@@ -258,5 +205,18 @@ public class CarsService {
         }
         carForPage.setCount(list);
         return carForPage;
+    }
+
+
+    private boolean hasParam(String param) {
+        return Objects.nonNull(param) && !param.equals("All");
+    }
+
+    private boolean hasParam(List<?> param) {
+        return param!=null && !param.isEmpty();
+    }
+
+    private boolean hasParam(Integer param) {
+        return param!=null;
     }
 }

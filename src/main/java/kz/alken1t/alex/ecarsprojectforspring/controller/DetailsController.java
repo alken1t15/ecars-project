@@ -1,5 +1,6 @@
 package kz.alken1t.alex.ecarsprojectforspring.controller;
 
+import kz.alken1t.alex.ecarsprojectforspring.dto.CarFilter;
 import kz.alken1t.alex.ecarsprojectforspring.dto.SortCategory;
 import kz.alken1t.alex.ecarsprojectforspring.entity.Cars;
 import kz.alken1t.alex.ecarsprojectforspring.entity.City;
@@ -24,20 +25,8 @@ public class DetailsController {
     private final CityService cityService;
 
     @GetMapping()
-    public String allProductPage(@RequestParam(value = "brand", required = false) String brand, @RequestParam(value = "model", required = false) String modelCar,
-                                 @RequestParam(value = "vehicleType", required = false) List<String> vehicleTypesCar, @RequestParam(value = "min_km", required = false) Integer minKm,
-                                 @RequestParam(value = "max_km", required = false) Integer maxKm, @RequestParam(value = "min_year", required = false) Integer minYear,
-                                 @RequestParam(value = "max_year", required = false) Integer maxYear, @RequestParam(value = "min_price", required = false) Integer minPrice,
-                                 @RequestParam(value = "max_price", required = false) Integer maxPrice, @RequestParam(value = "country", required = false) String countryId,
-                                 @RequestParam(value = "city", required = false) List<String> citiesCar, @RequestParam(value = "cylinder", required = false) List<String> cylindersCar,
-                                 @RequestParam(value = "color", required = false) List<String> colorsCar, @RequestParam(value = "seat", required = false) List<String> seatsCar,
-                                 @RequestParam(value = "fuelType", required = false) List<String> fuelTypesCar, @RequestParam(value = "transmission", required = false) List<String> transmissionsCar, @RequestParam
-                                         (value = "page", required = false) Integer page, @RequestParam(value = "sort", required = false) String sort, Model model) {
-        if (page == null) {
-            page = 0;
-        }
-        SortCategory sortCategory = carsService.findBySort(brand, modelCar, vehicleTypesCar, minKm, maxKm, maxYear, minYear, minPrice, maxPrice, countryId, citiesCar, cylindersCar, colorsCar
-                , seatsCar, fuelTypesCar, transmissionsCar, page, sort);
+    public String allProductPage(CarFilter filter, Model model) {
+        SortCategory sortCategory = carsService.findBySort(filter);
         int found = sortCategory.getFound();
         List<Integer> count = sortCategory.getCount();
         List<Cars> cars = sortCategory.getCars();
@@ -66,25 +55,17 @@ public class DetailsController {
         model.addAttribute("filters", filters);
         model.addAttribute("count", count);
         model.addAttribute("found", found);
-        model.addAttribute("page", page);
+        model.addAttribute("page", filter.getPage());
+        model.addAttribute("filter", filter);
         return "catalog_page";
     }
 
     @GetMapping("/{id}")
     public String getOneCarPage(@PathVariable Long id, Model model) {
-        System.out.println("ffsdfsdfsdf");
-        System.out.println(id);
         Cars car = carsService.findById(id);
         List<Cars> cars = carsService.getFoursCar();
         model.addAttribute("car", car);
         model.addAttribute("cars", cars);
         return "details_page";
-    }
-
-    @GetMapping("/tg")
-    @ResponseBody
-    public List<Cars> allProductPage() {
-        List<Cars> cars = carsService.findAll();
-        return cars;
     }
 }

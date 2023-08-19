@@ -65,19 +65,19 @@
             </div>
             <select id="make" th:name="brand" class="block_filter_car_inner_first_select">
                 <option th:value="All">All</option>
-                <option th:each="brand : ${brands}" th:text="${brand}" th:value="${brand}">Toyota</option>
+                <option th:each="brand : ${brands}" th:text="${brand}" th:value="${brand}" th:selected="${filter.brand == brand}">Toyota</option>
             </select>
             <p class="block_filter_car_inner_first_text">Model</p>
             <select th:name="model" class="block_filter_car_inner_first_select">
                 <option th:value="All">All</option>
-                <option th:each="model : ${modelsCar}" th:text="${model}" th:value="${model}">Toyota</option>
+                <option th:each="model : ${modelsCar}" th:text="${model}" th:value="${model}" th:selected="${filter.model == model}">Toyota</option>
             </select>
             <div class="block_filter_car_inner_second_block">
                 <p class="block_filter_car_inner_first_block_text">Vehicle type</p>
                 <button id="vehicle_type_reset" type="button" class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
                 <div th:each="vehicleType : ${vehicleTypes}"  class="vehicle_type_block">
-                    <input type="checkbox" th:value="${vehicleType}" th:name="vehicleType">
+                    <input type="checkbox" th:value="${vehicleType}" th:name="vehicleType" th:checked="${filter.vehicleType.contains(vehicleType)}">
                     <p class="vehicle_type_text" th:text="${vehicleType}"></p>
                 </div>
             <div class="block_filter_car_inner_second_block">
@@ -85,21 +85,21 @@
                 <button type="button" id="kilometer_reset" class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
             <div class="block_filter_car_inner_third_block">
-                <input id="kilometers_min"  placeholder="Min 0" class="block_filter_car_inner_third_block_input_first" type="number" th:name="min_km">
-                <input id="kilometers_max" placeholder="Max 120000" class="block_filter_car_inner_third_block_input_second" type="number" th:name="max_km">
+                <input id="kilometers_min"  placeholder="Min 0" class="block_filter_car_inner_third_block_input_first" type="number" th:name="minKm">
+                <input id="kilometers_max" placeholder="Max 120000" class="block_filter_car_inner_third_block_input_second" type="number" th:name="maxKm">
             </div>
             <p class="block_filter_car_inner_second_text">Year</p>
             <div class="block_filter_car_inner_third_block">
-                <input  placeholder="Min" class="block_filter_car_inner_third_block_input_first" type="number" th:name="min_year">
-                <input placeholder="Max" class="block_filter_car_inner_third_block_input_second" type="number" th:name="max_year">
+                <input  placeholder="Min" class="block_filter_car_inner_third_block_input_first" type="number" th:name="minYear">
+                <input placeholder="Max" class="block_filter_car_inner_third_block_input_second" type="number" th:name="maxYear">
             </div>
             <div class="block_filter_car_inner_second_block">
                 <p class="block_filter_car_inner_first_block_text">Price, USD</p>
                 <button type="button" id="price_reset" class="block_filter_car_inner_first_block_button">Reset</button>
             </div>
             <div class="block_filter_car_inner_third_block">
-                <input id="price_min" placeholder="Min 20000" class="block_filter_car_inner_third_block_input_first" type="number" th:name="min_price">
-                <input id="price_max" placeholder="Max 250000" class="block_filter_car_inner_third_block_input_second" type="number" th:name="max_price">
+                <input id="price_min" placeholder="Min 20000" class="block_filter_car_inner_third_block_input_first" type="number" th:name="minPrice">
+                <input id="price_max" placeholder="Max 250000" class="block_filter_car_inner_third_block_input_second" type="number" th:name="maxPrice">
             </div>
             <div class="block_filter_car_inner_second_block">
                 <p class="block_filter_car_inner_first_block_text">Country</p>
