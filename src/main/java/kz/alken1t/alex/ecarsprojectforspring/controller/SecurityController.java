@@ -1,5 +1,7 @@
 package kz.alken1t.alex.ecarsprojectforspring.controller;
 
+import io.micrometer.common.util.StringUtils;
+import kz.alken1t.alex.ecarsprojectforspring.dto.RegistrationAccount;
 import kz.alken1t.alex.ecarsprojectforspring.dto.RegistrationError;
 import kz.alken1t.alex.ecarsprojectforspring.entity.Users;
 import kz.alken1t.alex.ecarsprojectforspring.service.UsersService;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Controller
@@ -59,38 +62,31 @@ public class SecurityController {
     }
 
     @PostMapping("/registration")
-    public String registrationAccount(@RequestParam(name = "name") String name,
-                                      @RequestParam(name = "login") String login,
-                                      @RequestParam(name = "password") String password,
-                                      @RequestParam(name = "password_confirm") String passwordConfirm,
-                                      @RequestParam(name = "confirm", required = false) String confirm, Model model) {
+    public String registrationAccount(RegistrationAccount account, Model model) {
         RegistrationError registrationError = new RegistrationError(false, false, false, false, false, false);
-        if (name.isEmpty()) {
+        if (Objects.nonNull(account.getName()) && StringUtils.isBlank(account.getName())) {
             registrationError.setName(true);
         }
-        if (login.isEmpty()) {
+        if (Objects.nonNull(account.getLogin()) && StringUtils.isBlank(account.getLogin())) {
             registrationError.setLogin(true);
         }
-        if (password.isEmpty()) {
+        if (Objects.nonNull(account.getPassword()) && StringUtils.isBlank(account.getPassword())) {
             registrationError.setPassword(true);
         }
-        if (passwordConfirm.isEmpty()) {
+        if (Objects.nonNull(account.getPasswordConfirm()) && StringUtils.isBlank(account.getPasswordConfirm())) {
             registrationError.setPasswordConfirm(true);
         }
-        if (!password.equals(passwordConfirm)) {
+        if (!account.getPassword().equals(account.getPasswordConfirm())) {
             registrationError.setPasswordNotCorrected(true);
         }
-        if (confirm == null) {
+        if (Objects.nonNull(account.getConfirm()) && StringUtils.isBlank(account.getConfirm())) {
             registrationError.setConfirm(true);
         }
         if (registrationError.isName() || registrationError.isLogin() || registrationError.isConfirm() || registrationError.isPasswordConfirm() || registrationError.isPassword() || registrationError.isPasswordNotCorrected()) {
             model.addAttribute("registrationError", registrationError);
             return "sign_up_page";
         } else {
-            Users users = new Users();
-            users.setFirstName(name);
-            users.setEmail(login);
-            users.setPassword(passwordEncoder.encode(password));
+            Users users = new Users(account.getName(),account.getLogin(),passwordEncoder.encode(account.getPassword()));
             usersService.save(users);
             return "redirect:/login";
         }

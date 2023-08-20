@@ -68,7 +68,7 @@
       <input name="password" type="password" class="sign_up_block_input">
       <p class="error" th:if="${registrationError.isPassword()}">The password cannot be empty</p>
       <p class="sign_up_block_second_text">Confirm password</p>
-      <input name="password_confirm" type="password" class="sign_up_block_input">
+      <input name="passwordConfirm" type="password" class="sign_up_block_input">
       <p class="error" th:if="${registrationError.isPasswordConfirm()}">The passwords don't match</p>
       <p class="error" th:if="${registrationError.isPasswordNotCorrected()}">The passwords don't match</p>
       <div class="sign_up_block_texts">
